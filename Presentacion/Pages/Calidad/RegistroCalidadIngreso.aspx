@@ -250,7 +250,8 @@
                                                                                                     <div class="col-md-4">
                                                                                                             <div class="panel panel-transparent">
                                                                                                                     <div class="panel-heading">
-                                                                                                                        <span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> <b>1.1)</b> Selecciona tu Proyecto</span>
+                                                                                                                        <span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> <b>1.1)</b> Selecciona tu Proyecto</span>
+
                                                                                                                      
                                                                                                                         <div class="panel-heading-controls">
                                                                                                                             <div class="panel-heading-icon"><%--<i class="fa fa-inbox"></i>--%></div>
@@ -314,8 +315,11 @@
                                                                                                                                                             </SelectParameters>
                                                                                                                                                         </asp:SqlDataSource>
                                                                                                                                                         <br />
-<%--                                                                                                                                                          <button class="btn btn-outline btn-labeled btn-primary"><span class="btn-label icon fa fa-camera-retro"></span>Default</button>&nbsp;&nbsp;--%>                                                                                                                                                      <%--  <button id="modalOpen"  data-toggle="modal" data-target="#uidemo-modals-alerts-success" class="col-md-3 col-md-offset-9 btn btn-rounded btn-sm btn-labeled btn-success"><span class="btn-label icon fa fa-plus-circle"></span>Nueva actividad</button>&nbsp;&nbsp;--%>                                                                                                                                                  <%--      <button id="modalOpen1" class=" col-md-offset-10 btn btn-rounded btn-sm btn-labeled btn-light-green" data-toggle="modal" data-placement="left" title="" data-original-title="Ingrese nueva actividad" data-target="#uidemo-modals-alerts-success"> <span class="btn-label icon fa fa-plus-circle"></span>Actividad</button>
-                                                                                                                                                 --%>       &nbsp;&nbsp;&nbsp;&nbsp;<button id="modalOpen"  class="col-md-offset-8 btn btn-rounded btn-labeled btn-primary"><span class="btn-label icon fa fa-plus-circle"  data-toggle="modal" data-placement="left" title="" data-original-title="Ingrese nueva actividad" data-target="#uidemo-modals-alerts-success"></span>Crear Actividad</button>
+<%--                                                                                                                                                          <button class="btn btn-outline btn-labeled btn-primary"><span class="btn-label icon fa fa-camera-retro"></span>Default</button>&nbsp;&nbsp;--%>
+                                                                                                                                                      <%--  <button id="modalOpen"  data-toggle="modal" data-target="#uidemo-modals-alerts-success" class="col-md-3 col-md-offset-9 btn btn-rounded btn-sm btn-labeled btn-success"><span class="btn-label icon fa fa-plus-circle"></span>Nueva actividad</button>&nbsp;&nbsp;--%>
+                                                                                                                                                  <%--      <button id="modalOpen1" class=" col-md-offset-10 btn btn-rounded btn-sm btn-labeled btn-light-green" data-toggle="modal" data-placement="left" title="" data-original-title="Ingrese nueva actividad" data-target="#uidemo-modals-alerts-success"> <span class="btn-label icon fa fa-plus-circle"></span>Actividad</button>
+                                                                                                                                                 --%>       &nbsp;&nbsp;&nbsp;&nbsp;<button id="modalOpen"  class="col-md-offset-8 btn btn-rounded btn-labeled btn-primary"><span class="btn-label icon fa fa-plus-circle"  data-toggle="modal" data-placement="left" title="" data-original-title="Ingrese nueva actividad" data-target="#uidemo-modals-alerts-success"></span>Crear Actividad</button>
+
 
 
                                                                                                                                                       <%--<button id="modalOpen "class="col-md-3 col-md-offset-9 btn btn-rounded btn-sm btn-labeled btn-success"   data-toggle="modal" data-placement="left" title="" data-original-title="Ingrese nueva actividad" data-target="#uidemo-modals-alerts-success"> <i class="fa fa-plus-circle" aria-hidden="true" style="color:#f1f1f1"></i>nueva actividad</button>--%>
@@ -339,7 +343,8 @@
 					                                                                                                                    </div> <!-- / .form-group -->
 			                                                                                                              </div>
                                                                                                                     </div>
-                                                                                                                </div> <!-- / .panel -->
+                                                                                                                </div> <!-- / .panel -->
+
 
                                                                                                            
 				                                                                                   </div>
