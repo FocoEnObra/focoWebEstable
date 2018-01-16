@@ -25,8 +25,8 @@ Namespace wsLogin_
         Function Login(ByVal vUsuario As String, ByVal vPassword As String, ByVal vStrConexion As String, ByVal ip As String, ByVal host As String) As wsLogin_.UsuarioSistema
     End Interface
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -36,7 +36,7 @@ Namespace wsLogin_
         
         Private lastPageField As String
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property LastPage() As String
             Get
@@ -49,9 +49,9 @@ Namespace wsLogin_
         End Property
     End Class
     
-    '''<comentarios/>
+    '''<remarks/>
     <System.Xml.Serialization.XmlIncludeAttribute(GetType(UsuarioSistema)),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -106,7 +106,7 @@ Namespace wsLogin_
         
         Private block_MO_GGField As Integer
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property ID_MAESTRO() As Long
             Get
@@ -118,7 +118,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property NickName() As String
             Get
@@ -130,7 +130,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property Estado() As EstadoUsuario
             Get
@@ -142,7 +142,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property EsAdmin() As Boolean
             Get
@@ -154,7 +154,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property Empresas() As System.Data.DataTable
             Get
@@ -166,7 +166,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property EmpresaSelected() As Empresa
             Get
@@ -178,7 +178,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property ID_PARTICULAR() As Long
             Get
@@ -190,7 +190,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property NombreLargo() As String
             Get
@@ -202,7 +202,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property IdPerfil() As Long
             Get
@@ -214,7 +214,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property Perfil() As String
             Get
@@ -226,7 +226,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property perfilInmobiliario() As Boolean
             Get
@@ -238,7 +238,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property perfilOperacional() As Boolean
             Get
@@ -250,7 +250,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property vePrebalance() As Boolean
             Get
@@ -262,7 +262,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property Opciones() As System.Data.DataTable
             Get
@@ -274,7 +274,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property ip() As String
             Get
@@ -286,7 +286,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property hostName() As String
             Get
@@ -298,7 +298,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property LoggedIn() As Boolean
             Get
@@ -310,7 +310,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property UsuarioTest() As Integer
             Get
@@ -322,7 +322,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=18)>  _
         Public Property usuarioInterno() As Boolean
             Get
@@ -334,7 +334,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=19)>  _
         Public Property vePreAvance() As Boolean
             Get
@@ -346,7 +346,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=20)>  _
         Public Property veEfectoAuditoria() As Boolean
             Get
@@ -358,7 +358,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=21)>  _
         Public Property PaginaInicio() As String
             Get
@@ -370,7 +370,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=22)>  _
         Public Property Block_MO_GG() As Integer
             Get
@@ -392,24 +392,24 @@ Namespace wsLogin_
         End Sub
     End Class
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
     Public Enum EstadoUsuario
         
-        '''<comentarios/>
+        '''<remarks/>
         Desconocido
         
-        '''<comentarios/>
+        '''<remarks/>
         Activo
         
-        '''<comentarios/>
+        '''<remarks/>
         Inactivo
     End Enum
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -492,7 +492,7 @@ Namespace wsLogin_
         
         Private paginaInicioField As String
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property ID() As Long
             Get
@@ -504,7 +504,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Nombre() As String
             Get
@@ -516,7 +516,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property tipoMando() As Integer
             Get
@@ -528,7 +528,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property muestraDescargaInf() As Boolean
             Get
@@ -540,7 +540,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property BaseDatos() As String
             Get
@@ -552,7 +552,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property BDServer() As String
             Get
@@ -564,7 +564,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property BDUsuario() As String
             Get
@@ -576,7 +576,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property BDPassword() As String
             Get
@@ -588,7 +588,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property Estado() As EstadoEmpresa
             Get
@@ -600,7 +600,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property DatosConexion() As DatosConexion
             Get
@@ -612,7 +612,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property ObraIDSelected() As Long
             Get
@@ -624,7 +624,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property ObraNombreSelected() As String
             Get
@@ -636,7 +636,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property ObraCodigoSelected() As String
             Get
@@ -648,7 +648,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property GanttIDSelected() As Long
             Get
@@ -660,7 +660,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property GanttNombreSelected() As String
             Get
@@ -672,7 +672,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property FechaEvalSelected() As Date
             Get
@@ -684,7 +684,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property FechaAvaIDSelected() As Long
             Get
@@ -696,7 +696,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property PorcAvanceSelected() As Decimal
             Get
@@ -708,7 +708,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=18)>  _
         Public Property PorcDesvSelected() As Decimal
             Get
@@ -720,7 +720,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=19)>  _
         Public Property DesvProyDias() As Integer
             Get
@@ -732,7 +732,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=20)>  _
         Public Property FechaTermProy() As Date
             Get
@@ -744,7 +744,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=21)>  _
         Public Property utilizaFoco() As Integer
             Get
@@ -756,7 +756,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=22)>  _
         Public Property cierreManual() As Integer
             Get
@@ -768,7 +768,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=23)>  _
         Public Property FechaCierreBalance() As System.Nullable(Of Date)
             Get
@@ -780,7 +780,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=24)>  _
         Public Property FechaAvaCierreBalance() As System.Nullable(Of Date)
             Get
@@ -792,7 +792,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=25)>  _
         Public Property ganttCierreBalance() As String
             Get
@@ -804,7 +804,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=26)>  _
         Public Property idGanttCierreBalance() As System.Nullable(Of Integer)
             Get
@@ -816,7 +816,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=27)>  _
         Public Property vistoBueno() As Boolean
             Get
@@ -828,7 +828,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=28)>  _
         Public Property estadoFlujo() As Boolean
             Get
@@ -840,7 +840,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=29)>  _
         Public Property cargoGerente() As String
             Get
@@ -852,7 +852,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=30)>  _
         Public Property resultadoActualFoco() As System.Nullable(Of Double)
             Get
@@ -864,7 +864,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=31)>  _
         Public Property calendario() As String
             Get
@@ -876,7 +876,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=32)>  _
         Public Property usaInformeCC() As Integer
             Get
@@ -888,7 +888,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=33)>  _
         Public Property fechaCierreMO() As System.Nullable(Of Date)
             Get
@@ -900,7 +900,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=34)>  _
         Public Property fechaCierreSC() As System.Nullable(Of Date)
             Get
@@ -912,7 +912,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=35)>  _
         Public Property porcRealBal() As Double
             Get
@@ -924,7 +924,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=36)>  _
         Public Property paginaInicio() As String
             Get
@@ -946,24 +946,24 @@ Namespace wsLogin_
         End Sub
     End Class
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
     Public Enum EstadoEmpresa
         
-        '''<comentarios/>
+        '''<remarks/>
         Desconocido
         
-        '''<comentarios/>
+        '''<remarks/>
         Activo
         
-        '''<comentarios/>
+        '''<remarks/>
         Inactivo
     End Enum
     
-    '''<comentarios/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0"),  _
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -982,7 +982,7 @@ Namespace wsLogin_
         
         Private usarWindowsAutentificationField As Boolean
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Servidor() As String
             Get
@@ -994,7 +994,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Catalogo() As String
             Get
@@ -1006,7 +1006,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property Usuario() As String
             Get
@@ -1018,7 +1018,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property Clave() As String
             Get
@@ -1030,7 +1030,7 @@ Namespace wsLogin_
             End Set
         End Property
         
-        '''<comentarios/>
+        '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property UsarWindowsAutentification() As Boolean
             Get

@@ -1,8 +1,6 @@
-﻿Imports serviciosUtilidades
-Imports System.Data.SqlClient
-Imports Entidades.Seguridad
-Imports SUL
+﻿Imports System.Data.SqlClient
 Imports EL.Seguridad
+Imports SUL
 
 Namespace Seguridad
     Public Class Usuario

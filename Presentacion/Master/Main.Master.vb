@@ -34,6 +34,7 @@
 
     Private Sub CargarEmpresa()
         Dim emp As DataTable = Session.Contents("xEMPRESA")
+
         Dim nombreEmpresa As String = emp.Rows(0).Item(1).ToString
 
         Dim usuario As String = Trim(Session.Contents("xUser"))

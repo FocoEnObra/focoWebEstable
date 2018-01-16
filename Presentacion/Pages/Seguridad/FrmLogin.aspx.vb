@@ -1,6 +1,5 @@
 ﻿Imports System.Net
 Imports System.Data.SqlClient
-
 Public Class FrmLogin
     Inherits System.Web.UI.Page
 
@@ -48,15 +47,19 @@ Public Class FrmLogin
     End Function
 
     Private Sub Ingresar()
-        Dim vUser As wsLogin_.UsuarioSistema
+        ' Dim vUser As wsLogin_.UsuarioSistema
+        Dim vUser As DAL.Seguridad.UsuarioSistema
+
         ' ObtenerHost()
         Try
             ' conexion de prueba del wsLogin ---- Dim ws As wsLogin.Service1SoapClient = New wsLogin.Service1SoapClient
-            Dim ws As wsLogin_.Service1SoapClient = New wsLogin_.Service1SoapClient
+            'Dim ws As wsLogin_.Service1SoapClient = New wsLogin_.Service1SoapClient
             Dim dtEmpresas As DataTable = New DataTable
             ' pendiente..  
 
-            vUser = ws.Login(fname.Value, fpass.Value, "Data Source=192.168.1.52;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
+            'vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=192.168.1.52;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
+            vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=MAURO-MORENO;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
+
             dtEmpresas = vUser.Empresas
             Session.Add("xEMPRESA", dtEmpresas)
 
@@ -81,8 +84,9 @@ Public Class FrmLogin
                 Session.Add("xSSN_USUARIO", vUser)
                 'Session(SSN_USUARIO) = vUser
                 vUser.LoggedIn = True
-                Session.Add("xUser", fname.Value)
-                Session.Add("xPass", fpass.Value)
+                'Session.Add("xUser", fname.Value.ToLower)
+                'Session.Add("xPass", fpass.Value.ToLower)
+
 
                 Response.Redirect(ConfigurationManager.AppSettings("PaginaInicio"))
 

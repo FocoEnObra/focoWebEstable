@@ -49,47 +49,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
     <div class="row">
-        <script>
-            init.push(function () {
-                $('.ui-wizard-example').pixelWizard({
-                    onChange: function () {
-                        console.log('Current step: ' + this.currentStep());
-                    },
-                    onFinish: function () {
-                        this.unfreeze();
-                        console.log('Wizard is freezed');
-                        console.log('Finished!');
-                    }
-                });
-
-                $('.wizard-next-step-btn').click(function () {
-                    $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
-                });
-
-                $('.wizard-prev-step-btn').click(function () {
-                    $(this).parents('.ui-wizard-example').pixelWizard('prevStep');
-                });
-
-                $('.wizard-go-to-step-btn').click(function () {
-                    $(this).parents('.ui-wizard-example').pixelWizard('setCurrentStep', 2);
-                });
-
-                $('#ui-wizard-modal').on('show.bs.modal', function (e) {
-                    var $modal = $(this),
-                        $wizard = $modal.find('.ui-wizard-example'),
-                        timer = null,
-                        callback = function () {
-                            if (timer) clearTimeout(timer);
-                            if ($modal.hasClass('in')) {
-                                $wizard.pixelWizard('resizeSteps');
-                            } else {
-                                timer = setTimeout(callback, 10);
-                            }
-                        };
-                    callback();
-                });
-            });
-		</script>
+    
 
         
         <div class="panel">  
@@ -123,6 +83,48 @@
 			        </div>
 
 					<div class="panel-body">
+
+                            <script>
+                                init.push(function () {
+                                    $('.ui-wizard-example').pixelWizard({
+                                        onChange: function () {
+                                            console.log('Current step: ' + this.currentStep());
+                                        },
+                                        onFinish: function () {
+                                            this.unfreeze();
+                                            console.log('Wizard is freezed');
+                                            console.log('Finished!');
+                                        }
+                                    });
+
+                                    $('.wizard-next-step-btn').click(function () {
+                                        $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
+                                    });
+
+                                    $('.wizard-prev-step-btn').click(function () {
+                                        $(this).parents('.ui-wizard-example').pixelWizard('prevStep');
+                                    });
+
+                                    $('.wizard-go-to-step-btn').click(function () {
+                                        $(this).parents('.ui-wizard-example').pixelWizard('setCurrentStep', 2);
+                                    });
+
+                                    $('#ui-wizard-modal').on('show.bs.modal', function (e) {
+                                        var $modal = $(this),
+                                            $wizard = $modal.find('.ui-wizard-example'),
+                                            timer = null,
+                                            callback = function () {
+                                                if (timer) clearTimeout(timer);
+                                                if ($modal.hasClass('in')) {
+                                                    $wizard.pixelWizard('resizeSteps');
+                                                } else {
+                                                    timer = setTimeout(callback, 10);
+                                                }
+                                            };
+                                        callback();
+                                    });
+                                });
+		</script>
                         <!--                    -->
                         <!--       WIZARD        -->
                         <!--                    -->
@@ -248,9 +250,7 @@
                                  	                                </div>
                                                                 </div>
 						                         </div>                              
-				              
-                                          
-                                                  <div class="col-md-4"> 
+		                                          <div class="col-md-4"> 
                                                          
 				                                    <script>
                                                         init.push(function () {
@@ -299,9 +299,7 @@
 					                                </div>
 				                                </div>
                                         </div>
-                            
-                                        
-
+        
                                         </div>
                                         <div class="col-md-12" style="margin-top:15px"><p class="pull-right">
                                     <span id="paso1btn" class="fa-stack fa-lg wizard-next-step-btn" style="cursor:pointer">

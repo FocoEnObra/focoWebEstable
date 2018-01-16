@@ -75,4 +75,40 @@ Partial Public Class Formulario_web14
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents sqlUcos As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control ASPxGridView5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxGridView5 As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control SqlDataSource1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control ASPxGridView1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxGridView1 As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control sqlUsuarios.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sqlUsuarios As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

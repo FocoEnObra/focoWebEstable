@@ -10,7 +10,7 @@
     <AssemblyName>AccesoDatos</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,6 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>AccesoDatos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>AccesoDatos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -44,15 +46,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AccesoDatos">
-      <HintPath>D:\Capas de Foco\AccesoDatos\bin\Release\AccesoDatos.dll</HintPath>
-    </Reference>
-    <Reference Include="EstructuraEntidad">
-      <HintPath>D:\Capas de Foco\AccesoDatos\bin\Release\EstructuraEntidad.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiciosUtilidades">
-      <HintPath>D:\Capas de Foco\AccesoDatos\bin\Release\ServiciosUtilidades.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -76,6 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calidad\Actividad.vb" />
     <Compile Include="Empresa\Dias.vb" />
     <Compile Include="Empresa\Obra.vb" />
     <Compile Include="Empresa\Areas.vb" />
@@ -116,6 +110,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EstructuraEntidad\EstructuraEntidad.vbproj">
+      <Project>{a514b4d0-efe2-431a-8b15-68444d75aff4}</Project>
+      <Name>EstructuraEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiciosUtilidades\ServiciosUtilidades.vbproj">
+      <Project>{9942bdb6-0851-462d-9887-53766da1134d}</Project>
+      <Name>ServiciosUtilidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

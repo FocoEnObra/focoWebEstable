@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master/Main.Master" CodeBehind="initConfig.aspx.vb" Inherits="Presentacion.initConfig" %>
 <%@ register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style>
@@ -66,7 +67,7 @@
                 });
             });
 				</script>
-            <div class="panel">
+        <div class="panel">
 					<div class="panel-body">
 						<div class="wizard ui-wizard-example">
 							<div class="wizard-wrapper">

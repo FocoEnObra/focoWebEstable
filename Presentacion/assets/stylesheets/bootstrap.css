@@ -2155,7 +2155,7 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #5bc0de;
+  background-color: #17649a;
   border-color: #46b8da;
 }
 .btn-info:hover,
@@ -2187,11 +2187,11 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #5bc0de;
+  background-color: #17649a;
   border-color: #46b8da;
 }
 .btn-info .badge {
-  color: #5bc0de;
+  color: #17649a;
   background-color: #ffffff;
 }
 .btn-warning {
@@ -4295,7 +4295,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #449d44;
 }
 .label-info {
-  background-color: #5bc0de;
+  background-color: #17649a;
 }
 .label-info[href]:hover,
 .label-info[href]:focus {
@@ -4543,7 +4543,7 @@ a.thumbnail.active {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-info {
-  background-color: #5bc0de;
+  background-color: #17649a;
 }
 .progress-striped .progress-bar-info {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);

@@ -232,7 +232,7 @@
     color: #fff;
 }
 .theme-asphalt #main-menu li.active>a .menu-icon {
-    color: #165886;
+    color: #35ae98; 
 }
 .theme-asphalt #main-menu li.active>a:after {
     display: block;
@@ -743,11 +743,7 @@
 .theme-asphalt .widget-rating .active a {
     color: #52bdb4;
 }
-
-}
-
-
-     .panel-footer{text-align:center}
+.panel-footer{text-align:center}
 
 	</style>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -758,8 +754,10 @@
 <script>var init = [];
 
 </script>
+
 
 <div id="main-wrapper">
+  
 	<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
         <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i>
             <span class="hide-menu-text">HIDE MENU</span></button>		
@@ -880,9 +878,10 @@
                 </li>
                  <li class="mm-dropdown">
 					<a href="#"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Calidad de Obra</span></a>
-                    <ul><li><a tabindex="-1" href="../Productividad/calElabRegistro.aspx"><i class="menu-icon fa fa-building-o"></i><span class="mm-text">Elaborar Registro</span></a></li>
-						<li><a tabindex="-1" href="../Productividad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Listado ACC</span></a></li>
-					<li><a tabindex="-1" href="../Productividad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">inspeccción en terreno</span></a></li>
+                    <ul>
+                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Definición Proceso Calidad</span> </a>
+                           
+                        </li>
                     </ul> 
                 </li>
 			</ul>  <!-- END SIDEBAR -->

@@ -15,7 +15,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Presentacion</RootNamespace>
     <AssemblyName>Presentacion</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -35,6 +35,7 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>Presentacion.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,12 +46,9 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>Presentacion.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AccesoDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AccesoDatos\bin\Release\AccesoDatos.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -62,6 +60,7 @@
     <Reference Include="DevExpress.Web.ASPxPivotGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Bootstrap.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.DemoData.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -181,6 +180,7 @@
     <Content Include="assets\javascripts\pixel-admin.min.js" />
     <Content Include="assets\stylesheets\bootstrap.css" />
     <Content Include="assets\stylesheets\bootstrap.min.css" />
+    <Content Include="assets\stylesheets\DragAndDrop.css" />
     <Content Include="assets\stylesheets\pages.css" />
     <Content Include="assets\stylesheets\pages.min.css" />
     <Content Include="assets\stylesheets\pixel-admin.css" />
@@ -191,10 +191,15 @@
     <Content Include="assets\stylesheets\themes.min.css" />
     <Content Include="assets\stylesheets\widgets.css" />
     <Content Include="assets\stylesheets\widgets.min.css" />
+    <Content Include="CSS\animate.css" />
     <Content Include="CSS\w3-theme-black.css" />
     <Content Include="CSS\w3.css" />
     <Content Include="Global.asax" />
-    <Content Include="Pages\Calidad\CalMantConfigInicial.aspx" />
+    <Content Include="Pages\Calidad\RegistroCalidadIngreso.aspx" />
+    <Content Include="Pages\Calidad\jquery.countdown.js" />
+    <Content Include="Pages\Calidad\jquery.countdown.min.js" />
+    <Content Include="Pages\Calidad\jquery.countdown360.js" />
+    <Content Include="Pages\Productividad\AsignacionMO.aspx" />
     <Content Include="Pages\Productividad\calElabRegistro.aspx" />
     <Content Include="Pages\Productividad\ccoInspeccionTerreno.aspx" />
     <Content Include="Pages\Productividad\checklist.aspx" />
@@ -252,6 +257,8 @@
     <Content Include="Pages\Productividad\AsignacionMO.aspx.bak" />
     <Content Include="Pages\Productividad\ccoInspeccionTerreno.aspx.bak" />
     <Content Include="Pages\Productividad\checklist.aspx.bak" />
+    <None Include="My Project\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Service References\wsLogin_\Servicios.disco" />
     <None Include="Service References\wsLogin_\configuration91.svcinfo" />
     <None Include="Service References\wsLogin_\configuration.svcinfo" />
@@ -269,12 +276,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Maestro.vb" />
-    <Compile Include="Pages\Calidad\CalMantConfigInicial.aspx.designer.vb">
-      <DependentUpon>CalMantConfigInicial.aspx</DependentUpon>
+    <Compile Include="Pages\Calidad\RegistroCalidadIngreso.aspx.designer.vb">
+      <DependentUpon>RegistroCalidadIngreso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Calidad\CalMantConfigInicial.aspx.vb">
-      <DependentUpon>CalMantConfigInicial.aspx</DependentUpon>
+    <Compile Include="Pages\Calidad\RegistroCalidadIngreso.aspx.vb">
+      <DependentUpon>RegistroCalidadIngreso.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Productividad\AsignacionMO.aspx.designer.vb">
+      <DependentUpon>AsignacionMO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Productividad\AsignacionMO.aspx.vb">
+      <DependentUpon>AsignacionMO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Productividad\calElabRegistro.aspx.designer.vb">
       <DependentUpon>calElabRegistro.aspx</DependentUpon>
@@ -596,6 +610,10 @@
     <WCFMetadataStorage Include="Service References\wsLogin_\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.vbproj">
+      <Project>{0b2a01d9-a546-4788-80c0-1bd4a12bd4ad}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EstructuraEntidad\EstructuraEntidad.vbproj">
       <Project>{a514b4d0-efe2-431a-8b15-68444d75aff4}</Project>
       <Name>EstructuraEntidad</Name>

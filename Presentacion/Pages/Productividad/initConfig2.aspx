@@ -7,7 +7,7 @@
 </asp:Content>
 
 <asp:Content id="MainBody" contentplaceholderid="body" runat="server">
-<!-- .
+    <!-- .
     Bienvenido. 
     Configuración Inicial Foco en Obra
     File:initConfig.
@@ -75,28 +75,8 @@
 											BIENVENIDO!
 											<span class="wizard-step-description">Hola! te agradecemos el preferir nuestro sistema de control.</span>
 										</span>
-									</li
-									><li data-target="#wizard-example-step2"> <!-- ! Remove space between elements by dropping close angle -->
-										<span class="wizard-step-number">2</span>
-										<span class="wizard-step-caption">
-											PASO 1: CONFIGURACIÓN
-											<span class="wizard-step-description">Guardaremos la información base de tu empresa.</span>
-										</span>
-									</li
-									><li data-target="#wizard-example-step3"> <!-- ! Remove space between elements by dropping close angle -->
-										<span class="wizard-step-number">3</span>
-										<span class="wizard-step-caption">
-											PASO 2: PRIMER PROYECTO
-											<span class="wizard-step-description">Ingresaremos los datos de tu primer proyecto en Foco.</span>
-										</span>
-									</li
-									><li data-target="#wizard-example-step4"> <!-- ! Remove space between elements by dropping close angle -->
-										<span class="wizard-step-number">4</span>
-										<span class="wizard-step-caption">
-											MANOS A LA OBRA!
-                                            <span class="wizard-step-description">Agradecemos tu tiempo. Ya puedes comenzar a usar el sistema.</span>
-										</span>
 									</li>
+                                   
 								</ul> <!-- / .wizard-steps -->
 							</div> <!-- / .wizard-wrapper -->
 							<div class="wizard-content panel">
@@ -208,7 +188,7 @@ Has adquirido el mejor sistema de control de gestión de obras civiles, que de m
                                     </div>
                                     </div>
                                     <br>
-									<button class="btn btn-primary wizard-next-step-btn">Siguiente</button>
+								
 								</div> <!-- / .wizard-pane -->
 								<div class="wizard-pane" id="wizard-example-step2" style="display: none;">
 									<div class="row">
