@@ -60,7 +60,7 @@
             Return periodos
         End Function
 
-     
+
 
         Public Shared Function MesesEntreFecha(fechaIni As Date, fechaFin As Date) As DataTable
 
@@ -159,7 +159,7 @@
             Else
                 Dim fechaTmp As Date = DateAdd(DateInterval.Day, FirstDayOfWeek.Friday - fecha.DayOfWeek - 1, fecha)
                 Return "Al" & fechaTmp
-                
+
             End If
 
             Return ""

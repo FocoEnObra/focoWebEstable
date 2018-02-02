@@ -21,6 +21,20 @@ Namespace Calidad
             Return False
 
         End Function
+        Public Shared Function insertarGrupoActividad(usuario As EL.Seguridad.Usuario, nombreGrupo As String) As Boolean
+            Dim vCon As New Conexion(usuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
+            Dim vParam As New Dictionary(Of String, Object)
+            Dim paramOut As New Dictionary(Of String, SqlDbType)
+            vParam.Add("@NOMBRE_GRP_CHK", nombreGrupo)
+            Try
+                vCon.Exec("SP_WS_INS_GRP_CHK", vParam)
+                Return True
+            Catch ex As Exception
+                Throw New Exception("No se pudo insertar el grupo.", ex)
+            End Try
+            Return False
+
+        End Function
 
         Public Shared Function buscarEtapa(usuario As EL.Seguridad.Usuario, ByVal idActividad As Integer) As String
             Dim vCon As New Conexion(usuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
@@ -34,6 +48,22 @@ Namespace Calidad
                 Throw New Exception("No se pudo insertar la actividad.", ex)
             End Try
             Return False
+        End Function
+        Public Shared Function traerEtapa(ByVal idObra As Integer) As DataSet
+            'Dim vCon As New Conexion(usuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
+            'Dim vCon As New Conexion("Data Source=MAURO-MORENO;Initial Catalog=Foco_CVV_Mjeldres;Persist Security Info=True;User ID=foco_cvv;Password=Foco38Web1835")
+            Dim vCon As New Conexion("Data Source=192.168.1.52;Initial Catalog=Foco_CVV_Mjeldres;Persist Security Info=True;User ID=foco_cvv;Password=Foco38Web1835")
+
+            Dim vParam As New Dictionary(Of String, Object)
+            Dim vTablas As DataSet = Nothing
+            vParam.Add("@ID_OBR", idObra)
+            Try
+                vTablas = vCon.ExecSP_DS("SP_WS_TRAER_ETAPA", vParam)
+                Return vTablas
+            Catch ex As Exception
+                Throw New Exception("No se pudo Listar las etapas", ex)
+            End Try
+
         End Function
 
 

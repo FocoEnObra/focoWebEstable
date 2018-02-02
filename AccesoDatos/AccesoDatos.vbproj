@@ -46,6 +46,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -70,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calidad\Actividad.vb" />
+    <Compile Include="Calidad\Mensajeria.vb" />
+    <Compile Include="Calidad\Plantilla.vb" />
     <Compile Include="Empresa\Dias.vb" />
     <Compile Include="Empresa\Obra.vb" />
     <Compile Include="Empresa\Areas.vb" />
@@ -110,6 +115,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EstructuraEntidad\EstructuraEntidad.vbproj">

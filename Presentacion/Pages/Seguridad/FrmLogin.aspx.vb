@@ -57,8 +57,8 @@ Public Class FrmLogin
             Dim dtEmpresas As DataTable = New DataTable
             ' pendiente..  
 
-            'vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=192.168.1.52;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
-            vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=MAURO-MORENO;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
+            vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=192.168.1.52;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
+            'vUser = DAL.Seguridad.Usuario.Ingresar(fname.Value.ToLower, fpass.Value.ToLower, "Data Source=MAURO-MORENO;Initial Catalog=Foco_WebMaster;Integrated Security=False;Connect Timeout=200;USER ID=foco_webmaster;password=Foco38Web1835", "192.168.0.102", "")
 
             dtEmpresas = vUser.Empresas
             Session.Add("xEMPRESA", dtEmpresas)

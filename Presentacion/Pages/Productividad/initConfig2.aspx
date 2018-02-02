@@ -96,7 +96,7 @@ Has adquirido el mejor sistema de control de gestión de obras civiles, que de m
 					<div class="stat-row">
 						<!-- Info background, without padding, horizontally centered text, super large text -->
 						<div class="stat-cell bg-info no-padding text-center text-slg">
-							<i class="fa fa-money"></i>
+							<i class="fas fa-chart-line"></i>
 						</div>
 					</div> <!-- /.stat-row -->
 					<div class="stat-row">
@@ -113,7 +113,7 @@ Has adquirido el mejor sistema de control de gestión de obras civiles, que de m
 					<div class="stat-row">
 						<!-- Info background, without padding, horizontally centered text, super large text -->
 						<div class="stat-cell bg-info no-padding text-center text-slg">
-							<i class="fa fa-clock-o"></i>
+							<i class="far fa-money-bill-alt"></i>
 						</div>
 					</div> <!-- /.stat-row -->
 					<div class="stat-row">

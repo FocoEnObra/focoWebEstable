@@ -37,9 +37,8 @@
 							<strong>Nota:</strong> Recuerda guardar los cambios que vayas realizando!
 						    </div>--%>
                             <p>En esta sección puedes editar la información relacionada con las etapas constructivas de tus proyectos en Foco.</p><hr />
-							<asp:ScriptManager ID="ScriptManager" runat="server" />
-                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                 <contenttemplate>
+						
+                           
                                      <div class="panel-body bg-panel">
                                       <div class="col-sm-12">
                                         <label class="control-label">Selecciona Proyecto</label>
@@ -53,58 +52,20 @@
                                                       </asp:SqlDataSource>
                                         </div>
 							         </div>  
+                                           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                 <contenttemplate>
                                       <div class="col-md-12">
                                             <label class="control-label">Listado de Actividades Controladas</label>
                                             <br />
-                                 
+                                
                                             <dx:ASPxGridView ID="gridActividades"  ClientInstanceName="grid" runat="server" AutoGenerateColumns="False" DataSourceID="sqlCalidad" EnableTheming="True" KeyFieldName="ID_ACC_PLT" Theme="MetropolisBlue" Width="100%">
-                                               <Toolbars>
-           <%-- <dx:GridViewToolbar ItemAlign="Right" EnableAdaptivity="true">
-                <Items>
-                    <dx:GridViewToolbarItem Command="New"  Text ="Nuevo"/>
-                    <dx:GridViewToolbarItem Command="Edit" text="editar"/>
-                    <dx:GridViewToolbarItem Command="Delete" Text="Eliminar" />
-                    <dx:GridViewToolbarItem Command="Refresh" BeginGroup="true" Text="Actualizar" />
-                    <dx:GridViewToolbarItem Text="Exportar a" Image-IconID="actions_download_16x16office2013" BeginGroup="true">
-                        <Items>
-                            <dx:GridViewToolbarItem Command="ExportToPdf" />
-                            <dx:GridViewToolbarItem Command="ExportToDocx" />
-                            <dx:GridViewToolbarItem Command="ExportToRtf" />
-                            <dx:GridViewToolbarItem Command="ExportToCsv" />
-                            <dx:GridViewToolbarItem Command="ExportToXls" Text="Export to XLS(DataAware)" />
-                            <dx:GridViewToolbarItem Name="CustomExportToXLS" Text="Export to XLS(WYSIWYG)" Image-IconID="export_exporttoxls_16x16office2013" >
-                                <Image IconID="export_exporttoxls_16x16office2013">
-                                </Image>
-                            </dx:GridViewToolbarItem>
-                            <dx:GridViewToolbarItem Command="ExportToXlsx" Text="Export to XLSX(DataAware)" />
-                            <dx:GridViewToolbarItem Name="CustomExportToXLSX" Text="Export to XLSX(WYSIWYG)" Image-IconID="export_exporttoxlsx_16x16office2013" >
-                                <Image IconID="export_exporttoxlsx_16x16office2013">
-                                </Image>
-                            </dx:GridViewToolbarItem>
-                        </Items>
-                        <Image IconID="actions_download_16x16office2013">
-                        </Image>
-                    </dx:GridViewToolbarItem>
-                    <dx:GridViewToolbarItem BeginGroup="true">
-                        <Template>
-                            <dx:ASPxButtonEdit ID="tbToolbarSearch" runat="server" NullText="Buscar..." Height="100%">
-                                <Buttons>
-                                    <dx:SpinButtonExtended Image-IconID="find_find_16x16gray" />
-                                </Buttons>
-                            </dx:ASPxButtonEdit>
-                        </Template>
-                    </dx:GridViewToolbarItem>
-                </Items>
-            </dx:GridViewToolbar>--%>
-       
-        </Toolbars>
-
+                                              
                                                    <Settings ShowGroupPanel="True" />
                                                 <SettingsBehavior AllowFocusedRow="True" />
       
                                                 <SettingsSearchPanel ShowClearButton="True" Visible="True" />
 
-        <ClientSideEvents ToolbarItemClick="OnToolbarItemClick" />
+                                                        <ClientSideEvents ToolbarItemClick="OnToolbarItemClick" />
 
                                                 <SettingsDetail ExportMode="Expanded" ShowDetailRow="True" AllowOnlyOneMasterRowExpanded="True" />
                                                 <Templates>
@@ -440,10 +401,10 @@
                                                             </dx:GridViewDataTextColumn>
                                                             <dx:GridViewDataTextColumn Caption="N°" FieldName="NUM_ACC" ShowInCustomizationForm="True" VisibleIndex="1">
                                                             </dx:GridViewDataTextColumn>
-                                                            <dx:GridViewDataTextColumn FieldName="ETAPA" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                           <%-- <dx:GridViewDataTextColumn FieldName="ETAPA" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="4">
                                                                 <CellStyle HorizontalAlign="Left" VerticalAlign="Middle">
                                                                 </CellStyle>
-                                                            </dx:GridViewDataTextColumn>
+                                                            </dx:GridViewDataTextColumn>--%>
                                                         </Columns>
                                                     </dx:GridViewBandColumn>
                                                     <dx:GridViewBandColumn Caption="RECINTOS" VisibleIndex="2">
@@ -501,47 +462,24 @@
        
                                             </dx:ASPxGridView>
 
-                                            <asp:SqlDataSource ID="sqlCalidad" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [QA_ACC_PLT] WHERE [ID_ACC_PLT] = @original_ID_ACC_PLT" InsertCommand="INSERT INTO [QA_ACC_PLT] ([CODIGO_ACC], [NOMBRE_ACC], [NUM_ACC], [VERSION_ACC], [ID_OBR], [ID_ETA], [CODIGO_ACT], [NOMBRE_ACT], [ESTADO_ACC], [FECHA_CREA], [ID_USU_CREA]) VALUES (@CODIGO_ACC, @NOMBRE_ACC, @NUM_ACC, @VERSION_ACC, @ID_OBR, @ID_ETA, @CODIGO_ACT, @NOMBRE_ACT, @ESTADO_ACC, @FECHA_CREA, @ID_USU_CREA)" OldValuesParameterFormatString="original_{0}" SelectCommand="SP_QA_ACC_PLT_BUSCAR" UpdateCommand="UPDATE [QA_ACC_PLT] SET [CODIGO_ACC] = @CODIGO_ACC, [NOMBRE_ACC] = @NOMBRE_ACC, [NUM_ACC] = @NUM_ACC, [VERSION_ACC] = @VERSION_ACC, [ID_OBR] = @ID_OBR, [ID_ETA] = @ID_ETA, [CODIGO_ACT] = @CODIGO_ACT, [NOMBRE_ACT] = @NOMBRE_ACT, [ESTADO_ACC] = @ESTADO_ACC, [FECHA_CREA] = @FECHA_CREA, [ID_USU_CREA] = @ID_USU_CREA WHERE [ID_ACC_PLT] = @original_ID_ACC_PLT" SelectCommandType="StoredProcedure">
-                                                <DeleteParameters>
-                                                    <asp:Parameter Name="original_ID_ACC_PLT" Type="Int32" />
-                                                </DeleteParameters>
-                                                <InsertParameters>
-                                                    <asp:Parameter Name="CODIGO_ACC" Type="String" />
-                                                    <asp:Parameter Name="NOMBRE_ACC" Type="String" />
-                                                    <asp:Parameter Name="NUM_ACC" Type="Int32" />
-                                                    <asp:Parameter Name="VERSION_ACC" Type="Int32" />
-                                                    <asp:Parameter Name="ID_OBR" Type="Int64" />
-                                                    <asp:Parameter Name="ID_ETA" Type="Int64" />
-                                                    <asp:Parameter Name="CODIGO_ACT" Type="String" />
-                                                    <asp:Parameter Name="NOMBRE_ACT" Type="String" />
-                                                    <asp:Parameter Name="ESTADO_ACC" Type="Int16" />
-                                                    <asp:Parameter Name="FECHA_CREA" Type="DateTime" />
-                                                    <asp:Parameter Name="ID_USU_CREA" Type="Int64" />
-                                                </InsertParameters>
+                                            <asp:SqlDataSource ID="sqlCalidad" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                         SelectCommand="SP_QA_ACC_PLT_BUSCAR_MULA" 
+                                                SelectCommandType="StoredProcedure">
+                                                
                                                 <SelectParameters>
                                                     <asp:ControlParameter ControlID="ddlObra" Name="ID_OBR" PropertyName="Value" Type="Int64" />
                                                     <asp:Parameter DefaultValue="-1" Name="ID_ACC_PLT" Type="Int32" />
                                                     <asp:Parameter DefaultValue="0" Name="SOLO_PEND" Type="Int32" />
                                                 </SelectParameters>
-                                                <UpdateParameters>
-                                                    <asp:Parameter Name="CODIGO_ACC" Type="String" />
-                                                    <asp:Parameter Name="NOMBRE_ACC" Type="String" />
-                                                    <asp:Parameter Name="NUM_ACC" Type="Int32" />
-                                                    <asp:Parameter Name="VERSION_ACC" Type="Int32" />
-                                                    <asp:Parameter Name="ID_OBR" Type="Int64" />
-                                                    <asp:Parameter Name="ID_ETA" Type="Int64" />
-                                                    <asp:Parameter Name="CODIGO_ACT" Type="String" />
-                                                    <asp:Parameter Name="NOMBRE_ACT" Type="String" />
-                                                    <asp:Parameter Name="ESTADO_ACC" Type="Int16" />
-                                                    <asp:Parameter Name="FECHA_CREA" Type="DateTime" />
-                                                    <asp:Parameter Name="ID_USU_CREA" Type="Int64" />
-                                                    <asp:Parameter Name="original_ID_ACC_PLT" Type="Int32" />
-                                                </UpdateParameters>
+                                                
                                             </asp:SqlDataSource>
 
                                         </div>
 					                 </div>
                                  </contenttemplate>
+                                               <Triggers>
+                                                        <asp:AsyncPostBackTrigger ControlID="ddlObra" />
+                                               </Triggers>
                             </asp:UpdatePanel>
                           
                         <%--<div class="col-md-12">

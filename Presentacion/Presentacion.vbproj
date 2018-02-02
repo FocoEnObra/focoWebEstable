@@ -68,6 +68,9 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -88,7 +91,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\UploadTemp\" />
     <Folder Include="archivos\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -176,11 +179,13 @@
     <Content Include="assets\javascripts\jquery.mockjax.js" />
     <Content Include="assets\javascripts\jquery.mockjax.min.js" />
     <Content Include="assets\javascripts\jquery.transit.min.js" />
+    <Content Include="assets\javascripts\pace.min.js" />
     <Content Include="assets\javascripts\pixel-admin.js" />
     <Content Include="assets\javascripts\pixel-admin.min.js" />
     <Content Include="assets\stylesheets\bootstrap.css" />
     <Content Include="assets\stylesheets\bootstrap.min.css" />
     <Content Include="assets\stylesheets\DragAndDrop.css" />
+    <Content Include="assets\stylesheets\pace-theme-flash.css" />
     <Content Include="assets\stylesheets\pages.css" />
     <Content Include="assets\stylesheets\pages.min.css" />
     <Content Include="assets\stylesheets\pixel-admin.css" />
@@ -195,6 +200,8 @@
     <Content Include="CSS\w3-theme-black.css" />
     <Content Include="CSS\w3.css" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Calidad\prueba2.aspx" />
+    <Content Include="Pages\Calidad\Pruebas.aspx" />
     <Content Include="Pages\Calidad\RegistroCalidadIngreso.aspx" />
     <Content Include="Pages\Calidad\jquery.countdown.js" />
     <Content Include="Pages\Calidad\jquery.countdown.min.js" />
@@ -238,6 +245,7 @@
     <Content Include="Pages\Seguridad\Inicio.aspx" />
     <Content Include="Pages\Seguridad\initConfig.aspx" />
     <Content Include="assets\javascripts\jquery-qrcode.min.js" />
+    <Content Include="pruebafuera.aspx" />
     <Content Include="Scripts\jquery.qrcode.js" />
     <Content Include="Scripts\qrcode.js" />
     <Content Include="Scripts\w3.js" />
@@ -266,6 +274,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <Content Include="UserControls\UploadedFilesContainer.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -276,6 +285,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Maestro.vb" />
+    <Compile Include="Pages\Calidad\prueba2.aspx.designer.vb">
+      <DependentUpon>prueba2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\prueba2.aspx.vb">
+      <DependentUpon>prueba2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calidad\Pruebas.aspx.designer.vb">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\Pruebas.aspx.vb">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Pages\Calidad\RegistroCalidadIngreso.aspx.designer.vb">
       <DependentUpon>RegistroCalidadIngreso.aspx</DependentUpon>
     </Compile>
@@ -546,6 +569,13 @@
     <Compile Include="Pages\Seguridad\initConfig.aspx.vb">
       <DependentUpon>initConfig.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pruebafuera.aspx.designer.vb">
+      <DependentUpon>pruebafuera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pruebafuera.aspx.vb">
+      <DependentUpon>pruebafuera.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Service References\wsLogin\Reference.vb">
       <AutoGen>True</AutoGen>

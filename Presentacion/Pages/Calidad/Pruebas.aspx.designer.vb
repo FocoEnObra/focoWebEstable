@@ -11,50 +11,59 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Formulario_web11
+Partial Public Class Formulario_web14
     
     '''<summary>
-    '''Control ddlObra.
+    '''Control Grid.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlObra As Global.DevExpress.Web.ASPxComboBox
+    Protected WithEvents Grid As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control sqlObra.
+    '''Control sqlCat_Tip.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents sqlObra As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents sqlCat_Tip As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control UpdatePanel1.
+    '''Control sqlCategorias.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
+    Protected WithEvents sqlCategorias As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control gridActividades.
+    '''Control sqlTodasTipologias.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gridActividades As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents sqlTodasTipologias As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control sqlCalidad.
+    '''Control sqlTipologias.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents sqlCalidad As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents sqlTipologias As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control Label1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 End Class

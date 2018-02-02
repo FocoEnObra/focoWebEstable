@@ -33,18 +33,18 @@
     'End Sub
 
     Private Sub CargarEmpresa()
-        Dim emp As DataTable = Session.Contents("xEMPRESA")
+        'Dim emp As DataTable = Session.Contents("xEMPRESA")
 
-        Dim nombreEmpresa As String = emp.Rows(0).Item(1).ToString
+        'Dim nombreEmpresa As String = emp.Rows(0).Item(1).ToString
 
-        Dim usuario As String = Trim(Session.Contents("xUser"))
+        'Dim usuario As String = Trim(Session.Contents("xUser"))
 
-        If emp.Rows.Count = 1 Then
-            lblUsuario.Text = usuario.ToUpper 'emp.Rows(0).Item(1).ToString
-            lblEmpresa.Text = nombreEmpresa.ToUpper
-            lblEmpresaMenu.Text = nombreEmpresa.ToUpper
+        'If emp.Rows.Count = 1 Then
+        '    lblUsuario.Text = usuario.ToUpper 'emp.Rows(0).Item(1).ToString
+        '    lblEmpresa.Text = nombreEmpresa.ToUpper
+        '    lblEmpresaMenu.Text = nombreEmpresa.ToUpper
 
-        End If
+        'End If
 
 
     End Sub

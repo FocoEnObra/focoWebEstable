@@ -2,21 +2,29 @@
 <!DOCTYPE html>
 <html class="gt-ie8 gt-ie9 not-ie"> 
 <head runat="server">
-<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   
 	<title>Foco en Obra</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+     <link href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
-	
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css" />
+
     <style>
-    
+        
+    body.modal-open {
+    overflow: hidden;
+    position: fixed;
+} 
     .theme-asphalt {
     background: #f3f3f3;
 }
@@ -750,7 +758,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body class="theme-asphalt main-menu-animated">
+<body class="theme-asphalt main-menu-animated main-navbar-fixed main-menu-fixed">
 <script>var init = [];
 
 </script>
@@ -760,16 +768,16 @@
 <div id="main-wrapper">
   
 	<div id="main-navbar" class="navbar navbar-inverse" role="navigation">
-        <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i>
+        <button type="button" id="main-menu-toggle"><i class="fa fa-bars  "></i>
             <span class="hide-menu-text">HIDE MENU</span></button>		
 		<div class="navbar-inner">
 			<div class="navbar-header">
 				<a href="#" class="navbar-brand">
 					<div>
 
-                        <img alt="Pixel Admin" src="../../assets/images/pixel-admin/main-navbar-logo2.png">
+                        <i class="fa fa-bullseye fa-2x"></i>
 					</div>
-					<strong>FOCO EN OBRA</strong>
+					<strong>&nbsp;&nbsp; FOCO EN OBRA</strong>
 				</a>
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
 			</div> 
@@ -804,8 +812,9 @@
 							</li>--%>
 
 							<li class="dropdown">
+                              
 								<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
-									<img src="../../assets/images/user_foco.png" alt="">
+									  <i class="fa fa-user-circle" aria-hidden="true"></i>
 									<span><b>
                                         <asp:Label ID="lblUsuario" runat="server" Text="emp"></asp:Label></b>
                                         
@@ -843,7 +852,7 @@
 
 			<ul class="navigation">
                 
-                <li><a href="../Seguridad/initConfig.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Configuración Inicial</span></a></li>
+                <li><a href="../Seguridad/initConfig.aspx"><i class="menu-icon fas fa-cog fa-spin"></i><span class="mm-text">Configuración Inicial</span></a></li>
                 <li><a href="#"><i class="menu-icon fa fa-tasks"></i><span class="mm-text">Cuadro de Mando</span></a></li>
 				
                 <li class="mm-dropdown"><a href="#"><i class="menu-icon fa fa-th"></i><span class="mm-text">Avances</span></a>
@@ -865,7 +874,7 @@
                 </li>
 
                 <li class="mm-dropdown">
-					<a href="#"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Configuración Sistema</span></a>
+					<a href="#"><i class="menu-icon fas fa-desktop"></i><span class="mm-text">Configuración Sistema</span></a>
                     <ul><li><a tabindex="-1" href="../Productividad/ConfigSistema.aspx"><i class="menu-icon fa fa-building-o"></i><span class="mm-text">Empresa</span></a></li>
 						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp1.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Proyectos</span></a></li>
 						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp2.aspx"><i class="menu-icon fa fa-map-marker"></i><span class="mm-text">Ubicaciones</span></a></li>
@@ -877,11 +886,14 @@
                         <li><a tabindex="-1" href="../Productividad/ConfigSistemaOp8.aspx"><i class="menu-icon fa fa-lightbulb-o"></i><span class="mm-text">Etapas Constructivas</span></a></li>
                     </ul> 
                 </li>
-                 <li class="mm-dropdown">
-					<a href="#"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Calidad de Obra</span></a>
+                 <li class="mm-dropdown"> 
+					<a href="#"><i class="menu-icon fas fa-book"></i><span class="mm-text">Calidad de Obra</span></a>
                     <ul>
-                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Definición Proceso Calidad</span> </a>
-                           
+                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Crear Plantilla</span> </a>
+                            <li><a tabindex="-1" href="../Productividad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-calendar"></i><span class="mm-text">Listado de Actividades</span> </a>
+                           <li><a tabindex="-1" href="../Productividad/ListaPendientes.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">listado de Act. Pend.</span> </a>
+                          
+                           LISTADO DE ACTIVIDADES
                         </li>
                     </ul> 
                 </li>
@@ -891,10 +903,20 @@
 
     <div id="content-wrapper">
         <!-- ID DE BODY = form1 -->
+         
+               
          <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+          
+
             <asp:contentplaceholder id="body" runat="server">
+                 
+
             </asp:contentplaceholder>
+            
+
          </form>
+                      
 	</div> 
 
 	<div id="main-menu-bg">
@@ -903,28 +925,72 @@
 
     <!-- FOOTER RRSS - ETC -->
     <footer class="panel-footer bg-panel ">
-            <p><strong>Conecta con Foco</strong>&nbsp;&nbsp;<a href="#"><i class="lg-nav-icon fa fa-facebook-square"></i>&nbsp;&nbsp;Facebook</a>&nbsp;&nbsp;
-			<a href="#"><i class="lg-nav-icon fa fa-skype"></i>&nbsp;&nbsp;Skype</a>&nbsp;&nbsp;
-			<a href="#"><i class="lg-nav-icon fa fa-linkedin-square"></i>&nbsp;&nbsp;Linkedin</a>&nbsp;&nbsp;
-			<a href="#"><i class="lg-nav-icon fa  fa-phone-square"></i>&nbsp;&nbsp;Fono</a>&nbsp;&nbsp;
-			<a href="#"><i class="lg-nav-icon fa  fa-envelope-o"></i>&nbsp;&nbsp;Correo</a></p>
+            <p><strong>Conecta con Foco</strong>&nbsp;&nbsp;<a href="#"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Facebook</a>&nbsp;&nbsp;
+			<a href="#"><i class="fab fa-skype"></i>&nbsp;&nbsp;Skype</a>&nbsp;&nbsp;
+			<a href="#"><i class="fab fa-linkedin"></i>&nbsp;&nbsp;Linkedin</a>&nbsp;&nbsp;
+			<a href="#"><i class="fas fa-phone-square"></i>&nbsp;&nbsp;Fono</a>&nbsp;&nbsp;
+			<a href="#"><i class="fas fa-envelope-square"></i>&nbsp;&nbsp;Correo</a></p>
             <p style="font-size:10px">Todos los derechos reservados &copy; 2018 | Foco en Obra - Gestión por Compromiso</p>
     </footer>
 </div> 
     <!-- End Wrapper -->
 
-<script type="text/javascript"> window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">' + "<" + "/script>"); </script>
+
+
+    
 <script src="../../../assets/javascripts/jquery.transit.min.js"></script>
 <script src="../../../assets/javascripts/bootstrap.min.js"></script>
 <script src="../../../assets/javascripts/pixel-admin.min.js"></script>
 <script src="../../../assets/javascripts/jquery-qrcode.min.js"></script>
+ <%-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>       --%>
+
 
 <script type="text/javascript">
+
+  
+
+
     init.push(function () {});
     window.PixelAdmin.start(init);
+    //$("#modal").iziModal();
+    $(document).on('click', '.trigger', function (event) {
+        event.preventDefault();
+        // $('#modal').iziModal('setZindex', 99999);
+        // $('#modal').iziModal('open', { zindex: 99999 });
+        //alert('aa');
+        //$.ajax({
+        //    type: "POST",
+        //    url: "RegistroCalidadIngreso.aspx/llenarEtapas",
+        //    data: "{}",
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    success: function (msg) {
+        //        var datos = $.parseJSON(msg.d);
+        //        alert(datos);
+        //        $(datos).each(function () {
+        //            var option = $(document.createElement('option'));
 
+        //            option.text(this.Nombre);
+        //            option.val(this.Id);
+
+        //            $("#cboEjemplo").append(option);
+        //        });
+        //    },
+        //    error: function (msg) {
+        //        $("#dvAlerta > span").text("Error al llenar el combo");
+        //    }
+        //});
+
+   
+
+        //////$('#modal').iziModal('open');
+    });
 </script>
+    
+
     <script type="text/javascript">
+       
+
         //<![CDATA[
         $(window).on('load', function () { // makes sure the whole site is loaded 
             $('#status').fadeOut(); // will first fade out the loading animation 
@@ -938,5 +1004,43 @@
         //    height: 128,
         //    text: "http://ourcodeworld.com"
 </script>
+           <script>
+               init.push(function () {
+                   $('.ui-wizard-example').pixelWizard({
+                       onChange: function () {
+                           console.log('Current step: ' + this.currentStep());
+                       },
+                       onFinish: function () {
+                           this.unfreeze();
+                           console.log('Wizard is freezed');
+                           console.log('Finished!');
+                       }
+                   });
+                   $('.wizard-next-step-btn').click(function () {
+                       $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
+                   });
+                   $('.wizard-prev-step-btn').click(function () {
+                       $(this).parents('.ui-wizard-example').pixelWizard('prevStep');
+                   });
+                   $('.wizard-go-to-step-btn').click(function () {
+                       $(this).parents('.ui-wizard-example').pixelWizard('setCurrentStep', 2);
+                   });
+                   $('#ui-wizard-modal').on('show.bs.modal', function (e) {
+                       var $modal = $(this),
+                           $wizard = $modal.find('.ui-wizard-example'),
+                           timer = null,
+                           callback = function () {
+                               if (timer) clearTimeout(timer);
+                               if ($modal.hasClass('in ')) {
+                                   $wizard.pixelWizard('resizeSteps');
+                               } else {
+                                   timer = setTimeout(callback, 10);
+                               }
+                           };
+                       callback();
+                   });
+               });
+				                            </script>
+   
 </body>
 </html>
