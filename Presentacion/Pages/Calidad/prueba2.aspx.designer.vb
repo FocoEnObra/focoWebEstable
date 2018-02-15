@@ -14,65 +14,29 @@ Option Explicit On
 Partial Public Class Formulario_web15
     
     '''<summary>
-    '''Control gridMensajes.
+    '''Control GridVb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gridMensajes As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents GridVb As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control SqlDataSource2.
+    '''Control sql_vb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents sql_vb As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control SqlDataSource1.
+    '''Control SqlUsuarios.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control objMensajeria.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents objMensajeria As Global.System.Web.UI.WebControls.ObjectDataSource
-    
-    '''<summary>
-    '''Control Button1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control sqlMensajesCriterios.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlMensajesCriterios As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control sqlPrueba.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlPrueba As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents SqlUsuarios As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

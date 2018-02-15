@@ -4,25 +4,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" class="gt-ie8 gt-ie9 not-ie">
 <head id="Head1" runat="server">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>Foco En Obra | Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
-	<link href="../../assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/pages.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/pixel-admin.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css"/>
+	<link href="../../assets/stylesheets/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/stylesheets/pages.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/stylesheets/pixel-admin.css" rel="stylesheet" type="text/css"/>
     <link href="../../assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/themes.css" rel="stylesheet" type="text/css">
-    <link href="../../assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/themes.css" rel="stylesheet" type="text/css"/>
 <%--    <link href="../../assets/javascripts/pixel-admin.min.js" rel="stylesheet" type="text/css">
     <link href="../../assets/javascripts/bootstrap.min.js" rel="stylesheet" type="text/css">--%>
 
 
-	<style>
+<%--	<style>
 		#signin-demo {
 			position: fixed;
 			right: 0;
@@ -40,12 +39,12 @@
 			font-weight: 600;
 			padding-bottom: 6px;
 		}
-	</style>
+	</style>--%>
 
 
 </head>
 
-<body class="theme-default page-signin">
+<body class="theme-dust page-signin">
 
 <script>
 	var init = [];
@@ -106,7 +105,7 @@
                     
                     <asp:Button ID="Button1" runat="server" class="signin-btn bg-primary" OnClick="Ingresar_Click" OnClientClick="muestraLoader()" Text="Ingresar" />
 <%--                    <asp:Button id="btnIngresar3" type="submit" runat="server" class="signin-btn bg-primary" OnClick="Ingresar_Click" value="INGRESAR" />--%>  
-					<a href="#" class="forgot-password" id="forgot-password-link">¿Olvidó su Contraseña?</a>
+					<a href="RecuperarContraseña.aspx" class="forgot-password" id="forgot-password-link">¿Olvidó su Contraseña?</a>
 				</div> 
                 </form>  
 			</div>

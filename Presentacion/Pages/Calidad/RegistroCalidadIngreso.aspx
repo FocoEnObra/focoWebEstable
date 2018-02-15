@@ -103,22 +103,30 @@
                                 });
 				            </script>
 						<span class="panel-title" style="color:#17649A"><b>DEFINICIÓN PROCESO DE CALIDAD</b></span>
-                        <div  class="panel-heading-controls" >
-							 <span class="panel-heading-text">
-                                 &nbsp;&nbsp;
-                                <i class="fa fa-calendar" aria-hidden="true" style="color:#008080"></i>
-                                Fecha:&nbsp;<b><asp:Label ID="lblFecha" runat="server" Text="Label"></asp:Label></b>
-                   
+                        <div  class="panel-heading-controls"  >
+							 <span class="panel-heading-text" >
+                                <asp:UpdatePanel ID="UpdatePanel7" runat="server" >
+                                   <ContentTemplate >
+                             
+                                    <div id="datosTop" class="panel-heading-controls" style="display:none">      
+                                           <span class="panel-title">
+                                            
+                                               <span><i class="lnr lnr-checkmark-circle  "></i></span>&nbsp;&nbsp;<asp:Label ID="lblAct" style="color:#515151" runat="server" Text=""></asp:Label> &nbsp;&nbsp;
+                                               <span><i class="lnr lnr-file-add  "></i></span>&nbsp;&nbsp;<asp:Label ID="lblPlnNom" runat="server" style="color:#515151" Text=""></asp:Label> &nbsp;&nbsp;  
+                                               <span class="label label-warning "><i class="lnr lnr-apartment"></i></span> &nbsp;&nbsp;<asp:Label ID="lblObra" runat="server" Text="" style="color:#515151" ></asp:Label>         
+                                              <%--  <i class="lnr lnr-calendar-full"  >&nbsp;</i> <b><asp:Label ID="lblFecha" runat="server" Text=""></asp:Label></b>       --%>
+                                           </span>
+                                      </div>
+                            
+                                </ContentTemplate>
+                            </asp:UpdatePanel> 
+
+
+                                 
                              </span> 
 
                             <p>
-                                                                                                                   <%-- <dx:BootstrapButton CssClasses-Control="btn btn btn-primary rounded wizard-next-step-btn  " ID="btn_otropaso" runat="server" AutoPostBack="false"  Text="Guardar y Continuar el siguiente paso">
-                                                                                                                        <CssClasses Icon="fas fa-angle-double-right" />
-
-                                                                                                                    </dx:BootstrapButton>--%>
-                                                                                                             <%--       
-                                                                                                            
-                                                                                                                </span> </p> --%>  
+                                                                                                               
 						</div>
 			        </div>
 
@@ -149,7 +157,14 @@
 							                            </div> 
                                                              <div class="wizard-content panel">
                				                                      <div class="wizard-pane" id="wizard-example-step1">
+                                                                           <div class="col-md-12" style="text-align:right">
+                                                                                                                <p>
+                                                                                                                  <a class="btn btn-rounded  btn-labeled btn-primary wizard-next-step-btn" id="GuardarPaso_1" runat="server" style="cursor:pointer">&nbsp;&nbsp;Continuar con el siguiente paso&nbsp;&nbsp;<i class="fas fa-angle-double-right"  style="color:teal" ></i> </a>
+                                                                                                                 </p>
+                                                                                                             </div>
+
                                                                                                 <div class="row"> 
+                                                                                                              
                                                                                                     <div class="col-md-3">
                                                                                                             <div class="panel panel-transparent">
                                                                                                                     <div class="panel-heading">
@@ -186,7 +201,7 @@
                                                                                                             </div>
                                                                                                       </div>
                                                                                                   </div>
-                                                                                                    <div class="col-md-4">
+                                                                                                    <div class="col-md-3">
                                                                                                          <div class="panel widget-tasks  panel-transparent ">
                                                                                                                     <div class="panel-heading">
                                                                                                                         <span class="panel-title"><i class="lnr lnr-file-add fa-2x"></i>  <b>1.2)</b> Información del proceso</span>
@@ -325,11 +340,10 @@
                                                                                                                     </div>
                                                                                                                 </div> <!-- / .panel -->
 				                                                                                   </div>
-                                                                                                    <div class="col-md-5">
+                                                                                                    <div class="col-md-6">
                                                                                                              <div class="panel panel-transparent ">
                                                                                                                     <div class="panel-heading">
                                                                                                                         <span class="panel-title"><i class="fas fa-map-marker-alt fa-2x"></i> <b>1.3) </b> Alcance </span>
-                                                                                                                      
                                                                                                                     </div>
                                                                                                              <div class="panel-body">
                                                                                                               <span class="text-default "><em>Corresponde a los recintos donde aplica este proceso de calidad </em></span>
@@ -366,11 +380,11 @@
                                                                                                                                                            <PropertiesComboBox DataSourceID="sqlCategorias" TextField="NOMBRE_TIP" ValueField="ID_TIP"></PropertiesComboBox>
                                                                                                                                                        </dx:GridViewDataComboBoxColumn>--%>
 
-                                                                                                                                                       <dx:GridViewCommandColumn VisibleIndex="5" Width="20%" ShowDeleteButton="True"></dx:GridViewCommandColumn>
-                                                                                                                                                       <dx:GridViewDataTextColumn FieldName="ID_ACC_SEC" ReadOnly="True" VisibleIndex="1" Visible="False">
+                                                                                                                                                       <dx:GridViewCommandColumn VisibleIndex="1" Width="20%" ShowDeleteButton="True"></dx:GridViewCommandColumn>
+                                                                                                                                                       <dx:GridViewDataTextColumn FieldName="ID_ACC_SEC" ReadOnly="True" VisibleIndex="2" Visible="False">
                                                                                                                                                            <EditFormSettings Visible="False"></EditFormSettings>
                                                                                                                                                        </dx:GridViewDataTextColumn>
-                                                                                                                                                       <dx:GridViewDataComboBoxColumn Caption="Categorias" FieldName="ID_TUC" Width="40%" VisibleIndex="3">
+                                                                                                                                                       <dx:GridViewDataComboBoxColumn Caption="Categorias" FieldName="ID_TUC" Width="35%" VisibleIndex="4">
                                                                                                                                                            <PropertiesComboBox DataSourceID="sqlCategorias" ValueField="ID_TUC" ValueType="System.Int32"
                                                                                                                                                                TextField="NOMBRE_TUC" EnableSynchronization="False" IncrementalFilteringMode="StartsWith">
                                                                                                                                                                                                                                                                                                                             <ValidationSettings RequiredField-IsRequired="true" Display="Dynamic" >
@@ -379,7 +393,7 @@
 						                                                                                                                                        <ClientSideEvents SelectedIndexChanged="CategoriasCombo_SelectedIndexChanged" />
 					                                                                                                                                        </PropertiesComboBox>
 				                                                                                                                                        </dx:GridViewDataComboBoxColumn>
-                                                                                                                                                       <dx:GridViewDataComboBoxColumn Caption="Tipologias" FieldName="ID_TIP" Width="40%" VisibleIndex="4">
+                                                                                                                                                       <dx:GridViewDataComboBoxColumn Caption="Tipologias" FieldName="ID_TIP" Width="35%" VisibleIndex="5">
 					                                                                                                                                        <PropertiesComboBox DataSourceID="sqlTodasTipologias" ValueField="ID_TIP" ValueType="System.Int32"
 						                                                                                                                                        TextField="NOMBRE_TIP" EnableSynchronization="False" IncrementalFilteringMode="StartsWith">
 						                                                                                                                                        <ValidationSettings RequiredField-IsRequired="true" Display="Dynamic" >
@@ -388,7 +402,7 @@
 					                                                                                                                                        </PropertiesComboBox>
 				                                                                                                                                        </dx:GridViewDataComboBoxColumn>
 
-                                                                                                                                                       <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="2" Visible="False">
+                                                                                                                                                       <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="3" Visible="False" Caption="ID" ReadOnly="True" Width="10%">
                                                                                                                                                        </dx:GridViewDataTextColumn>
 
                                                                                                                                                    </Columns>
@@ -405,12 +419,23 @@
 
 
 
-        <asp:SqlDataSource runat="server" ID="sqlCat_Tip" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' SelectCommand="SELECT * FROM [QA_ACC_PLT_SECTOR] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" DeleteCommand="DELETE FROM [QA_ACC_PLT_SECTOR] WHERE [ID_ACC_SEC] = @ID_ACC_SEC" InsertCommand="INSERT INTO [QA_ACC_PLT_SECTOR] ([ID_ACC_PLT], [ID_TUC], [ID_TIP]) VALUES (@ID_ACC_PLT, @ID_TUC, @ID_TIP)" UpdateCommand="UPDATE [QA_ACC_PLT_SECTOR] SET [ID_ACC_PLT] = @ID_ACC_PLT, [ID_TUC] = @ID_TUC, [ID_TIP] = @ID_TIP WHERE [ID_ACC_SEC] = @ID_ACC_SEC">
+                                                                                                                                                    <asp:LinqDataSource ID="LinqDataSource1" runat="server" EntityTypeName="">
+                                                                                                                                      </asp:LinqDataSource>
+                                                                                                                                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
+
+
+
+
+                                                                                                                                                    <asp:SqlDataSource runat="server" ID="sqlCat_Tip" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' 
+                                                                                                                                                        SelectCommand="SELECT * FROM [QA_ACC_PLT_SECTOR] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" 
+                                                                                                                                                        DeleteCommand="DELETE FROM [QA_ACC_PLT_SECTOR] WHERE [ID_ACC_SEC] = @ID_ACC_SEC" 
+                                                                                                                                                        InsertCommand="INSERT INTO [QA_ACC_PLT_SECTOR] ([ID_ACC_PLT], [ID_TUC], [ID_TIP]) VALUES (@ID_ACC_PLT, @ID_TUC, @ID_TIP)" 
+                                                                                                                                                        UpdateCommand="UPDATE [QA_ACC_PLT_SECTOR] SET [ID_ACC_PLT] = @ID_ACC_PLT, [ID_TUC] = @ID_TUC, [ID_TIP] = @ID_TIP WHERE [ID_ACC_SEC] = @ID_ACC_SEC">
                                                                                                                                                    <deleteparameters>
                                                                                                                                                             <asp:Parameter Name="ID_ACC_SEC" Type="Int32"></asp:Parameter>
                                                                                                                                                             </deleteparameters>
                                                                                                                                                    <insertparameters>
-                                                                                                                                                        <asp:Parameter Name="ID_ACC_PLT" Type="Int32" DefaultValue="8" ></asp:Parameter>
+                                                                                                                                                        <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32" ></asp:SessionParameter>
                                                                                                                                                         <asp:Parameter Name="ID_TUC" Type="Int64"></asp:Parameter>
                                                                                                                                                         <asp:Parameter Name="ID_TIP" Type="Int64"></asp:Parameter>
                                                                                                                                                         </insertparameters>
@@ -421,7 +446,7 @@
                                                                                                                                                         <asp:Parameter Name="ID_ACC_SEC" Type="Int32"></asp:Parameter>
                                                                                                                                                         </updateparameters>
                                                                                                                                                    <selectparameters>
-                                                                                                                                                            <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32" DefaultValue="8"></asp:SessionParameter>
+                                                                                                                                                            <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32" DefaultValue ="-1" ></asp:SessionParameter>
                                                                                                                                                             </selectparameters>
                                                                                                                                                </asp:SqlDataSource>
                                                                                                                                                                      <asp:SqlDataSource ID="sqlCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" SelectCommand="SELECT [ID_TUC], [ID_OBR], [NOMBRE_TUC] FROM [UCO_TIPOS] WHERE ([ID_OBR] = @ID_OBR)">
@@ -449,21 +474,18 @@
 		                                                                                                        </div>
 					                                                                                 </div>
 			                                                                                    </div>
-                                                                                                    <div class="col-md-12" style="text-align:right">
-                                                                                                                <p>
-                                                                                                                   <%-- <dx:BootstrapButton CssClasses-Control="btn btn    <a class="btn btn btn-primary  wizard-next-step-btn" id="A1" runat="server" style="cursor:pointer"><i class="fas fa-angle-double-right" aria-hidden="true" ></i>&nbsp;&nbsp;Guardar</a>
-                             />
-
-                                                                                                                    </dx:BootstrapButton>--%>
-                                                                                                                <%--    <a class="btn btn btn-primary rounded wizard-next-step-btn" id="GuardarPaso_11" runat="server" style="cursor:pointer">Guardar y continuar&nbsp;&nbsp;<i class="fas fa-angle-double-right" aria-hidden="true" ></i></a> <span class="fa-stack fa-lg wizard-next-step-btn" style="cursor:pointer">
-                                                                                                             --%>      <a class="btn btn btn-primary  wizard-next-step-btn" id="GuardarPaso_1" runat="server" style="cursor:pointer"><i class="fas fa-angle-double-right" aria-hidden="true" ></i>&nbsp;&nbsp;Guardar</a>
-                            
-                                                                                                                 </p>
-                                                                                         </div>
-						                                                     <%--   </contenttemplate>
-                                                                             </asp:UpdatePanel>--%>
+						                                                   
                                                                 </div>
                                                                 <div class="wizard-pane" id="wizard-example-step2" <%--style="display: none;"--%>>
+                                                                                                 
+                                                                       <div class="col-md-6">
+                                                                                            <a class="btn btn-rounded  btn-labeled btn-primary  wizard-prev-step-btn" id="A2" runat="server" style="cursor:pointer"><i class="fas fa-angle-double-left"  style="color:teal" ></i>&nbsp;&nbsp;Volver al Paso Anterior&nbsp;&nbsp; </a>
+                                                                        </div>
+
+                                                                        <div class="col-md-6" style="text-align:right">
+                                                                               <a class="btn btn-rounded  btn-labeled btn-primary wizard-next-step-btn" id="A1" runat="server" style="cursor:pointer">&nbsp;&nbsp;Continuar con el siguiente paso&nbsp;&nbsp;<i class="fas fa-angle-double-right"  style="color:teal" ></i> </a>
+                                                                        </div>
+
 
                                                                        <div id="modalGrupo" class="modal  fadeIn  animated">
 					                                                                            <div class="modal-dialog" >
@@ -489,7 +511,7 @@
 							                                                                            </div>
                                                                                                         <div class="modal-footer">
                                                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                                                            <button id="OnMyButtonClick" type="button" class="btn btn-default" >Guardar</button>
+                                                                                                            <!--<button id="OnMyButtonClick" type="button" class="btn btn-default" >Guardar</button>-->
 
                                                                                                             <dx:BootstrapButton ID="btnNuevoGrupo" runat="server" data-dismiss="modal" Text="Guardar Grupo" class="btn btn-rounded btn-labeled btn-primary">
                                                                                                                 <SettingsBootstrap RenderOption="Primary" />
@@ -498,52 +520,19 @@
 						                                                                            </div> <!-- / .modal-content -->
 					                                                                            </div> <!-- / .modal-dialog -->
 				                                                                            </div> <!-- / .modal -->
+                                                                 
+                                                                    
+                                                                        
+
                                                                  <div class="row">
-                                                                   <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                                                      <ContentTemplate>
-                                                                        <div class="col-md-12" >
-                                                                                     <div class="panel form-horizontal">
-					                                                                   <div class="panel-body bg-panel">
-                                                                                         <h4>Información de la plantilla del checklist</h4>
-                                                                                           <p>
-                                                                                               <i class="lnr lnr-apartment fa-2x"></i>&nbsp;:<b>&nbsp;<asp:Label ID="lblProyecto_nombre" runat="server" Text=""></asp:Label></b>
-                                                                                               &nbsp;&nbsp;<i class="lnr lnr-file-add fa-2x"></i>&nbsp;:<b>&nbsp;<asp:Label ID="lblPLantillaCodigo" runat="server" Text=""></asp:Label></b>&nbsp;-&nbsp;<asp:Label ID="lblPlantillaNombre" runat="server" Text=""></asp:Label>
-                                                                                               &nbsp;&nbsp;<i class="lnr lnr-indent-increase fa-2x"></i>&nbsp;:&nbsp;<b><asp:Label ID="lblActividad" runat="server" Text=""></asp:Label>
-                                                                                            </p>
-                                                                                          </div>
-                                                                                         </div>
-                                                                                </div>
-                                                                          </b>
-                                                                      </ContentTemplate>
-                                                                        <Triggers>
-                                                                               <asp:AsyncPostBackTrigger ControlID ="ddlProyectos"  />
-                                                                        </Triggers>
-                                                                       </asp:UpdatePanel>
-
-                                                              
-                                                                     <%-- <dx:BootstrapPopupControl runat="server" ClientInstanceName="popupControl" PopupElementCssSelector="#default-popup-control-10"
-                                                                                        ShowFooter="true" ShowHeader="true" HeaderText="Header text" FooterText="Footer text"
-                                                                                         PopupHorizontalAlign ="WindowCenter"   PopupVerticalAlign ="WindowCenter"  Modal ="true" Width="500px" CloseAction="CloseButton" >
-                                                                        <HeaderTemplate>
-                                                                                <h4 class="text-info">
-                                                                                    <span class="fas fa-list-alt"></span>&nbsp;&nbsp;Nuevo grupo para la actividad
-                                                                                </h4>
-                                                                            </HeaderTemplate>
-                                                                        <ContentCollection>
-                                                                            <dx:ContentControl>
-                                                                                <dx:BootstrapTextBox ID="txtNuevoGrupo" Caption ="Nombre grupo" CaptionSettings-Position ="Before"     runat="server"></dx:BootstrapTextBox>
-                                                                            </dx:ContentControl>
-                                                                        </ContentCollection>
-                                                                            <FooterTemplate>
-                                                                                <dx:BootstrapButton id="btnNuevoGrupo"  ClientInstanceName="btnNuevoGrupo"  runat="server" Text="Agregar"  >
-                                                                                
-                                                                                </dx:BootstrapButton>
-                                                                            </FooterTemplate>
-
-                                                                    </dx:BootstrapPopupControl>--%>
-                                                                       <div class="col-ms-12">
+                                                             
+                                                                <div class="col-ms-12">
+                                                                    <br />
+                                                                    <br />
                                                                       <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                                                                         <ContentTemplate>
+                                                                              
+                                                                 
                                                                         <dx:ASPxGridView ID="grillaCheck" runat="server" AutoGenerateColumns="False" DataSourceID="sqlListaCheck" KeyFieldName="ID_PLT_CHK" EnableTheming="True" Theme="MaterialCompact" Width="100%">
                                                                             <SettingsEditing Mode="EditForm">
                                                                             </SettingsEditing>
@@ -579,11 +568,7 @@
                                                                                                     </dx:ASPxLabel>
                                                                                                 </p>
                                                                                             </div>
-                                                                                            <%--       <div>
-                                                                                                <dx:UploadedFilesContainer ID="FileContainer" runat="server" Width="380" Height="180" 
-                                                                                                    NameColumnWidth="240" SizeColumnWidth="70" HeaderText="Archivos Subidos" />
-                                                                                            </div>
-                                                                                            --%>
+                                                                                      
                                                                                         </Template>
 
                                                                                         <CaptionSettings Location="Top" HorizontalAlign="Left" VerticalAlign="Middle"></CaptionSettings>
@@ -736,17 +721,7 @@
                                                                           </Triggers>
                                                                     </asp:UpdatePanel>
 
-                                                                        <div class="col-md-5">
-                                                                                    <p> <span class="fa-stack fa-lg wizard-prev-step-btn" style="cursor:pointer">
-                                                                                    <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" style="color:#008080"></i>
-                                                                                    </span><a class="wizard-prev-step-btn" style="cursor:pointer">Volver al Paso Anterior</a></p>
-                                                                        </div>
-
-                                                                        <div class="col-md-5" style="text-align:right">
-                                                                                    <p><a class="wizard-next-step-btn" style="cursor:pointer">Guardar y continuar el siguiente paso</a><span class="fa-stack fa-lg wizard-next-step-btn" style="cursor:pointer">
-                                                                                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true" style="color:#008080"></i>
-                                                                                    </span> </p>
-                                                                        </div>
+                                                                     
 
 
                                                                     </div>
@@ -758,20 +733,86 @@
                                                             </div>
 								
 								                        <div class="wizard-pane" id="wizard-example-step3" <%--style="display: none;"--%>>
+                                                              <div class="col-md-6">
+                                                                          <a class="btn btn-rounded  btn-labeled btn-primary  wizard-prev-step-btn" id="A3" runat="server" style="cursor:pointer"><i class="fas fa-angle-double-left"  style="color:teal" ></i>&nbsp;&nbsp;Volver al Paso Anterior&nbsp;&nbsp; </a>
+                                                                        </div>
+
+                                                                        <div class="col-md-6" style="text-align:right">
+                                                                               <a class="btn btn-rounded  btn-labeled btn-primary wizard-next-step-btn" id="A4" runat="server" style="cursor:pointer">&nbsp;&nbsp;Continuar con el siguiente paso&nbsp;&nbsp;<i class="fas fa-angle-double-right"  style="color:teal" ></i> </a>
+                                                                        </div>
+
 									                         <div class="row">
+                                                                 <div class ="col-ms-12">
+                                                                     <dx:ASPxGridView ID="gridVB" runat="server" AutoGenerateColumns="False" DataSourceID="sqlVB" KeyFieldName="ID_PLT_VB" Theme="MaterialCompact" Width="100%">
+                                                                         
+                                                                         <Columns>
+                                                                             <dx:GridViewCommandColumn ShowNewButtonInHeader="True" VisibleIndex="0" ShowDeleteButton="True" ShowEditButton="True"></dx:GridViewCommandColumn>
+                                                                             <dx:GridViewDataTextColumn FieldName="ID_PLT_VB" ReadOnly="True" VisibleIndex="2" Visible="False">
+                                                                                 <EditFormSettings Visible="False"></EditFormSettings>
+                                                                             </dx:GridViewDataTextColumn>
+                                                                             <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="3">
+                                                                                 <EditFormSettings Visible="False"></EditFormSettings>
+                                                                             </dx:GridViewDataTextColumn>
+                                                                             <dx:GridViewDataTextColumn FieldName="CARGO_VB" VisibleIndex="4" Caption="CARGO"></dx:GridViewDataTextColumn>
+                                                                             <dx:GridViewDataTextColumn FieldName="ESTADO_VB" VisibleIndex="5" Caption="ESTADO"></dx:GridViewDataTextColumn>
+                                                                             <dx:GridViewBandColumn Caption="V.B." VisibleIndex="6">
+                                                                                 <Columns>
+                                                                                     <dx:GridViewDataCheckColumn Caption="DIGITAL" FieldName="VB_DIGITAL" VisibleIndex="0">
+                                                                                     </dx:GridViewDataCheckColumn>
+                                                                                     <dx:GridViewDataCheckColumn Caption="PAPEL" FieldName="VB_PAPEL" VisibleIndex="1">
+                                                                                     </dx:GridViewDataCheckColumn>
+                                                                                 </Columns>
+                                                                             </dx:GridViewBandColumn>
+                                                                             <dx:GridViewDataTokenBoxColumn Caption="USUARIOS"  VisibleIndex="1">
+                                                                                 <PropertiesTokenBox DataSourceID="SqlUsuarios" TextField="nombre_Usu" ValueField="id_Usu" AllowCustomTokens="false"></PropertiesTokenBox>
+                                                                             </dx:GridViewDataTokenBoxColumn>
+                                                                         </Columns>
+                                                                         <SettingsEditing EditFormColumnCount="1" Mode="EditForm"></SettingsEditing>
+                                                                     </dx:ASPxGridView>
+
+
+                                                                     <asp:SqlDataSource runat="server" ID="sqlVB" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' SelectCommand="SELECT * FROM [QA_ACC_PLT_CADENA_VB]" DeleteCommand="DELETE FROM [QA_ACC_PLT_CADENA_VB] WHERE [ID_PLT_VB] = @ID_PLT_VB" InsertCommand="INSERT INTO [QA_ACC_PLT_CADENA_VB] ([ID_ACC_PLT], [CARGO_VB], [VB_DIGITAL], [VB_PAPEL], [ORDEN_VB], [ESTADO_VB]) VALUES (@ID_ACC_PLT, @CARGO_VB, @VB_DIGITAL, @VB_PAPEL, @ORDEN_VB, @ESTADO_VB)" UpdateCommand="UPDATE [QA_ACC_PLT_CADENA_VB] SET [ID_ACC_PLT] = @ID_ACC_PLT, [CARGO_VB] = @CARGO_VB, [VB_DIGITAL] = @VB_DIGITAL, [VB_PAPEL] = @VB_PAPEL, [ORDEN_VB] = @ORDEN_VB, [ESTADO_VB] = @ESTADO_VB WHERE [ID_PLT_VB] = @ID_PLT_VB">
+                                                                         <DeleteParameters>
+                                                                             <asp:Parameter Name="ID_PLT_VB" Type="Int32" />
+                                                                         </DeleteParameters>
+                                                                         <InsertParameters>
+                                                                             <asp:Parameter Name="ID_ACC_PLT" Type="Int32" />
+                                                                             <asp:Parameter Name="CARGO_VB" Type="String" />
+                                                                             <asp:Parameter Name="VB_DIGITAL" Type="Int16" />
+                                                                             <asp:Parameter Name="VB_PAPEL" Type="Int16" />
+                                                                             <asp:Parameter Name="ORDEN_VB" Type="Int16" />
+                                                                             <asp:Parameter Name="ESTADO_VB" Type="Int16" />
+                                                                         </InsertParameters>
+                                                                         <UpdateParameters>
+                                                                             <asp:Parameter Name="ID_ACC_PLT" Type="Int32" />
+                                                                             <asp:Parameter Name="CARGO_VB" Type="String" />
+                                                                             <asp:Parameter Name="VB_DIGITAL" Type="Int16" />
+                                                                             <asp:Parameter Name="VB_PAPEL" Type="Int16" />
+                                                                             <asp:Parameter Name="ORDEN_VB" Type="Int16" />
+                                                                             <asp:Parameter Name="ESTADO_VB" Type="Int16" />
+                                                                             <asp:Parameter Name="ID_PLT_VB" Type="Int32" />
+                                                                         </UpdateParameters>
+                                                                     </asp:SqlDataSource>
+                                                                     <br />
+                                                                     <asp:SqlDataSource ID="SqlUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" SelectCommand="SELECT [id_Usu], [nombre_Usu] FROM [USUARIOS]">
+
+                                                                     </asp:SqlDataSource>
+                                                                 </div>
+
+
                                                                  <div class="col-ms-12">
-    <dx:ASPxGridView ID="gridMensajes" runat="server" DataSourceID="SqlDataSource2" EnableTheming="True" Theme="MaterialCompact" Width ="100%" AutoGenerateColumns ="False" KeyFieldName="ID_QA_MSG" >
+                                                                    <dx:ASPxGridView ID="gridMensajes" runat="server" DataSourceID="SqlDataSource2" EnableTheming="True" Theme="MaterialCompact" Width ="100%" AutoGenerateColumns ="False" KeyFieldName="ID_QA_MSG" >
         <Columns>
             <dx:GridViewBandColumn Caption="CRITERIOS DE AVISOS POR MAIL" VisibleIndex="8">
                 <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                 <Columns>
-                    <dx:GridViewDataCheckColumn Caption="SOLICITAR" FieldName="CRITERIO_1" VisibleIndex="0" Width="5%">
+                    <dx:GridViewDataCheckColumn Caption="SOLICITAR" FieldName="CRT_GENERA_ACC" VisibleIndex="0" Width="5%">
                         <HeaderStyle HorizontalAlign="Center" Wrap="True" />
                     </dx:GridViewDataCheckColumn>
-                    <dx:GridViewDataCheckColumn Caption="VB" FieldName="CRITERIO_2" VisibleIndex="1" Width="5%">
+                    <dx:GridViewDataCheckColumn Caption="VB" FieldName="CRT_VB_ACC" VisibleIndex="1" Width="5%">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
                     </dx:GridViewDataCheckColumn>
-                    <dx:GridViewDataCheckColumn Caption="RECHAZO" FieldName="CRITERIO_3" VisibleIndex="2" Width="5%">
+                    <dx:GridViewDataCheckColumn Caption="RECHAZO" FieldName="CRT_RECHAZA_ACC" VisibleIndex="2" Width="5%">
                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </dx:GridViewDataCheckColumn>
                 </Columns>
@@ -803,7 +844,7 @@
         </SettingsEditing>
        
     </dx:ASPxGridView>
-                                                                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [QA_MENSAJERIA] WHERE [ID_QA_MSG] = @ID_QA_MSG" InsertCommand="INSERT INTO [QA_MENSAJERIA] ([NOMBRE_MSG], [CARGO_MSG], [MAIL_MSG], [FONO_MSG], [ID_ACC_PLT], [CRITERIO_1], [CRITERIO_2], [CRITERIO_3]) VALUES (@NOMBRE_MSG, @CARGO_MSG, @MAIL_MSG, @FONO_MSG, @ID_ACC_PLT, @CRITERIO_1, @CRITERIO_2, @CRITERIO_3)" SelectCommand="SELECT * FROM [QA_MENSAJERIA] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" UpdateCommand="UPDATE [QA_MENSAJERIA] SET [NOMBRE_MSG] = @NOMBRE_MSG, [CARGO_MSG] = @CARGO_MSG, [MAIL_MSG] = @MAIL_MSG, [FONO_MSG] = @FONO_MSG, [ID_ACC_PLT] = @ID_ACC_PLT, [CRITERIO_1] = @CRITERIO_1, [CRITERIO_2] = @CRITERIO_2, [CRITERIO_3] = @CRITERIO_3 WHERE [ID_QA_MSG] = @ID_QA_MSG">
+                                                                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [QA_MENSAJERIA] WHERE [ID_QA_MSG] = @ID_QA_MSG" InsertCommand="INSERT INTO [QA_MENSAJERIA] ([NOMBRE_MSG], [CARGO_MSG], [MAIL_MSG], [FONO_MSG], [ID_ACC_PLT], [CRT_GENERA_ACC], [CRT_VB_ACC], [CRT_RECHAZA_ACC]) VALUES (@NOMBRE_MSG, @CARGO_MSG, @MAIL_MSG, @FONO_MSG, @ID_ACC_PLT, @CRT_GENERA_ACC, @CRT_VB_ACC, @CRT_RECHAZA_ACC)" SelectCommand="SELECT * FROM [QA_MENSAJERIA] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" UpdateCommand="UPDATE [QA_MENSAJERIA] SET [NOMBRE_MSG] = @NOMBRE_MSG, [CARGO_MSG] = @CARGO_MSG, [MAIL_MSG] = @MAIL_MSG, [FONO_MSG] = @FONO_MSG, [ID_ACC_PLT] = @ID_ACC_PLT, [CRT_GENERA_ACC] = @CRT_GENERA_ACC, [CRT_VB_ACC] = @CRT_VB_ACC, [CRT_RECHAZA_ACC] = @CRT_RECHAZA_ACC WHERE [ID_QA_MSG] = @ID_QA_MSG">
                                                                          <DeleteParameters>
                                                                              <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
                                                                          </DeleteParameters>
@@ -813,9 +854,9 @@
                                                                              <asp:Parameter Name="MAIL_MSG" Type="String" />
                                                                              <asp:Parameter Name="FONO_MSG" Type="String" />
                                                                              <asp:SessionParameter DefaultValue="8" Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_1" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_2" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_3" Type="Int32" />
+                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32"  DefaultValue="0" />
+                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32"  DefaultValue="0" />
+                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32"  DefaultValue="0"/>
                                                                          </InsertParameters>
                                                                          <SelectParameters>
                                                                              <asp:SessionParameter DefaultValue="8" Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
@@ -826,9 +867,9 @@
                                                                              <asp:Parameter Name="MAIL_MSG" Type="String" />
                                                                              <asp:Parameter Name="FONO_MSG" Type="String" />
                                                                              <asp:Parameter Name="ID_ACC_PLT" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_1" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_2" Type="Int32" />
-                                                                             <asp:Parameter Name="CRITERIO_3" Type="Int32" />
+                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32" />
+                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32" />
+                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32" />
                                                                              <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
                                                                          </UpdateParameters>
                                                                      </asp:SqlDataSource>
@@ -931,6 +972,11 @@
         });
     </script>
         <script>
+
+            
+
+
+
               $(document).ready(function () {
                   //alert('aaaa');
                   //$("#modal").iziModal();
@@ -942,16 +988,28 @@
                     });
                   });
                    $("#body_GuardarPaso_1").click(function () {
+                       document.getElementById("datosTop").style.display = "block";
+                       var idObr = $('#body_ddlProyectos_VI').val();
+                       var codPlt = $('#body_codigotexto_I').val();
+                       var nomPlt = $('#body_txtnombre_I').val();
+                       var idAct = $('#body_dllActividad_VI').val();
+                       //var idEta = $('#body_txtEtapa_I').val();
+                       var obs = $('#body_txtMemPbservaciones_I').val();
+                      
+                       var datos = "{'idObr':'" + idObr + "','codPlt':'" + codPlt + "','nomPlt':'" + nomPlt + "','idAct':'" + idAct + "','obs':'" + obs + "' }";
+                       alert(datos);
                        $.ajax({
                            type: "POST",
-                           url: "RegistroCalidadIngreso.aspx/guardaPaso1",
-                           data: '{}',
+                           url: "RegistroCalidadIngreso.aspx/guardaPaso_1",
+                           data: datos,
                            contentType: "application/json; charset=utf-8",
                            dataType: "json",
                            success: function (response) {
+                              
                            },
                            failure: function (response) {
                                console.log(response.d);
+                               alert(response.d);
                            }
                        });
                    });
@@ -1009,6 +1067,11 @@
                 document.getElementById("datosTop").style.display = "block";
             });
     </script>
+
+
+   
+
+
 
 
    

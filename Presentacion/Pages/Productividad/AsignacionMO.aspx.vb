@@ -54,7 +54,6 @@ Public Class AsignacionMO
 
 
         tblActividades.Columns.Add("ID_PAR", GetType(Integer))
-
         tblActividades.Columns.Add("CODIGO_PAR", GetType(String))
         tblActividades.Columns.Add("NOMBRE_PAR", GetType(String))
         tblActividades.Columns.Add("UM", GetType(String))

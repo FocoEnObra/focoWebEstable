@@ -245,6 +245,7 @@
     <Content Include="Pages\Seguridad\Inicio.aspx" />
     <Content Include="Pages\Seguridad\initConfig.aspx" />
     <Content Include="assets\javascripts\jquery-qrcode.min.js" />
+    <Content Include="Pages\Seguridad\RecuperarContraseña.aspx" />
     <Content Include="pruebafuera.aspx" />
     <Content Include="Scripts\jquery.qrcode.js" />
     <Content Include="Scripts\qrcode.js" />
@@ -569,6 +570,13 @@
     <Compile Include="Pages\Seguridad\initConfig.aspx.vb">
       <DependentUpon>initConfig.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Seguridad\RecuperarContraseña.aspx.designer.vb">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Seguridad\RecuperarContraseña.aspx.vb">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="pruebafuera.aspx.designer.vb">
       <DependentUpon>pruebafuera.aspx</DependentUpon>

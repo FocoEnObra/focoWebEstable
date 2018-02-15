@@ -19,9 +19,9 @@ Public Class Formulario_web16
         codigo = DAL.Calidad.Actividad.GeneraCodigoActividad(ssUsuario, ddlProyectos.Value)
         codigotexto.Value = codigo
         Session.Add("xCodigo", codigo)
-        lblProyecto_nombre.Text = ddlProyectos.Text
-        lblPLantillaCodigo.Text = codigotexto.Text
-        lblPlantillaNombre.Text = txtnombre.Text
+        'lblProyecto_nombre.Text = ddlProyectos.Text
+        'lblPLantillaCodigo.Text = codigotexto.Text
+        'lblPlantillaNombre.Text = txtnombre.Text
 
 
     End Sub
@@ -33,12 +33,23 @@ Public Class Formulario_web16
         If newAct = True Then
             'mensaje
             dllActividad.DataBind()
-            lblProyecto_nombre.Text = ddlProyectos.Text
-            lblPLantillaCodigo.Text = codigotexto.Text
-            lblPlantillaNombre.Text = txtnombre.Text
+            'lblProyecto_nombre.Text = ddlProyectos.Text
+            'lblPLantillaCodigo.Text = codigotexto.Text
+            'lblPlantillaNombre.Text = txtnombre.Text
             dllActividad.Text = txtAct_Nombre.Value
             txtEtapa.Text = ddlEtapa.Text
-            lblActividad.Text = dllActividad.Text
+            'lblActividad.Text = dllActividad.Text
+
+
+
+            ' Los iconos de arriba
+
+            lblObra.Text = ddlProyectos.Text
+            'lblPlnCod.Text = codigotexto.Text
+            lblPlnNom.Text = txtnombre.Text
+            lblAct.Text = dllActividad.Text
+
+            '------  
         Else
             'mensaje 
         End If
@@ -55,10 +66,19 @@ Public Class Formulario_web16
         Session.Add("xActividad", dllActividad.Value)
 
         nombreEtapa = DAL.Calidad.Actividad.buscarEtapa(ssUsuario, dllActividad.Value)
-        lblProyecto_nombre.Text = ddlProyectos.Text
-        lblPLantillaCodigo.Text = codigotexto.Text
-        lblPlantillaNombre.Text = txtnombre.Text
-        lblActividad.Text = dllActividad.Text
+        'lblProyecto_nombre.Text = ddlProyectos.Text
+        'lblPLantillaCodigo.Text = codigotexto.Text
+        'lblPlantillaNombre.Text = txtnombre.Text
+
+        ' Los iconos de arriba
+
+        lblObra.Text = ddlProyectos.Text
+        '  lblPlnCod.Text = codigotexto.Text
+        lblPlnNom.Text = txtnombre.Text
+        lblAct.Text = dllActividad.Text
+
+        '------  
+
         txtEtapa.Text = nombreEtapa
 
 
@@ -66,15 +86,23 @@ Public Class Formulario_web16
 
 #Region "Web method"
     <System.Web.Services.WebMethod()>
-    Public Shared Sub guardaPaso1()
+    Public Shared Sub guardaPaso_1(idObr As Integer, codPlt As String, nomPlt As String, idAct As Integer, obs As String)
+        'Public Shared Sub guardaPaso1()
         Dim newPlantilla As Boolean
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
         'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codigotexto.Text, HttpContext.Current.Session.Contents("idObra"), dllActividad.Value, 1, txtnombre.Text, txtMemPbservaciones.Text)
 
+        Dim ID_ACC_PLT As Integer
 
-        newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
-
-
+        If HttpContext.Current.Session("ID_ACC_PLT") Is Nothing Then
+            'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
+            newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codPlt, idObr, 1, idAct, nomPlt, obs)
+            ID_ACC_PLT = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
+            HttpContext.Current.Session.Add("ID_ACC_PLT", ID_ACC_PLT)
+        Else
+            ' newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
+            newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), codPlt, idObr, idAct, 1, nomPlt, obs)
+        End If
     End Sub
 
     <System.Web.Services.WebMethod()>
@@ -132,12 +160,15 @@ Public Class Formulario_web16
         If (Not IsPostBack) Then
 
             Grid.StartEdit(0)
-            lblFecha.Text = Date.Today.ToLongDateString
+            '  lblFecha.Text = Date.Today.ToLongDateString
+            limpiarVariables()
 
         End If
 
 
     End Sub
+
+
 
 
     Protected Sub UploadControl_FileUploadComplete(ByVal sender As Object, ByVal e As FileUploadCompleteEventArgs)
@@ -170,5 +201,36 @@ Public Class Formulario_web16
 
     Protected Sub txtMemPbservaciones_TextChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.TextChanged
         Session.Add("xObs", txtMemPbservaciones.Text)
+    End Sub
+
+    Protected Sub Grid_InitNewRow(sender As Object, e As ASPxDataInitNewRowEventArgs) Handles Grid.InitNewRow
+
+        If Session("ID_ACC_PLT") Is Nothing Then
+            Dim newPlantilla As Boolean
+            Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
+            newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
+            Dim ID_ACC_PLT As Integer = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
+            e.NewValues("ID_ACC_PLT") = ID_ACC_PLT
+            Session.Add("ID_ACC_PLT", ID_ACC_PLT)
+
+
+
+        End If
+
+    End Sub
+
+    Protected Sub Grid_DataBound(sender As Object, e As EventArgs) Handles Grid.DataBound
+        ' Grid.Columns("ID_ACC_PLT").Visible = False
+    End Sub
+
+
+    Private Sub limpiarVariables()
+        Session.Remove("ID_ACC_PLT")
+        Session.Remove("xCodigo")
+        Session.Remove("idObra")
+        Session.Remove("xActividad")
+        Session.Remove("xtxtNombre")
+        Session.Remove("xObs")
+
     End Sub
 End Class
