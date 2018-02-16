@@ -212,24 +212,6 @@ Partial Public Class Formulario_web16
     Protected WithEvents Grid As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control LinqDataSource1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LinqDataSource1 As Global.System.Web.UI.WebControls.LinqDataSource
-    
-    '''<summary>
-    '''Control ObjectDataSource1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ObjectDataSource1 As Global.System.Web.UI.WebControls.ObjectDataSource
-    
-    '''<summary>
     '''Control sqlCat_Tip.
     '''</summary>
     '''<remarks>
@@ -356,33 +338,6 @@ Partial Public Class Formulario_web16
     Protected WithEvents A4 As Global.System.Web.UI.HtmlControls.HtmlAnchor
     
     '''<summary>
-    '''Control gridVB.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gridVB As Global.DevExpress.Web.ASPxGridView
-    
-    '''<summary>
-    '''Control sqlVB.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlVB As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control SqlUsuarios.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents SqlUsuarios As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control gridMensajes.
     '''</summary>
     '''<remarks>
@@ -399,4 +354,49 @@ Partial Public Class Formulario_web16
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control GridVb.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridVb As Global.DevExpress.Web.ASPxGridView
+    
+    '''<summary>
+    '''Control sql_vb.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sql_vb As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control SqlUsuarios.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlUsuarios As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control SqlDataSource1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control sqlRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sqlRol As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

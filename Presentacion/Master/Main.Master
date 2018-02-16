@@ -758,7 +758,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body class="theme-asphalt main-menu-animated main-navbar-fixed main-menu-fixed">
+<body class="theme-asphalt   main-menu-animated main-navbar-fixed main-menu-fixed">
 <script>var init = [];
 
 </script>

@@ -166,8 +166,19 @@ Public Class Formulario_web16
         End If
 
 
+
+
+
+
     End Sub
 
+    Protected Sub GridVb_CellEditorInitialize(sender As Object, e As ASPxGridViewEditorEventArgs) Handles GridVb.CellEditorInitialize
+        If (e.Column.FieldName = "ORDEN_VB") Then
+            Dim cbx As ASPxComboBox = TryCast(e.Editor, ASPxComboBox)
+            cbx.SelectedIndex = 0
+
+        End If
+    End Sub
 
 
 
@@ -231,6 +242,19 @@ Public Class Formulario_web16
         Session.Remove("xActividad")
         Session.Remove("xtxtNombre")
         Session.Remove("xObs")
+
+    End Sub
+
+    Protected Sub GridVb_RowInserting(sender As Object, e As ASPxDataInsertingEventArgs) Handles GridVb.RowInserting
+        Dim ultimoValor As String = e.NewValues("ORDEN_VB").ToString
+        e.NewValues("ID_PLT_VB_PRED") = ultimoValor
+
+        ' Session.Add("ID_PLT_VB_PRED", ultimoValor)
+
+
+    End Sub
+
+    Protected Sub grillaCheck_InitNewRow(sender As Object, e As ASPxDataInitNewRowEventArgs) Handles grillaCheck.InitNewRow
 
     End Sub
 End Class
