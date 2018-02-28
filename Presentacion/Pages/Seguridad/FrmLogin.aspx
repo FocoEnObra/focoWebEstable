@@ -44,7 +44,7 @@
 
 </head>
 
-<body class="theme-dust page-signin">
+<body class="theme-default page-signin">
 
 <script>
 	var init = [];

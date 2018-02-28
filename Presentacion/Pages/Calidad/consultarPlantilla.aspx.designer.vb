@@ -11,79 +11,106 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Formulario_web14
+Partial Public Class Formulario_web18
     
     '''<summary>
-    '''Control ddlProyectos.
+    '''Control lblCodigoPlantilla.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlProyectos As Global.DevExpress.Web.Bootstrap.BootstrapComboBox
+    Protected WithEvents lblCodigoPlantilla As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
-    '''Control sqlObra.
+    '''Control lblNombrePLantilla.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents sqlObra As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents lblNombrePLantilla As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
-    '''Control Text1.
+    '''Control lblNombreObra.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Text1 As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents lblNombreObra As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtActividad.
+    '''Control lblActividad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtActividad As Global.System.Web.UI.HtmlControls.HtmlInputText
+    Protected WithEvents lblActividad As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control dllEtapa.
+    '''Control lblEtapa.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents dllEtapa As Global.DevExpress.Web.Bootstrap.BootstrapComboBox
+    Protected WithEvents lblEtapa As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control xgridRecintos.
+    '''Control lblObs.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents xgridRecintos As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents lblObs As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control sqlUcos.
+    '''Control treeUcos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents sqlUcos As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents treeUcos As Global.DevExpress.Web.ASPxTreeList.ASPxTreeList
     
     '''<summary>
-    '''Control ASPxGridView5.
+    '''Control ASPxLabel2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ASPxGridView5 As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents ASPxLabel2 As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control countLiteral.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents countLiteral As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Control ASPxVerticalGrid1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxVerticalGrid1 As Global.DevExpress.Web.ASPxVerticalGrid
+    
+    '''<summary>
+    '''Control btnGuardarRecintos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardarRecintos As Global.DevExpress.Web.Bootstrap.BootstrapButton
     
     '''<summary>
     '''Control SqlDataSource1.
@@ -95,13 +122,22 @@ Partial Public Class Formulario_web14
     Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control ASPxGridView1.
+    '''Control sqlRol_vb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ASPxGridView1 As Global.DevExpress.Web.ASPxGridView
+    Protected WithEvents sqlRol_vb As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control SqlDataSource2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''Control sqlUsuarios.
@@ -111,4 +147,22 @@ Partial Public Class Formulario_web14
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents sqlUsuarios As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control lblcantseleccionados.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblcantseleccionados As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control myUsuarios.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents myUsuarios As Global.System.Web.UI.HtmlControls.HtmlInputHidden
 End Class

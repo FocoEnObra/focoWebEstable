@@ -1,4 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master/Main.Master" CodeBehind="prueba2.aspx.vb" Inherits="Presentacion.Formulario_web15" %>
+
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -12,55 +16,25 @@
 
 
 <asp:Content ID="MainBody" ContentPlaceHolderID="body" runat="server">
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" ButtonRenderMode="Image" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EnableTheming="True" KeyFieldName="ID_ROL" Theme="MaterialCompact" Width="100%" >
-
-
-
-        <SettingsPager Visible="False">
-        </SettingsPager>
-
-
-
-  <SettingsCommandButton>
-        <NewButton Text=" " Image-IconID="actions_add_16x16gray"  >
-            <%--<Styles>
-                        <Style CssClass="fas fa-angle-double-right fa-2x"></Style>
-               </Styles>--%>
-
-             <Image  ToolTip="nuevo" ></Image>
-       </NewButton>
-         <EditButton    Text =" " Image-IconID ="edit_edit_16x16gray">   
-                <Image  ToolTip="Editar" ></Image>
-         </EditButton>
-      <UpdateButton  Text =" " Image-IconID ="save_save_16x16gray"  >
-                <Image  ToolTip="Guardar" ></Image>
-      </UpdateButton>
-      <CancelButton Text =" " Image-IconID ="actions_cancel_16x16gray"   >
-              <Image  ToolTip="cancelar" ></Image>
-      </CancelButton>
-       <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  >
-            <Image  ToolTip="eliminar" ></Image>
-       </DeleteButton>
-  </SettingsCommandButton>
-        <Columns>
-            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
-            </dx:GridViewCommandColumn>
-            <dx:GridViewDataTextColumn FieldName="ID_ROL" ReadOnly="True" VisibleIndex="1">
-                <EditFormSettings Visible="False" />
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="NOMBRE_ROL" VisibleIndex="2">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="ID_OBR" VisibleIndex="3">
-            </dx:GridViewDataTextColumn>
-        </Columns>
-    </dx:ASPxGridView>
-
-
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT * FROM [QA_ROL] WHERE ([ID_OBR] = @ID_OBR)">
-        <SelectParameters>
-            <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int64" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    
+    <dx:ASPxPivotGrid ID="ASPxPivotGrid1" runat="server" ClientIDMode="AutoID" DataSourceID="SqlDataSource1" Theme="MaterialCompact" Height="100%" Width="100%">
+        <Fields>
+            <dx:PivotGridField FieldName="NOMBRE_UCO" Name="fieldNOMBREUCO" ID="fieldNOMBREUCO" Area="RowArea" AreaIndex="0"></dx:PivotGridField>
+            <dx:PivotGridField FieldName="UCO_SUP" Name="fieldUCOSUP" ID="fieldUCOSUP" Area="DataArea" AreaIndex="0"></dx:PivotGridField>
+            <dx:PivotGridField FieldName="NOMBRE_TIP" Name="fieldNOMBRETIP" ID="fieldNOMBRETIP" Area="RowArea" AreaIndex="1"></dx:PivotGridField>
+            <dx:PivotGridField ID="fieldTIPOUCO" Area="ColumnArea" AreaIndex="0" FieldName="TIPOUCO" Name="fieldTIPOUCO">
+            </dx:PivotGridField>
+            <dx:PivotGridField ID="fieldIDTIP" Area="DataArea" FieldName="ID_TIP" Name="fieldIDTIP" Visible="False">
+            </dx:PivotGridField>
+            <dx:PivotGridField ID="fieldIDTUC" Area="DataArea" FieldName="ID_TUC" Name="fieldIDTUC" Visible="False">
+            </dx:PivotGridField>
+        </Fields>
+    </dx:ASPxPivotGrid>
+       <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="PA_ListadoUco" SelectCommandType="StoredProcedure">
+                                                        <SelectParameters>
+                                                            <asp:SessionParameter DefaultValue="68" Name="ID_OBRA" SessionField="ID_OBRA" Type="Int64" />
+                                                        </SelectParameters>
+                                                    </asp:SqlDataSource>
 
 
 </asp:Content>

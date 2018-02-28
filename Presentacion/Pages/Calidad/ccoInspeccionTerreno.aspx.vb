@@ -88,5 +88,27 @@ Public Class Formulario_web11
 
     End Sub
 
+    Protected Sub gridActividades_CustomButtonCallback(sender As Object, e As ASPxGridViewCustomButtonCallbackEventArgs) Handles gridActividades.CustomButtonCallback
 
+        If e.ButtonID = "ver" Then
+            Dim value As Object = (TryCast(sender, ASPxGridView)).GetRowValues(e.VisibleIndex, "ID_ACC_PLT")
+            ' Response.Redirect("consultarPlantilla.aspx?idPlantilla=" & value.ToString)
+            'Server.Transfer("consultarPlantilla.aspx?idPlantilla=" & value.ToString, True)
+
+        End If
+
+    End Sub
+
+    Protected Sub gridActividades_BeforeGetCallbackResult(sender As Object, e As EventArgs) Handles gridActividades.BeforeGetCallbackResult
+        'Dim value As Object = (TryCast(sender, ASPxGridView)).GetRowValues(e.VisibleIndex, "ID_ACC_PLT")
+        'Response.Redirect("consultarPlantilla.aspx?idPlantilla")
+
+
+
+    End Sub
+
+    Protected Sub ddlObra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlObra.SelectedIndexChanged
+        Session.Add("idObra", ddlObra.Value)
+        Session.Add("nombreObra", ddlObra.Text)
+    End Sub
 End Class

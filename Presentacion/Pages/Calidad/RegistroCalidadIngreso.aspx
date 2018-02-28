@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
     function onFileUploadComplete(s, e) {
-        alert('Archivo(s) cargados correctamente');
+       // alert('Archivo(s) cargados correctamente');
         if (e.callbackData) {
             var fileData = e.callbackData.split('|');
             var fileName = fileData[0],
@@ -112,25 +112,18 @@
                                            <span class="panel-title">
                                             
                                                <div class="btn-group">
-                                                    <span class="label label-info arrowed-in-right arrowed">Info</span>
-                                                    <button type="button" class="btn btn-labeled btn-success btn-xs">
-                                                            <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button>
-           	                                           
-                                                      <button type="button" class="btn btn-xs btn-label"><i class="certificate" ></i>&nbsp;&nbsp;<asp:Label CssClass ="text-xs" ID="lblAct" style="color:#515151" runat="server" Text=""></asp:Label></button>
-                                                   <button type="button" class="btn btn-xs  btn-label"><i class="fas fa-chevron-left"></i></button>   
-                                                   <button type="button" class="btn btn-xs btn-label"><i class="fas fa-file-powerpoint "></i>&nbsp;&nbsp;<asp:Label CssClass ="text-xs" ID="lblPlnNom" runat="server" style="color:#515151" Text=""></asp:Label></button>
-                                                   <button type="button" class="btn btn-xs btn-label"><i class="fas fa-chevron-left"></i></button>    
-                                                   <button type="button" class="btn btn-xs btn-label"><i class="fas fa-building" style="color:#515151"></i> &nbsp;&nbsp;<asp:Label ID="lblObra" CssClass ="text-xs" runat="server" Text="" style="color:#515151" ></asp:Label></button>
-                                                    </div>
-
-
-
-                                            <%--<%--   <span><i class="lnr lnr-checkmark-circle  "></i></span>&nbsp;&nbsp;<asp:Label ID="lblAct" style="color:#515151" runat="server" Text=""></asp:Label> &nbsp;&nbsp;
-                                               <span><i class="lnr lnr-file-add  "></i></span>&nbsp;&nbsp;<asp:Label ID="lblPlnNom" runat="server" style="color:#515151" Text=""></asp:Label> &nbsp;&nbsp;  
-                                               <%--<span class="label label-warning "><i class="fas fa-building"></i></span> &nbsp;&nbsp;<asp:Label ID="lblObra" runat="server" Text="" style="color:#515151" ></asp:Label>         
-                                               --%> 
-                                             <%-- <i class="fas fa-building"></i>Proyecto: &nbsp;&nbsp;<em><asp:Label ID="lblObra" runat="server" Text="" style="color:#515151" ></asp:Label>    </em>  --%>    
-                                              <%--  <i class="lnr lnr-calendar-full"  >&nbsp;</i> <b><asp:Label ID="lblFecha" runat="server" Text=""></asp:Label></b>       --%>
+                                                    <button type="button" class="btn btn-labeled btn-flat  btn-xs btn-rounded btn-dark-gray">
+                                                            <span class="btn-label "><i class="glyphicon glyphicon-certificate"></i></span><strong><asp:Label CssClass ="text-xs" ID="lblAct" runat="server" Text=""></asp:Label></strong>
+                                                    </button>
+                                                    &nbsp;&nbsp;
+                                                    <button type="button" class="btn btn-labeled btn-flat btn-xs">
+                                                            <span class="btn-label"><i class="glyphicon glyphicon glyphicon glyphicon-list-alt"></i></span><strong><asp:Label CssClass ="text-xs" ID="lblPlnNom" runat="server" text=""></asp:Label></strong>
+                                                    </button>
+                                                    &nbsp;&nbsp;
+           	                                       <button type="button" class="btn btn-labeled btn-flat btn-xs">
+                                                            <span class="btn-label"><i class="glyphicon glyphicon-home"></i></span><strong><asp:Label CssClass ="text-xs" ID="lblObra" runat="server" text=""></asp:Label></strong>
+                                                    </button>
+                                              
                                         </span>
                                       </div>
                             
@@ -178,21 +171,19 @@
                                                                                                                  </p>
                                                                                                              </div>
                                                                                 <div class="row"> 
-                                                                                    <div class="col-md-3">
-                                                                                                            <div class="panel panel-transparent">
+                                                                                    <div class="col-md-6">
+                                                                                                         <div class="panel widget-tasks  panel-transparent ">
                                                                                                                     <div class="panel-heading">
-                                                                                                                        <span class="panel-title "><i class="lnr lnr-apartment fa-2x"></i> <b>1.1)</b> Selecciona tu Proyecto</span>
-                                                                                                                  
+                                                                                                                        <span class="panel-title"><i class="lnr lnr-file-add fa-2x"></i>  <b>1.1)</b>&nbsp;&nbsp; Información Basica de la  plantilla </span>
+                                                                                                                       
                                                                                                                     </div>
                                                                                                                     <div class="panel-body">
-                                                                                                                        <span class="text-default "><em>Selecciona tu proyecto al cual le Asignarás un proceso </em></span>
+                                                                                                                               <span class="text-default "><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </em></span>
                                                                                                                           <br />
-                                                                                                                         <br />
+                                                                                                                          <br />
                                                                                                                          <div class="row">
-		                                                            	                                                        <div class="col-sm-12">
-                                                                                                                                       <div class="form-group">
-                                                                                                                                         
-						                                                                                                                            <div class="col-sm-12">
+		                                                            	                                                            <div class="col-sm-12">
+                                                                                                                                        <div class="form-group">
                                                                                                                                             <dx:BootstrapComboBox Caption="Proyecto" ID="ddlProyectos" runat="server" NullText="seleciona un proyecto"  DataSourceID="sqlObra" AutoPostBack="True" TextField="NomAbr_Obr" ValueField="ID_OBR"></dx:BootstrapComboBox>
                                                                                                                                                       <asp:SqlDataSource ID="sqlObra" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT [ID_OBR], [NomAbr_Obr] FROM [OBRAS] WHERE ([Vigente_Obr] = @Vigente_Obr)">
                                                                                                                                                       <SelectParameters>
@@ -204,28 +195,12 @@
                                                                                                                                                                    <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int64"></asp:Parameter>
                                                                                                                                                                    </SelectParameters>
                                                                                                                                                          </asp:SqlDataSource>
-                                                                                                                                                </div>
-                                                                                                                                             
-                                                                                                                                           </div>
-
-                                                                                                                                    </div>
-                                                                                                                             </div>
-                                                                                                                        
-                                                                                                            </div>
-                                                                                                      </div>
-                                                                                                  </div>
-                                                                                    <div class="col-md-3">
-                                                                                                         <div class="panel widget-tasks  panel-transparent ">
-                                                                                                                    <div class="panel-heading">
-                                                                                                                        <span class="panel-title"><i class="lnr lnr-file-add fa-2x"></i>  <b>1.2)</b> Información del proceso</span>
-                                                                                                                       
-                                                                                                                    </div>
-                                                                                                                    <div class="panel-body">
-                                                                                                                               <span class="text-default "><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </em></span>
-                                                                                                                          <br />
-                                                                                                                          <br />
-                                                                                                                         <div class="row">
-		                                                            	                                                                   <div class="col-sm-12">
+                                                                                                                                           </div>                                                                                                                       
+                                                                                                                                      </div>              
+                                                                                                                             
+                                                                                                                             
+                                                                                                                             
+                                                                                                                             <div class="col-sm-12">
 				                                                                                                                                <div class="form-group">
 						                                                                                                                            <div class="col-sm-12">
 							                                                                                                                             <asp:UpdatePanel ID="UpdatePanel3" runat="server">
@@ -334,7 +309,24 @@
                                                                                                                                                         
                                                                                                                                                         </div>
 					                                                                                                                            </div> <!-- / .form-group -->
-					                                                                                                                            <div class="form-group">
+					                                                                                                                            
+					                                                                                                                    </div> <!-- / .form-group -->
+			                                                                                                              </div>
+                                                                                                                    </div>
+                                                                                                                </div> <!-- / .panel -->
+				                                                                                   </div>
+                                                                                    <div class="col-md-6">
+                                                                                                             <div class="panel panel-transparent ">
+                                                                                                                    <div class="panel-heading">
+                                                                                                                        <span class="panel-title"><i class="fas fa-map-marker-alt fa-2x"></i> <b>1.2) </b>&nbsp;&nbsp; Observaciones Y Alcance de la Plantilla </span>
+                                                                                                                    </div>
+                                                                                                             <div class="panel-body">
+                                                                                                              <span class="text-default "><em>Corresponde a los recintos donde aplica este proceso de calidad </em></span>
+                                                                                                                 <br />
+                                                                                                                 <br />
+                                                                                                                 <div class="row">
+		                                                            	                                                      <div class="col-sm-12">
+                                                                                                                                  <div class="form-group">
 						                                                                                                                            <label for="asdasdas" class="col-sm-6 control-label">Observaciones generales:</label>
 						                                                                                                                            <div class="col-sm-12">
                                                                                                                                                        <asp:UpdatePanel ID="UpdatePanel6" runat="server">
@@ -348,24 +340,8 @@
                                                                                                                                                             </asp:UpdatePanel>
                                                                                                                                                         </div>
 					                                                                                                                            </div> <!-- / .form-group -->
-					                                                                                                                    </div> <!-- / .form-group -->
-			                                                                                                              </div>
-                                                                                                                    </div>
-                                                                                                                </div> <!-- / .panel -->
-				                                                                                   </div>
-                                                                                    <div class="col-md-6">
-                                                                                                             <div class="panel panel-transparent ">
-                                                                                                                    <div class="panel-heading">
-                                                                                                                        <span class="panel-title"><i class="fas fa-map-marker-alt fa-2x"></i> <b>1.3) </b> Alcance </span>
-                                                                                                                    </div>
-                                                                                                             <div class="panel-body">
-                                                                                                              <span class="text-default "><em>Corresponde a los recintos donde aplica este proceso de calidad </em></span>
-                                                                                                                 <br />
-                                                                                                                 <br />
-                                                                                                                 <div class="row">
-		                                                            	                                                      <div class="col-sm-12">
                                                                                                                                   <div class="form-group">    
-                                                                                                                                 <dx:ASPxGridView 	OnCellEditorInitialize="Grid_CellEditorInitialize" ClientInstanceName="grid" ID="Grid" runat="server" DataSourceID="sqlCat_Tip" AutoGenerateColumns="False" KeyFieldName="ID_ACC_SEC" Theme="MaterialCompact" EnableTheming="True" Width="100%">
+                                                                                                                                   <dx:ASPxGridView 	OnCellEditorInitialize="Grid_CellEditorInitialize" ClientInstanceName="grid" ID="Grid" runat="server" DataSourceID="sqlCat_Tip" AutoGenerateColumns="False" KeyFieldName="ID_ACC_SEC" Theme="Moderno" EnableTheming="True" Width="100%">
                                                                                                                                       <Toolbars>
             <dx:GridViewToolbar EnableAdaptivity="true">
                 <Items>
@@ -400,9 +376,9 @@
                                                                                                                                                        <dx:GridViewDataComboBoxColumn Caption="Categorias" FieldName="ID_TUC" Width="40%" VisibleIndex="4">
                                                                                                                                                            <PropertiesComboBox DataSourceID="sqlCategorias" ValueField="ID_TUC" ValueType="System.Int32"
                                                                                                                                                                TextField="NOMBRE_TUC" EnableSynchronization="False" IncrementalFilteringMode="StartsWith">
-                                                                                                                                                                                                                                                                                                                            <ValidationSettings RequiredField-IsRequired="true" Display="Dynamic" >
-<RequiredField IsRequired="True"></RequiredField>
-                                                                                                                                                                                                                                                                                                                            </ValidationSettings>
+                                                                                                                                                                  <ValidationSettings RequiredField-IsRequired="true" Display="Dynamic" >
+                                                                                                                                                                    <RequiredField IsRequired="True"></RequiredField>
+                                                                                                                                                                  </ValidationSettings>
 						                                                                                                                                        <ClientSideEvents SelectedIndexChanged="CategoriasCombo_SelectedIndexChanged" />
 					                                                                                                                                        </PropertiesComboBox>
 				                                                                                                                                           <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
@@ -454,7 +430,6 @@
 
 
 
-
                                                                                                                                                     <asp:SqlDataSource runat="server" ID="sqlCat_Tip" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' 
                                                                                                                                                         SelectCommand="SELECT * FROM [QA_ACC_PLT_SECTOR] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" 
                                                                                                                                                         DeleteCommand="DELETE FROM [QA_ACC_PLT_SECTOR] WHERE [ID_ACC_SEC] = @ID_ACC_SEC" 
@@ -497,8 +472,7 @@
                                                                                                                                   </div>
                                                                                                                           </div>
                                                                                                                  </div> <!-- / .form-group -->
-			                                                                                                        <p class="help-block">ejemplo: Departamento (Categoría) Tipo A (Tipologia).</p>     
-                                                                                                            </div>
+			                                                                                                        <p class="help-block">ejemplo: Departamento (Categoría) Tipo A (Tipologia).                                                                                                  </div>
 
 		                                                                                                        </div>
 					                                                                                 </div>
@@ -538,7 +512,6 @@
                                                                                                         <div class="modal-footer">
                                                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                                                                             <!--<button id="OnMyButtonClick" type="button" class="btn btn-default" >Guardar</button>-->
-
                                                                                                             <dx:BootstrapButton ID="btnNuevoGrupo" runat="server" data-dismiss="modal" Text="Guardar Grupo" class="btn btn-rounded btn-labeled btn-primary">
                                                                                                                 <SettingsBootstrap RenderOption="Primary" />
 								                                                                            </dx:BootstrapButton>
@@ -546,15 +519,25 @@
 						                                                                            </div> <!-- / .modal-content -->
 					                                                                            </div> <!-- / .modal-dialog -->
 				                                                                            </div> <!-- / .modal -->
-                                                                         <div class="row">
+                                                                        
+                                                                    
+                                                                    <div class="row">
                                                                                  <div class="col-md-12">
+
+                                                                                    <div class="panel panel-transparent">
+                                                                                        <div class="panel-heading">
+                                                                                            <span class="panel-title "><i class="lnr lnr lnr-layers fa-2x"></i> <b>2.1)</b>&nbsp;&nbsp;Detalle de la especificación </span>
+                                                                                        </div>
+                                                                                     <div class="panel-body">
+
+
                                                                             <br />
                                                                             <br />
                                                                               <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                                                                                 <ContentTemplate>
                                                                               
                                                                  
-                                                                                <dx:ASPxGridView ID="grillaCheck" runat="server" AutoGenerateColumns="False" DataSourceID="sqlListaCheck" KeyFieldName="ID_PLT_CHK" EnableTheming="True" Theme="MaterialCompact" Width="100%">
+                                                                                <dx:ASPxGridView ID="grillaCheck" runat="server" AutoGenerateColumns="False" DataSourceID="sqlListaCheck" KeyFieldName="ID_PLT_CHK" EnableTheming="True" Theme="Moderno" Width="100%">
                                                                                     <SettingsEditing Mode="EditForm">
                                                                                     </SettingsEditing>
                                                                                     <SettingsBehavior AutoExpandAllGroups="True" />
@@ -618,30 +601,6 @@
                                                                                         </dx:BootstrapGridViewTextColumn>
                                                                                         <dx:BootstrapGridViewTextColumn FieldName="ID_ACC_PLT" Visible="False" VisibleIndex="2">
                                                                                         </dx:BootstrapGridViewTextColumn>
-                                                                                        <dx:BootstrapGridViewComboBoxColumn Caption="REQUERIDO" FieldName="SOLICITA_ENT" HorizontalAlign="Center" VisibleIndex="8" Width="10%">
-                                                                                            <PropertiesComboBox>
-                                                                                                <Items>
-                                                                                                    <dx:BootstrapListEditItem Text="NO" Value="0">
-                                                                                                    </dx:BootstrapListEditItem>
-                                                                                                    <dx:BootstrapListEditItem Text="SI" Value="1">
-                                                                                                    </dx:BootstrapListEditItem>
-                                                                                                </Items>
-                                                                                                <ClearButton DisplayMode="Never" />
-                                                                                            </PropertiesComboBox>
-                                                                                        </dx:BootstrapGridViewComboBoxColumn>
-                                                                                        <dx:BootstrapGridViewComboBoxColumn Caption="TIPO DE DATO" FieldName="TIPO_DATO_ENT" HorizontalAlign="Center" VisibleIndex="9" Width="10%">
-                                                                                            <PropertiesComboBox>
-                                                                                                <Items>
-                                                                                                    <dx:BootstrapListEditItem Text="NUMERICO" Value="0">
-                                                                                                    </dx:BootstrapListEditItem>
-                                                                                                    <dx:BootstrapListEditItem Text="TEXTO" Value="1">
-                                                                                                    </dx:BootstrapListEditItem>
-                                                                                                </Items>
-                                                                                                <ClearButton DisplayMode="Never" />
-                                                                                            </PropertiesComboBox>
-                                                                                            <SettingsHeaderFilter Mode="List">
-                                                                                            </SettingsHeaderFilter>
-                                                                                        </dx:BootstrapGridViewComboBoxColumn>
                                                                                         <dx:BootstrapGridViewHyperLinkColumn Caption="Adj." HorizontalAlign="Center" VisibleIndex="10" Width="5%" Visible="False">
                                                                                             <PropertiesHyperLinkEdit IconCssClass="fas fa-paperclip" Text="Adjuntar...">
                                                                                             </PropertiesHyperLinkEdit>
@@ -662,7 +621,7 @@
                                                                                             </EditItemTemplate>
                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                         </dx:GridViewDataTextColumn>
-                                                                                        <dx:GridViewDataComboBoxColumn  FieldName="ID_GRP_CHK" VisibleIndex="7" Name="ckGrupo">
+                                                                                        <dx:GridViewDataComboBoxColumn  FieldName="ID_GRP_CHK" VisibleIndex="7" Name="ckGrupo" Visible="False">
                                                                                             <PropertiesComboBox  DataSourceID="sqlGrupos" TextField="NOMBRE_GRP_CHK" ValueField="ID_GRP_CHK">
                                                                                                <ClientSideEvents ButtonClick="function(s,e) { $('#modalGrupo').modal('show'); }" />
                                                                                              <%--   <button data-toggle="modal" data-target="#modalActividad" data-original-title="Ingrese nueva actividad" class="btn btn-primary" type="button"> <i class="fas fa-plus-circle rounded"></i></button>--%>
@@ -707,6 +666,48 @@
                                                                                             </SettingsHeaderFilter>
                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                         </dx:GridViewDataMemoColumn>
+                                                                                        <dx:GridViewDataComboBoxColumn Caption="INFO. OBLIGATORIA" FieldName="SOLICITA_ENT" VisibleIndex="8" Width="10%">
+                                                                                            <PropertiesComboBox DataSecurityMode="Strict">
+                                                                                                <Items>
+                                                                                                    <dx:BootstrapListEditItem Text="NO" Value="0">
+                                                                                                    </dx:BootstrapListEditItem>
+                                                                                                    <dx:BootstrapListEditItem Text="SI" Value="1">
+                                                                                                    </dx:BootstrapListEditItem>
+                                                                                                </Items>
+                                                                                                <ClearButton DisplayMode="Never">
+                                                                                                </ClearButton>
+                                                                                            </PropertiesComboBox>
+                                                                                            <SettingsHeaderFilter>
+                                                                                                <DateRangeCalendarSettings>
+                                                                                                    <FastNavProperties DisplayMode="Inline" />
+                                                                                                </DateRangeCalendarSettings>
+                                                                                                <DateRangePickerSettings>
+                                                                                                    <FastNavProperties DisplayMode="Inline" />
+                                                                                                </DateRangePickerSettings>
+                                                                                            </SettingsHeaderFilter>
+                                                                                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                        </dx:GridViewDataComboBoxColumn>
+                                                                                        <dx:GridViewDataComboBoxColumn Caption="TIPO DE DATO" FieldName="TIPO_DATO_ENT" VisibleIndex="9" Width="10%">
+                                                                                            <PropertiesComboBox DataSecurityMode="Strict">
+                                                                                                <Items>
+                                                                                                    <dx:BootstrapListEditItem Text="NUMERICO" Value="0">
+                                                                                                    </dx:BootstrapListEditItem>
+                                                                                                    <dx:BootstrapListEditItem Text="TEXTO" Value="1">
+                                                                                                    </dx:BootstrapListEditItem>
+                                                                                                </Items>
+                                                                                                <ClearButton DisplayMode="Never">
+                                                                                                </ClearButton>
+                                                                                            </PropertiesComboBox>
+                                                                                            <SettingsHeaderFilter Mode="List">
+                                                                                                <DateRangeCalendarSettings>
+                                                                                                    <FastNavProperties DisplayMode="Inline" />
+                                                                                                </DateRangeCalendarSettings>
+                                                                                                <DateRangePickerSettings>
+                                                                                                    <FastNavProperties DisplayMode="Inline" />
+                                                                                                </DateRangePickerSettings>
+                                                                                            </SettingsHeaderFilter>
+                                                                                            <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                        </dx:GridViewDataComboBoxColumn>
                                                                                     </Columns>
                                                                                     <Styles>
                                                                                         <EditForm BackColor="#CCCCCC">
@@ -729,14 +730,14 @@
       <CancelButton Text =" " Image-IconID ="actions_cancel_16x16gray"   >
               <Image  ToolTip="cancelar" ></Image>
       </CancelButton>
-       <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  >
+       <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  > 
             <Image  ToolTip="eliminar" ></Image>
        </DeleteButton>
   </SettingsCommandButton>
                                                   
                                                                                     </dx:ASPxGridView>
                                                                                    <asp:SqlDataSource ID="sqlGrupos" runat="server" ConnectionString='<%$ ConnectionStrings:cnxCalidad %>' 
-                                                                                       SelectCommand="SELECT * FROM [QA_GRUPO_CHECKLIST]" 
+                                                                                       SelectCommand="SELECT * FROM [QA_GRUPO_CHECKLIST] WHERE [ESTADO_GRP_CHK]=1 " 
                                                                                        DeleteCommand="DELETE FROM [QA_GRUPO_CHECKLIST] WHERE [ID_GRP_CHK] = @ID_GRP_CHK" 
                                                                                        InsertCommand="INSERT INTO [QA_GRUPO_CHECKLIST] ([NOMBRE_GRP_CHK]) VALUES (@NOMBRE_GRP_CHK)" 
                                                                                        UpdateCommand="UPDATE [QA_GRUPO_CHECKLIST] SET [NOMBRE_GRP_CHK] = @NOMBRE_GRP_CHK WHERE [ID_GRP_CHK] = @ID_GRP_CHK">
@@ -790,8 +791,8 @@
                                                                                   </Triggers>
                                                                             </asp:UpdatePanel>
 
-                                                                     
-
+                                                                            </div>
+                                                                        </div>              
 
                                                                             </div>
                                                                         </div>			
@@ -804,150 +805,41 @@
                                                                                                              <a class="btn btn-rounded  btn-labeled btn-primary wizard-next-step-btn" id="A4" runat="server" style="cursor:pointer">&nbsp;&nbsp;Continuar con el siguiente paso&nbsp;&nbsp;<i class="fas fa-angle-double-right"  style="color:teal" ></i> </a>
                                                                                            </div>
                                                                         <div class="row">
-                                                                                <div class="col-md-12">
-                                                                                                                 <div class="panel panel-transparent">
+                                                                             <div class ="col-md-12">
+                                                                                            <div class="panel panel-transparent">
                                                                                                                         <div class="panel-heading">
-                                                                                                                                <span class="panel-title "><i class="lnr lnr-apartment fa-2x"></i> <b>3.1)</b>orem ipsum dolor sit amet</span>
+                                                                                                                                <span class="panel-title "><i class="lnr lnr-sort-amount-asc fa-2x "></i> <b>3.1)</b>&nbsp;&nbsp;Definición de cadena revición</span>
                                                                                                                         </div>
                                                                                                                          <div class="panel-body">
-                                                                                                                                             <span class="text-default "><em>orem ipsum dolor sit amet, sollicitudin convallis commodo. Lacus duis lacu</em></span>
+                                                                                                                                             
                                                                                                                                              <br />
                                                                                                                                              <br />
-                                                                        
-                                                                                                                                    <dx:ASPxGridView ID="gridMensajes" runat="server" DataSourceID="SqlDataSource2" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns ="False" KeyFieldName="ID_QA_MSG" Width="100%">
-                                                                                                                                                <Columns>
-                                                                                                                                                    <dx:GridViewBandColumn Caption="CRITERIOS DE AVISOS POR MAIL" VisibleIndex="8">
-                                                                                                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                        <Columns>
-                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="SOLICITAR" FieldName="CRT_GENERA_ACC" VisibleIndex="0" Width="5%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" Wrap="True" />
-                                                                                                                                                            </dx:GridViewDataCheckColumn>
-                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="VB" FieldName="CRT_VB_ACC" VisibleIndex="1" Width="5%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
-                                                                                                                                                            </dx:GridViewDataCheckColumn>
-                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="RECHAZO" FieldName="CRT_RECHAZA_ACC" VisibleIndex="2" Width="5%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                            </dx:GridViewDataCheckColumn>
-                                                                                                                                                        </Columns>
-                                                                                                                                                    </dx:GridViewBandColumn>
-                                                                                                                                                    <dx:GridViewCommandColumn VisibleIndex="0" Width="10%" ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True">
-                                                                                                                                                    </dx:GridViewCommandColumn>
-                                                                                                                                                    <dx:GridViewBandColumn Caption="MENSAJERIA - DEFINICIÓN DE DESTINATARIOS DE AVISOS" VisibleIndex="1">
-                                                                                                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="True" />
-                                                                                                                                                        <Columns>
-                                                                                                                                                            <dx:GridViewDataTextColumn FieldName="ID_QA_MSG" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
-                                                                                                                                                                <EditFormSettings Visible="False" />
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                            <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                            <dx:GridViewDataTextColumn Caption="NOMBRE" FieldName="NOMBRE_MSG" ShowInCustomizationForm="True" VisibleIndex="2" Width="30%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                            <dx:GridViewDataTextColumn Caption="CARGO" FieldName="CARGO_MSG" ShowInCustomizationForm="True" VisibleIndex="3" Width="25%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                            <dx:GridViewDataTextColumn Caption="MAIL" FieldName="MAIL_MSG" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                            <dx:GridViewDataTextColumn Caption="FONO" FieldName="FONO_MSG" ShowInCustomizationForm="True" VisibleIndex="5" Width="10%">
-                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                                            </dx:GridViewDataTextColumn>
-                                                                                                                                                        </Columns>
-                                                                                                                                                    </dx:GridViewBandColumn>
-                                                                                                                                                </Columns>
-        
-                                                                                                                                                <SettingsPager Visible="False">
-                                                                                                                                                </SettingsPager>
-                                                                                                                                                <SettingsEditing Mode="Inline">
-                                                                                                                                                </SettingsEditing>
-                                                                                                                                              <SettingsCommandButton>
-        <NewButton Text=" " Image-IconID="actions_add_16x16gray"  >
-            <%--<Styles>
-                        <Style CssClass="fas fa-angle-double-right fa-2x"></Style>
-               </Styles>--%>
-
-             <Image  ToolTip="nuevo" ></Image>
-       </NewButton>
-         <EditButton    Text =" " Image-IconID ="edit_edit_16x16gray">   
-                <Image  ToolTip="Editar" ></Image>
-         </EditButton>
-      <UpdateButton  Text =" " Image-IconID ="save_save_16x16gray"  >
-                <Image  ToolTip="Guardar" ></Image>
-      </UpdateButton>
-      <CancelButton Text =" " Image-IconID ="actions_cancel_16x16gray"   >
-              <Image  ToolTip="cancelar" ></Image>
-      </CancelButton>
-       <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  >
-            <Image  ToolTip="eliminar" ></Image>
-       </DeleteButton>
-  </SettingsCommandButton>
-                                                  
-                                                                                                                                    </dx:ASPxGridView>
-                                                                                                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [QA_MENSAJERIA] WHERE [ID_QA_MSG] = @ID_QA_MSG" InsertCommand="INSERT INTO [QA_MENSAJERIA] ([NOMBRE_MSG], [CARGO_MSG], [MAIL_MSG], [FONO_MSG], [ID_ACC_PLT], [CRT_GENERA_ACC], [CRT_VB_ACC], [CRT_RECHAZA_ACC]) VALUES (@NOMBRE_MSG, @CARGO_MSG, @MAIL_MSG, @FONO_MSG, @ID_ACC_PLT, @CRT_GENERA_ACC, @CRT_VB_ACC, @CRT_RECHAZA_ACC)" SelectCommand="SELECT * FROM [QA_MENSAJERIA] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" UpdateCommand="UPDATE [QA_MENSAJERIA] SET [NOMBRE_MSG] = @NOMBRE_MSG, [CARGO_MSG] = @CARGO_MSG, [MAIL_MSG] = @MAIL_MSG, [FONO_MSG] = @FONO_MSG, [ID_ACC_PLT] = @ID_ACC_PLT, [CRT_GENERA_ACC] = @CRT_GENERA_ACC, [CRT_VB_ACC] = @CRT_VB_ACC, [CRT_RECHAZA_ACC] = @CRT_RECHAZA_ACC WHERE [ID_QA_MSG] = @ID_QA_MSG">
-                                                                                                                                         <DeleteParameters>
-                                                                                                                                             <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
-                                                                                                                                         </DeleteParameters>
-                                                                                                                                         <InsertParameters>
-                                                                                                                                             <asp:Parameter Name="NOMBRE_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="CARGO_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="MAIL_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="FONO_MSG" Type="String" />
-                                                                                                                                             <asp:SessionParameter DefaultValue="8" Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
-                                                                                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32"  DefaultValue="0" />
-                                                                                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32"  DefaultValue="0" />
-                                                                                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32"  DefaultValue="0"/>
-                                                                                                                                         </InsertParameters>
-                                                                                                                                         <SelectParameters>
-                                                                                                                                             <asp:SessionParameter Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
-                                                                                                                                         </SelectParameters>
-                                                                                                                                         <UpdateParameters>
-                                                                                                                                             <asp:Parameter Name="NOMBRE_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="CARGO_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="MAIL_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="FONO_MSG" Type="String" />
-                                                                                                                                             <asp:Parameter Name="ID_ACC_PLT" Type="Int32" />
-                                                                                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32" />
-                                                                                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32" />
-                                                                                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32" />
-                                                                                                                                             <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
-                                                                                                                                         </UpdateParameters>
-                                                                                                                                     </asp:SqlDataSource>
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                <div class ="col-md-12">
-                                                                                                                  <div class="panel panel-transparent">
-                                                                                                                        <div class="panel-heading">
-                                                                                                                                <span class="panel-title "><i class=" "></i> <b>3.2)</b>Lorem ipsum dolor sit amet</span>
-                                                                                                                        </div>
-                                                                                                                         <div class="panel-body">
-                                                                                                                                             <span class="text-default "><em>orem ipsum dolor sit amet, sollicitudin convallis commodo. Lacus duis lacu</em></span>
-                                                                                                                                             <br />
-                                                                                                                                             <br />
-                                                                                                                                   <dx:ASPxGridView ID="GridVb" runat="server" AutoGenerateColumns="False" DataSourceID="sql_vb" KeyFieldName="ID_PLT_VB"  Theme="MaterialCompact" Width="100%">
+                                                                                                                                   <dx:ASPxGridView ID="GridVb" runat="server" AutoGenerateColumns="False" DataSourceID="sql_vb" KeyFieldName="ID_PLT_VB"  Theme="MaterialCompact" Width="100%" EnableTheming="True">
                                                                                                                                      <SettingsEditing EditFormColumnCount="1" Mode="EditForm">
                                                                                                                                      </SettingsEditing>
-                                                                                                                                     <EditFormLayoutProperties ColCount="4">
+                                                                                                                                       <SettingsPopup>
+                                                                                                                                           <EditForm Modal="True" VerticalAlign="Middle">
+                                                                                                                                           </EditForm>
+                                                                                                                                           <CustomizationWindow PopupAnimationType="Slide" ShowShadow="True" VerticalAlign="Above" />
+                                                                                                                                       </SettingsPopup>
+                                                                                                                                     <EditFormLayoutProperties AlignItemCaptionsInAllGroups="True" ColCount="8">
                                                                                                                                          <Items>
-                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="NIVEL ANT." ColSpan="4" ColumnName="ORDEN_VB" Name="cbx">
+                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="REVISOR ANTERIOR" ColumnName="ORDEN_VB" Name="cbx" Width="20%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewColumnLayoutItem ColSpan="2" ColumnName="CARGO_VB">
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="CARGO_VB" Caption="REVISOR" Width="20%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewLayoutGroup Caption="VB" ColCount="2" ColSpan="2" RowSpan="2">
-                                                                                                                                                 <Items>
-                                                                                                                                                     <dx:GridViewColumnLayoutItem ColSpan="2" ColumnName="VB_PAPEL" RowSpan="2">
-                                                                                                                                                     </dx:GridViewColumnLayoutItem>
-                                                                                                                                                     <dx:GridViewColumnLayoutItem ColSpan="2" ColumnName="VB_DIGITAL" RowSpan="2">
-                                                                                                                                                     </dx:GridViewColumnLayoutItem>
-                                                                                                                                                 </Items>
-                                                                                                                                             </dx:GridViewLayoutGroup>
-                                                                                                                                             <dx:GridViewColumnLayoutItem ColSpan="2" ColumnName="USUARIO" Caption="ROL ">
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="ROL" Caption="ROLES" Width="30%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="AVISO ADICIONAL" ColSpan="4" ColumnName="CORREOS_VB">
+                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="AVISO ADICIONAL" ColumnName="CORREOS_VB" Width ="40%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:EditModeCommandLayoutItem ColSpan="4" HorizontalAlign="Right">
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="VB_PAPEL">
+                                                                                                                                             </dx:GridViewColumnLayoutItem>
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="VB_DIGITAL">
+                                                                                                                                             </dx:GridViewColumnLayoutItem>
+                                                                                                                                             <dx:EditModeCommandLayoutItem HorizontalAlign="Right" ColSpan="8">
                                                                                                                                              </dx:EditModeCommandLayoutItem>
                                                                                                                                          </Items>
+                                                                                                                                         <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Middle" />
                                                                                                                                      </EditFormLayoutProperties>
                                                                                                                                      <Columns>
                                                                                                                                          <dx:GridViewCommandColumn ShowNewButtonInHeader="True" VisibleIndex="0" ShowEditButton="True" Width="10%">
@@ -958,14 +850,16 @@
 
                                                                                                                                          <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="8" Visible="False">
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTextColumn FieldName="CARGO_VB" VisibleIndex="4" Caption="CARGO" Width="20%">
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="CARGO_VB" VisibleIndex="3" Caption="REVISOR" Width="20%">
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataTextColumn>
                                                                                                                                          <dx:GridViewDataTextColumn FieldName="ESTADO_VB" Visible="false" VisibleIndex="9" Caption="ESTADO">
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="USUARIO" VisibleIndex="3" Width="15%">
+                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="ROL" VisibleIndex="4" Width="25%" Caption="ROLES">
                                                                                                                                              <PropertiesTokenBox AllowMouseWheel="True" DataSourceID="sqlRol" TextField="NOMBRE_ROL" Tokens="" ValueField="NOMBRE_ROL" 
                                                                                                                                                  ValueSeparator =";">
+                                                                                                                                                 <TokenBoxInputStyle Width="30%">
+                                                                                                                                                 </TokenBoxInputStyle>
                                                                                                                                              </PropertiesTokenBox>
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataTokenBoxColumn>
@@ -973,32 +867,41 @@
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                              <Columns>
                                                                                                                                                  <dx:GridViewDataCheckColumn FieldName="VB_DIGITAL" Caption="DIGITAL" VisibleIndex="4" Width="5%">
+                                                                                                                                                     <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" ValueUnchecked="0">
+                                                                                                                                                     </PropertiesCheckEdit>
                                                                                                                                                      <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                                  </dx:GridViewDataCheckColumn>
                                                                                                                                                  <dx:GridViewDataCheckColumn FieldName="VB_PAPEL" Caption="PAPEL" VisibleIndex="0" Width="5%">
+                                                                                                                                                     <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" ValueUnchecked="0">
+                                                                                                                                                     </PropertiesCheckEdit>
                                                                                                                                                      <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                                  </dx:GridViewDataCheckColumn>
                                                                                                                                              </Columns>
                                                                                                                                          </dx:GridViewBandColumn>
-                                                                                                                                         <dx:GridViewDataComboBoxColumn Caption="ORDEN" FieldName="ORDEN_VB" Name="combo" VisibleIndex="2" Visible="False">
-                                                                                                                                             <PropertiesComboBox DataSourceID="SqlDataSource1" NullDisplayText="Seleccione su nivel de aprobación" TextField="CARGO_VB" TextFormatString="{1}" ValueField="ID_PLT_VB" DropDownStyle="DropDown">
+                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="CORREOS_VB" ShowInCustomizationForm="True" VisibleIndex="5" Width="40%" Caption="AVISO ADICIONAL">
+                                                                                                                                             <PropertiesTokenBox AllowMouseWheel="True" IncrementalFilteringMode="None" ShowDropDownOnFocus="Never" Tokens="" ValueSeparator=";">
+                                                                                                                                                 <TokenBoxInputStyle Width="50%">
+                                                                                                                                                 </TokenBoxInputStyle>
+                                                                                                                                             </PropertiesTokenBox>
+                                                                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                                                                         </dx:GridViewDataTokenBoxColumn>
+                                                                                                                                         <dx:GridViewDataComboBoxColumn Caption="REV. ANTERIOR" FieldName="ORDEN_VB" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2" Width="12%">
+                                                                                                                                             <PropertiesComboBox DataSourceID="sqlAnterior" TextField="CARGO_VB" TextFormatString="{1}" ValueField="ID_PLT_VB" ValueType="System.Int32">
                                                                                                                                                  <Columns>
-                                                                                                                                                     <dx:ListBoxColumn Caption="NIVEL" FieldName="ORDEN_VB" Width="20%">
+                                                                                                                                                     <dx:ListBoxColumn Caption="ORDEN" FieldName="ORDEN_VB">
                                                                                                                                                      </dx:ListBoxColumn>
-                                                                                                                                                     <dx:ListBoxColumn Caption="NOMBRE CARGO" FieldName="CARGO_VB" Width="80%">
+                                                                                                                                                     <dx:ListBoxColumn Caption="NOMBRE" FieldName="CARGO_VB">
                                                                                                                                                      </dx:ListBoxColumn>
                                                                                                                                                  </Columns>
                                                                                                                                              </PropertiesComboBox>
                                                                                                                                              <EditFormSettings Visible="True" />
+                                                                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataComboBoxColumn>
-                                                                                                                                         <dx:GridViewDataTextColumn Caption="ORDEN" FieldName="ORDEN_VB" VisibleIndex="1" Width="5%">
-                                                                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                                                                         <dx:GridViewDataTextColumn Caption="iD" FieldName="ORDEN_VB" Name="combo" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1" Width="3%">
+                                                                                                                                             <PropertiesTextEdit NullDisplayText="Seleccione su nivel de aprobación">
+                                                                                                                                             </PropertiesTextEdit>
+                                                                                                                                             <EditFormSettings Visible="False" />
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="CORREOS_VB" ShowInCustomizationForm="True" VisibleIndex="5" Width="40%">
-                                                                                                                                             <PropertiesTokenBox AllowMouseWheel="True" IncrementalFilteringMode="None" ShowDropDownOnFocus="Never" Tokens="" ValueSeparator=";">
-                                                                                                                                             </PropertiesTokenBox>
-                                                                                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-                                                                                                                                         </dx:GridViewDataTokenBoxColumn>
                                                                                                                                      </Columns>
                                                                                                                                              <SettingsCommandButton>
         <NewButton Text=" " Image-IconID="actions_add_16x16gray"  >
@@ -1038,6 +941,57 @@
                                                                                                                                          <asp:Parameter Name="VB_PAPEL" Type="Int32" DefaultValue ="0"/>
                                                                                                                                          <asp:Parameter Name="ID_PLT_VB_PRED" Type="Int32" />
                                                                                                                                          <asp:Parameter Name="ESTADO_VB" Type="Int32"  DefaultValue ="0" />
+                                                                                                                                         <asp:Parameter Name="ROL"  Type="String" />
+                                                                                                                                         <asp:Parameter Name="CORREOS_VB"  Type="String" />
+                                                                                                                                     </InsertParameters>
+                                                                                                                                     <UpdateParameters>
+                                                                                                                                          <asp:Parameter Name="ID_PLT_VB" Type="Int32" />
+                                                                                                                                          <asp:SessionParameter  Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="CARGO_VB" Type="String" />
+                                                                                                                                         <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
+                                                                                                                                         <asp:Parameter Name="VB_PAPEL" Type="Int32"  DefaultValue ="0"/>
+                                                                                                                                          <asp:SessionParameter Name="ID_PLT_VB_PRED" SessionField="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="ESTADO_VB" Type="Int32" DefaultValue ="0" />
+                                                                                                                                         <asp:Parameter Name="ROL" Type="String" />
+                                                                                                                                          <asp:Parameter Name="CORREOS_VB" Type="String" />
+                                                                                                                                     </UpdateParameters>
+                                                                                                                                 </asp:SqlDataSource>
+                                                                                                                                 <asp:SqlDataSource ID="SqlUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" 
+                                                                                                                                     SelectCommand="SELECT [id_Usu], [nombre_Usu] FROM [USUARIOS]">
+
+                                                                                                                                 </asp:SqlDataSource>
+                                                                                                                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" 
+                                                                                                                                     SelectCommand="SELECT [ID_PLT_VB], [ID_ACC_PLT], [CARGO_VB], [ORDEN_VB] FROM [QA_ACC_PLT_CADENA_VB] 
+WHERE ID_ACC_PLT=@ID_ACC_PLT
+ORDER BY [ID_PLT_VB] DESC">
+                                                                                                                                     <SelectParameters>
+                                                                                                                                         <asp:SessionParameter Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" />
+                                                                                                                                     </SelectParameters>
+
+                                                                                                                                 </asp:SqlDataSource>
+
+                                                                                                                                             <asp:SqlDataSource ID="sqlRol" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                                                                                                                 SelectCommand=" SELECT [ID_ROL], [NOMBRE_ROL]  FROM [QA_ROL] WHERE ([ID_OBR] = @ID_OBR)">
+                                                                                                                                                 <SelectParameters>
+                                                                                                                                                     <asp:SessionParameter Name="ID_OBR" SessionField="ID_OBR" Type="Int64" DefaultValue="68" />
+                                                                                                                                                 </SelectParameters>
+                                                                                                                                             </asp:SqlDataSource>
+
+                                                                                                                                             <asp:SqlDataSource ID="sqlAnterior" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                                                                                                                SelectCommand="SP_WS_TRAER_VB_CREADOS"
+                                                                                                                                     InsertCommand ="SP_WS_INS_VB"
+                                                                                                                                     UpdateCommand  ="SP_WS_ACTUALIZA_VB"
+                                                                                                                                     SelectCommandType="StoredProcedure" InsertCommandType="StoredProcedure" UpdateCommandType="StoredProcedure">
+                                                                                                                                     <SelectParameters>
+                                                                                                                                         <asp:SessionParameter  Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                     </SelectParameters>
+                                                                                                                                     <InsertParameters>
+                                                                                                                                         <asp:SessionParameter  Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="CARGO_VB" Type="String" />
+                                                                                                                                         <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
+                                                                                                                                         <asp:Parameter Name="VB_PAPEL" Type="Int32" DefaultValue ="0"/>
+                                                                                                                                         <asp:Parameter Name="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="ESTADO_VB" Type="Int32"  DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="USUARIO"  Type="String" />
                                                                                                                                          <asp:Parameter Name="CORREOS_VB"  Type="String" />
                                                                                                                                      </InsertParameters>
@@ -1052,26 +1006,116 @@
                                                                                                                                          <asp:Parameter Name="USUARIO" Type="String" />
                                                                                                                                           <asp:Parameter Name="CORREOS_VB" Type="String" />
                                                                                                                                      </UpdateParameters>
-                                                                                                                                 </asp:SqlDataSource>
-                                                                                                                                 <asp:SqlDataSource ID="SqlUsuarios" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" 
-                                                                                                                                     SelectCommand="SELECT [id_Usu], [nombre_Usu] FROM [USUARIOS]">
-
-                                                                                                                                 </asp:SqlDataSource>
-                                                                                                                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" 
-                                                                                                                                     SelectCommand="SELECT [ID_PLT_VB], [ID_ACC_PLT], [CARGO_VB], [ORDEN_VB] FROM [QA_ACC_PLT_CADENA_VB] ORDER BY [ID_PLT_VB] DESC">
-
-                                                                                                                                 </asp:SqlDataSource>
-
-                                                                                                                                             <asp:SqlDataSource ID="sqlRol" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
-                                                                                                                                                 SelectCommand="SELECT [ID_ROL], [NOMBRE_ROL], [ID_OBR] FROM [QA_ROL] WHERE ([ID_OBR] = @ID_OBR)">
-                                                                                                                                                 <SelectParameters>
-                                                                                                                                                     <asp:SessionParameter Name="ID_OBR" SessionField="ID_OBR" Type="Int64" DefaultValue="68" />
-                                                                                                                                                 </SelectParameters>
                                                                                                                                              </asp:SqlDataSource>
+                                                                                                                                             <br />
 
                                                                                                                              </div>
                                                                                                                     </div>
-                                                                                                             </div>
+                                                                                                             </div>   
+                                                                            <div class="col-md-12">
+                                                                                                                 <div class="panel panel-transparent">
+                                                                                                                        <div class="panel-heading">
+                                                                                                                                <span class="panel-title "><i class="lnr lnr-apartment fa-2x"></i> <b>3.2)</b>&nbsp;&nbsp;Definición de mensajería </span>
+                                                                                                                        </div>
+                                                                                                                         <div class="panel-body">
+                                                                                                                                            
+                                                                                                                                             <br />
+                                                                                                                                             <br />
+                                                                        
+                                                                                                                                    <dx:ASPxGridView ID="gridMensajes" runat="server" DataSourceID="SqlDataSource2" EnableTheming="True" Theme="MaterialCompact" AutoGenerateColumns ="False" KeyFieldName="ID_QA_MSG" Width="100%">
+                                                                                                                                                <Columns>
+                                                                                                                                                    <dx:GridViewBandColumn Caption="CRITERIOS DE AVISOS POR MAIL.-" VisibleIndex="8">
+                                                                                                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                                                                                        <Columns>
+                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="SOLICITAR" FieldName="CRT_GENERA_ACC" VisibleIndex="0" Width="5%">
+                                                                                                                                                                <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" ValueUnchecked="0">
+                                                                                                                                                                </PropertiesCheckEdit>
+                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" Wrap="True" />
+                                                                                                                                                            </dx:GridViewDataCheckColumn>
+                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="VB" FieldName="CRT_VB_ACC" VisibleIndex="1" Width="5%">
+                                                                                                                                                                <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" ValueUnchecked="0">
+                                                                                                                                                                </PropertiesCheckEdit>
+                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Wrap="False" />
+                                                                                                                                                            </dx:GridViewDataCheckColumn>
+                                                                                                                                                            <dx:GridViewDataCheckColumn Caption="RECHAZO" FieldName="CRT_RECHAZA_ACC" VisibleIndex="2" Width="5%">
+                                                                                                                                                                <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" ValueUnchecked="0">
+                                                                                                                                                                </PropertiesCheckEdit>
+                                                                                                                                                                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                                                                                                            </dx:GridViewDataCheckColumn>
+                                                                                                                                                        </Columns>
+                                                                                                                                                    </dx:GridViewBandColumn>
+                                                                                                                                                    <dx:GridViewCommandColumn VisibleIndex="0" Width="10%" ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True">
+                                                                                                                                                    </dx:GridViewCommandColumn>
+                                                                                                                                                                <dx:GridViewBandColumn ShowInCustomizationForm="True" Caption="MENSAJERIA - DEFINICIÓN DE DESTINATARIOS DE AVISOS.-" VisibleIndex="1"><Columns>
+                                                                                                                                                                <dx:GridViewDataTextColumn  FieldName="NOMBRE_MSG" ShowInCustomizationForm="True" Width="15%" Caption="NOMBRE" VisibleIndex="2"></dx:GridViewDataTextColumn>
+                                                                                                                                                                <dx:GridViewDataTextColumn FieldName="CARGO_MSG" ShowInCustomizationForm="True" Width="15%" Caption="CARGO" VisibleIndex="3"></dx:GridViewDataTextColumn>
+                                                                                                                                                                <dx:GridViewDataTextColumn FieldName="MAIL_MSG" ShowInCustomizationForm="True" Width="15%" Caption="E-MAIL" VisibleIndex="4"></dx:GridViewDataTextColumn>
+                                                                                                                                                                <dx:GridViewDataTextColumn FieldName="FONO_MSG" ShowInCustomizationForm="True" Width="15%" Caption="TELEFONO" VisibleIndex="5"></dx:GridViewDataTextColumn>
+                                                                                                                                                                </Columns>
+                                                                                                                                                                </dx:GridViewBandColumn>
+                                                                                                                                                </Columns>
+                                                                                                                                                        <SettingsEditing Mode="Inline">
+                                                                                                                                                </SettingsEditing>
+                                                                                                                                                        <SettingsCommandButton>
+                                                                                                                                                                    <NewButton Text=" " Image-IconID="actions_add_16x16gray"  >
+                                                                                                                                                                        <%--<Styles>
+                                                                                                                                                                                    <Style CssClass="fas fa-angle-double-right fa-2x"></Style>
+                                                                                                                                                                           </Styles>--%>
+
+                                                                                                                                                                         <Image  ToolTip="nuevo" ></Image>
+                                                                                                                                                                   </NewButton>
+                                                                                                                                                                     <EditButton    Text =" " Image-IconID ="edit_edit_16x16gray">   
+                                                                                                                                                                            <Image  ToolTip="Editar" ></Image>
+                                                                                                                                                                     </EditButton>
+                                                                                                                                                                  <UpdateButton  Text =" " Image-IconID ="save_save_16x16gray"  >
+                                                                                                                                                                            <Image  ToolTip="Guardar" ></Image>
+                                                                                                                                                                  </UpdateButton>
+                                                                                                                                                                  <CancelButton Text =" " Image-IconID ="actions_cancel_16x16gray"   >
+                                                                                                                                                                          <Image  ToolTip="cancelar" ></Image>
+                                                                                                                                                                  </CancelButton>
+                                                                                                                                                                   <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  >
+                                                                                                                                                                        <Image  ToolTip="eliminar" ></Image>
+                                                                                                                                                                   </DeleteButton>
+                                                                                                                                                        </SettingsCommandButton>
+                               
+                                                                                                                                    </dx:ASPxGridView>
+                                                                                                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                                                                                                        DeleteCommand="DELETE FROM [QA_MENSAJERIA] WHERE [ID_QA_MSG] = @ID_QA_MSG" 
+                                                                                                                                        InsertCommand="INSERT INTO [QA_MENSAJERIA] ([NOMBRE_MSG], [CARGO_MSG], [MAIL_MSG], [FONO_MSG], [ID_ACC_PLT], [CRT_GENERA_ACC], [CRT_VB_ACC], [CRT_RECHAZA_ACC]) VALUES (@NOMBRE_MSG, @CARGO_MSG, @MAIL_MSG, @FONO_MSG, @ID_ACC_PLT, @CRT_GENERA_ACC, @CRT_VB_ACC, @CRT_RECHAZA_ACC)" 
+                                                                                                                                        SelectCommand="SELECT * FROM [QA_MENSAJERIA] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" 
+                                                                                                                                        UpdateCommand="UPDATE [QA_MENSAJERIA] SET [NOMBRE_MSG] = @NOMBRE_MSG, [CARGO_MSG] = @CARGO_MSG, [MAIL_MSG] = @MAIL_MSG, [FONO_MSG] = @FONO_MSG, [ID_ACC_PLT] = @ID_ACC_PLT, [CRT_GENERA_ACC] = @CRT_GENERA_ACC, [CRT_VB_ACC] = @CRT_VB_ACC, [CRT_RECHAZA_ACC] = @CRT_RECHAZA_ACC WHERE [ID_QA_MSG] = @ID_QA_MSG">
+                                                                                                                                         <DeleteParameters>
+                                                                                                                                             <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
+                                                                                                                                         </DeleteParameters>
+                                                                                                                                         <InsertParameters>
+                                                                                                                                             <asp:Parameter Name="NOMBRE_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="CARGO_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="MAIL_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="FONO_MSG" Type="String" />
+                                                                                                                                             <asp:SessionParameter Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32"  DefaultValue="0" />
+                                                                                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32"  DefaultValue="0" />
+                                                                                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32"  DefaultValue="0"/>
+                                                                                                                                         </InsertParameters>
+                                                                                                                                         <SelectParameters>
+                                                                                                                                             <asp:SessionParameter Name="ID_ACC_PLT" SessionField="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                         </SelectParameters>
+                                                                                                                                         <UpdateParameters>
+                                                                                                                                             <asp:Parameter Name="NOMBRE_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="CARGO_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="MAIL_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="FONO_MSG" Type="String" />
+                                                                                                                                             <asp:Parameter Name="ID_ACC_PLT" Type="Int32" />
+                                                                                                                                             <asp:Parameter Name="CRT_GENERA_ACC" Type="Int32" />
+                                                                                                                                             <asp:Parameter Name="CRT_VB_ACC" Type="Int32" />
+                                                                                                                                             <asp:Parameter Name="CRT_RECHAZA_ACC" Type="Int32" />
+                                                                                                                                             <asp:Parameter Name="ID_QA_MSG" Type="Int32" />
+                                                                                                                                         </UpdateParameters>
+                                                                                                                                     </asp:SqlDataSource>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                               
                                                                         </div>
                                                                 </div>
                                 
@@ -1176,7 +1220,7 @@
                        var obs = $('#body_txtMemPbservaciones_I').val();
                       
                        var datos = "{'idObr':'" + idObr + "','codPlt':'" + codPlt + "','nomPlt':'" + nomPlt + "','idAct':'" + idAct + "','obs':'" + obs + "' }";
-                       alert(datos);
+                       //alert(datos);
                        $.ajax({
                            type: "POST",
                            url: "RegistroCalidadIngreso.aspx/guardaPaso_1",

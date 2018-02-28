@@ -59,12 +59,14 @@
     <Reference Include="DevExpress.Utils.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxPivotGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxThemes.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Bootstrap.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.DemoData.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.Resources.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -152,6 +154,7 @@
     <Content Include="assets\images\blankoChico.png" />
     <Content Include="assets\images\foco2.png" />
     <Content Include="assets\images\focoVerde.png" />
+    <Content Include="assets\images\logoBeltec2.png" />
     <Content Include="assets\images\pixel-admin\avatar.png" />
     <Content Include="assets\images\pixel-admin\blank.png" />
     <Content Include="assets\images\pixel-admin\blur.svg" />
@@ -200,6 +203,10 @@
     <Content Include="CSS\w3-theme-black.css" />
     <Content Include="CSS\w3.css" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Calidad\RegistrosCalidadListado.aspx" />
+    <Content Include="Pages\Calidad\verPlantilla.aspx" />
+    <Content Include="Pages\Calidad\consultarPlantilla.aspx" />
+    <Content Include="Pages\Calidad\MantenedorPlantillas.aspx" />
     <Content Include="Pages\Calidad\prueba2.aspx" />
     <Content Include="Pages\Calidad\Pruebas.aspx" />
     <Content Include="Pages\Calidad\RegistroCalidadIngreso.aspx" />
@@ -208,7 +215,7 @@
     <Content Include="Pages\Calidad\jquery.countdown360.js" />
     <Content Include="Pages\Productividad\AsignacionMO.aspx" />
     <Content Include="Pages\Productividad\calElabRegistro.aspx" />
-    <Content Include="Pages\Productividad\ccoInspeccionTerreno.aspx" />
+    <Content Include="Pages\Calidad\ccoInspeccionTerreno.aspx" />
     <Content Include="Pages\Productividad\checklist.aspx" />
     <Content Include="Pages\Productividad\ListaPendientes.aspx" />
     <Content Include="Pages\Productividad\ConfigSistema.aspx" />
@@ -264,7 +271,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Pages\Productividad\AsignacionMO.aspx.bak" />
-    <Content Include="Pages\Productividad\ccoInspeccionTerreno.aspx.bak" />
+    <Content Include="Pages\Calidad\ccoInspeccionTerreno.aspx.bak" />
     <Content Include="Pages\Productividad\checklist.aspx.bak" />
     <None Include="My Project\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile2.pubxml" />
@@ -286,6 +293,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Maestro.vb" />
+    <Compile Include="Pages\Calidad\RegistrosCalidadListado.aspx.designer.vb">
+      <DependentUpon>RegistrosCalidadListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\RegistrosCalidadListado.aspx.vb">
+      <DependentUpon>RegistrosCalidadListado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calidad\verPlantilla.aspx.designer.vb">
+      <DependentUpon>verPlantilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\verPlantilla.aspx.vb">
+      <DependentUpon>verPlantilla.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calidad\consultarPlantilla.aspx.designer.vb">
+      <DependentUpon>consultarPlantilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\consultarPlantilla.aspx.vb">
+      <DependentUpon>consultarPlantilla.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calidad\MantenedorPlantillas.aspx.designer.vb">
+      <DependentUpon>MantenedorPlantillas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\MantenedorPlantillas.aspx.vb">
+      <DependentUpon>MantenedorPlantillas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Pages\Calidad\prueba2.aspx.designer.vb">
       <DependentUpon>prueba2.aspx</DependentUpon>
     </Compile>
@@ -321,10 +356,10 @@
       <DependentUpon>calElabRegistro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Productividad\ccoInspeccionTerreno.aspx.designer.vb">
+    <Compile Include="Pages\Calidad\ccoInspeccionTerreno.aspx.designer.vb">
       <DependentUpon>ccoInspeccionTerreno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Productividad\ccoInspeccionTerreno.aspx.vb">
+    <Compile Include="Pages\Calidad\ccoInspeccionTerreno.aspx.vb">
       <DependentUpon>ccoInspeccionTerreno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

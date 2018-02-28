@@ -1,81 +1,39 @@
-﻿Imports System.IO
+﻿Imports DevExpress.Web.Data
+Imports System.IO
 Imports DevExpress.Web
 Imports DevExpress.Web.Bootstrap
-Imports DevExpress.Web.Data
-Imports DevExpress.Web.Demos
 
-Public Class Formulario_web16
+Imports DevExpress.Web.Demos
+Public Class Formulario_web19
     Inherits System.Web.UI.Page
     Private Const UploadDirectory As String = "~/archivos/"
 
-    Protected Sub ddlProyectos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlProyectos.SelectedIndexChanged
-        Session.Add("idObra", ddlProyectos.SelectedItem.Value)
-        'lblProyecto.Text = ddlProyectos.SelectedItem.Text
-        Dim codigo As String
-        Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
-        codigo = DAL.Calidad.Actividad.GeneraCodigoActividad(ssUsuario, ddlProyectos.Value)
-        codigotexto.Value = codigo
-        Session.Add("xCodigo", codigo)
-        'lblProyecto_nombre.Text = ddlProyectos.Text
-        'lblPLantillaCodigo.Text = codigotexto.Text
-        'lblPlantillaNombre.Text = txtnombre.Text
 
-
-    End Sub
 
     Protected Sub btnNuevaActividad_Click(sender As Object, e As EventArgs) Handles btnNuevaActividad.Click
         Dim newAct As Boolean
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         newAct = DAL.Calidad.Actividad.insertarActividades(ssUsuario, ssUsuario.ID_MAESTRO, Session.Contents("idObra"), ddlEtapa.SelectedItem.Value, "1", txtAct_Nombre.Value)
         If newAct = True Then
-            'mensaje
             dllActividad.DataBind()
-            'lblProyecto_nombre.Text = ddlProyectos.Text
-            'lblPLantillaCodigo.Text = codigotexto.Text
-            'lblPlantillaNombre.Text = txtnombre.Text
             dllActividad.Text = txtAct_Nombre.Value
             txtEtapa.Text = ddlEtapa.Text
-            'lblActividad.Text = dllActividad.Text
-
-
-
-            ' Los iconos de arriba
-
-            lblObra.Text = ddlProyectos.Text
-            'lblPlnCod.Text = codigotexto.Text
+            lblObra.Text = ddlProyectos.Text  'txtProyectos.Text
             lblPlnNom.Text = txtnombre.Text
             lblAct.Text = dllActividad.Text
-
-            '------  
         Else
-            'mensaje 
+
         End If
-
-
-
-
 
     End Sub
 
     Protected Sub dllActividad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dllActividad.SelectedIndexChanged
         Dim nombreEtapa As String
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
-        Session.Add("xActividad", dllActividad.Value)
-
         nombreEtapa = DAL.Calidad.Actividad.buscarEtapa(ssUsuario, dllActividad.Value)
-        'lblProyecto_nombre.Text = ddlProyectos.Text
-        'lblPLantillaCodigo.Text = codigotexto.Text
-        'lblPlantillaNombre.Text = txtnombre.Text
-
-        ' Los iconos de arriba
-
         lblObra.Text = ddlProyectos.Text
-        '  lblPlnCod.Text = codigotexto.Text
         lblPlnNom.Text = txtnombre.Text
         lblAct.Text = dllActividad.Text
-
-        '------  
-
         txtEtapa.Text = nombreEtapa
 
 
@@ -83,45 +41,11 @@ Public Class Formulario_web16
 
 #Region "Web method"
     <System.Web.Services.WebMethod()>
-    Public Shared Sub guardaPaso_1(idObr As Integer, codPlt As String, nomPlt As String, idAct As Integer, obs As String)
-        'Public Shared Sub guardaPaso1()
-        Dim newPlantilla As Boolean
-        Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
-        'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codigotexto.Text, HttpContext.Current.Session.Contents("idObra"), dllActividad.Value, 1, txtnombre.Text, txtMemPbservaciones.Text)
-
-        Dim ID_ACC_PLT As Integer
-
-        If HttpContext.Current.Session("ID_ACC_PLT") Is Nothing Then
-            'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
-            newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codPlt, idObr, 1, idAct, nomPlt, obs)
-            ID_ACC_PLT = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
-            HttpContext.Current.Session.Add("ID_ACC_PLT", ID_ACC_PLT)
-        Else
-            ' newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
-            newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), codPlt, idObr, idAct, 1, nomPlt, obs)
-        End If
-    End Sub
-
-    <System.Web.Services.WebMethod()>
     Public Shared Sub guardaGrupo(ByVal nombreGrupo As String)
         Dim newGrupo As Boolean
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
         newGrupo = DAL.Calidad.Actividad.insertarGrupoActividad(ssUsuario, nombreGrupo)
 
-    End Sub
-
-
-
-    Protected Sub txtnombre_ValueChanged(sender As Object, e As EventArgs) Handles txtnombre.ValueChanged
-        Session.Add("xtxtNombre", txtnombre.Value)
-    End Sub
-
-    Protected Sub txtMemPbservaciones_ValueChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.ValueChanged
-        Session.Add("xObs", txtMemPbservaciones.Text)
-    End Sub
-
-    Protected Sub codigotexto_TextChanged(sender As Object, e As EventArgs) Handles codigotexto.TextChanged
-        Session.Add("xCodigo", codigotexto.Text)
     End Sub
 #End Region
     Protected Sub Grid_CellEditorInitialize(ByVal sender As Object, ByVal e As ASPxGridViewEditorEventArgs)
@@ -154,13 +78,46 @@ Public Class Formulario_web16
     End Sub
 
     Private Sub Formulario_web16_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If (Not IsPostBack) Then
 
-            Grid.StartEdit(0)
-            '  lblFecha.Text = Date.Today.ToLongDateString
-            limpiarVariables()
 
-        End If
+        If Request.Params("idPlantilla") <> "" Then
+                Dim idPlantilla As String = Request.Params("idPlantilla")
+                Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
+            Dim xPlantilla As DataSet = DAL.Calidad.Plantilla.traerPlantilla(ssUsuario, Session.Contents("idObra"), idPlantilla)
+
+            Session("ID_ACC_PLT") = xPlantilla.Tables(0).Rows(0).Item("ID_ACC_PLT").ToString
+                Session("xCodigo") = xPlantilla.Tables(0).Rows(0).Item("CODIGO").ToString
+
+            Session("xActividad") = xPlantilla.Tables(0).Rows(0).Item("ACTIVIDAD").ToString
+            Session("xtxtNombre") = xPlantilla.Tables(0).Rows(0).Item("NOMBRE_ACC").ToString
+            Session("xObs") = xPlantilla.Tables(0).Rows(0).Item("OBS_ACC").ToString
+
+            If Page.IsPostBack = False Then
+                ddlProyectos.Value = Session.Contents("idObra")
+                ddlProyectos.Text = Session.Contents("nombreObra")
+                'txtProyectos.Text =
+                'txtObraNombre.Text = 
+                codigotexto.Value = Session("xCodigo")
+                txtnombre.Text = Session("xtxtNombre")
+                dllActividad.Value = Session("xActividad")
+                txtMemPbservaciones.Text = Session("xObs")
+
+            End If
+
+
+            Grid.DataBind()
+                grillaCheck.DataBind()
+                GridVb.DataBind()
+                gridMensajes.DataBind()
+
+
+
+
+                Grid.StartEdit(0)
+                '  lblFecha.Text = Date.Today.ToLongDateString
+                ' limpiarVariables()
+            End If
+
 
 
 
@@ -290,4 +247,5 @@ Public Class Formulario_web16
     Protected Sub GridVb_DataBound(sender As Object, e As EventArgs) Handles GridVb.DataBound
         ' GridVb.Columns("ORDEN_VB").Visible = False
     End Sub
+
 End Class

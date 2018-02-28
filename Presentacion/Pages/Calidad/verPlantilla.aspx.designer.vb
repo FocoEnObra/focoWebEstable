@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Formulario_web16
+Partial Public Class Formulario_web19
     
     '''<summary>
     '''Control UpdatePanel7.
@@ -48,15 +48,6 @@ Partial Public Class Formulario_web16
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblObra As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control GuardarPaso_1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GuardarPaso_1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
     
     '''<summary>
     '''Control ddlProyectos.
@@ -248,24 +239,6 @@ Partial Public Class Formulario_web16
     Protected WithEvents sqlTipologias As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control A2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents A2 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-    
-    '''<summary>
-    '''Control A1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents A1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-    
-    '''<summary>
     '''Control txtNuevoGrupo.
     '''</summary>
     '''<remarks>
@@ -318,24 +291,6 @@ Partial Public Class Formulario_web16
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents sqlListaCheck As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control A3.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents A3 As Global.System.Web.UI.HtmlControls.HtmlAnchor
-    
-    '''<summary>
-    '''Control A4.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents A4 As Global.System.Web.UI.HtmlControls.HtmlAnchor
     
     '''<summary>
     '''Control GridVb.

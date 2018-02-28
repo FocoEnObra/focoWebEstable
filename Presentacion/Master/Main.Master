@@ -890,7 +890,8 @@
 					<a href="#"><i class="menu-icon fas fa-book"></i><span class="mm-text">Calidad de Obra</span></a>
                     <ul>
                         <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Crear Plantilla</span> </a>
-                            <li><a tabindex="-1" href="../Productividad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-calendar"></i><span class="mm-text">Listado de Actividades</span> </a>
+                             <li><a tabindex="-1" href="../calidad/verPlantilla.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Mantenedor de plantilla</span> </a>
+                            <li><a tabindex="-1" href="../calidad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-calendar"></i><span class="mm-text">Listado de Actividades</span> </a>
                            <li><a tabindex="-1" href="../Productividad/ListaPendientes.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">listado de Act. Pend.</span> </a>
                           
                            LISTADO DE ACTIVIDADES

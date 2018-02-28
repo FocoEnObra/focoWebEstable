@@ -75,6 +75,7 @@
     <Compile Include="Calidad\Actividad.vb" />
     <Compile Include="Calidad\Mensajeria.vb" />
     <Compile Include="Calidad\Plantilla.vb" />
+    <Compile Include="Calidad\registro.vb" />
     <Compile Include="Empresa\Dias.vb" />
     <Compile Include="Empresa\Obra.vb" />
     <Compile Include="Empresa\Areas.vb" />

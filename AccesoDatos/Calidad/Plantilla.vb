@@ -57,6 +57,20 @@ Namespace Calidad
             End Try
             Return -1
         End Function
+        Public Shared Function traerPlantilla(usuario As EL.Seguridad.Usuario, ByVal idObra As Integer, ByVal idPlantilla As Integer) As DataSet
+            Dim vCon As New Conexion(usuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
+            Dim vParam As New Dictionary(Of String, Object)
+            Dim vTablas As DataSet = Nothing
+            vParam.Add("@ID_OBR", idObra)
+            vParam.Add("@ID_ACC_PLT", idPlantilla)
+            Try
+                vTablas = vCon.ExecSP_DS("SP_QA_ACC_PLT_BUSCAR", vParam)
+                Return vTablas
+            Catch ex As Exception
+                Throw New Exception("No se pudo TRAER LA PLANTILLA", ex)
+            End Try
+
+        End Function
 
     End Class
 End Namespace

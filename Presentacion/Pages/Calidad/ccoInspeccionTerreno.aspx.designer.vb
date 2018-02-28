@@ -50,6 +50,33 @@ Partial Public Class Formulario_web11
     Protected WithEvents gridActividades As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
+    '''Control ver.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ver As Global.DevExpress.Web.GridViewCommandColumnCustomButton
+    
+    '''<summary>
+    '''Control version.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents version As Global.DevExpress.Web.GridViewCommandColumnCustomButton
+    
+    '''<summary>
+    '''Control calidad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents calidad As Global.DevExpress.Web.GridViewCommandColumnCustomButton
+    
+    '''<summary>
     '''Control sqlCalidad.
     '''</summary>
     '''<remarks>
