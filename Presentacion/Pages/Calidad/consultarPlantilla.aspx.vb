@@ -26,7 +26,7 @@ Public Class Formulario_web18
             treeUcos.Nodes.Item(0).Expanded = True
             treeUcos.UnselectAll()
 
-
+            ' ddd
 
         End If
         ' countLiteral.Text = treeUcos.SelectionCount.ToString()
@@ -70,8 +70,6 @@ Public Class Formulario_web18
         End If
         listUco.FilterExpression = (GroupOperator.Combine(GroupOperatorType.And, selectionCriteria)).ToString()
     End Sub
-
-
     Private Sub SaveSelection()
         Dim chkUcos As String = ""
         Session(NodosSelecionados) = treeUcos.GetSelectedNodes().Select(Function(node) node.Key)
@@ -125,11 +123,9 @@ Public Class Formulario_web18
         Next
         Dim plantilla As Integer = Request.Params("idPlantilla")
         Dim result As Boolean = DAL.registro.registro.insertarRegistrosCalidad(Session.Contents("xSSN_USUARIO"), plantilla, Trim(chkUcos), Trim(USUARIOS).Remove(USUARIOS.Length - 1))
-
         If result Then
             Response.Redirect("RegistrosCalidadListado.aspx", True)
             '            Server.Transfer("RegistrosCalidadListado.aspx", True)
-
         End If
     End Sub
 End Class

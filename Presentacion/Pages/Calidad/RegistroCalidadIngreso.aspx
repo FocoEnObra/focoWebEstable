@@ -1216,7 +1216,6 @@ ORDER BY [ID_PLT_VB] DESC">
                        var codPlt = $('#body_codigotexto_I').val();
                        var nomPlt = $('#body_txtnombre_I').val();
                        var idAct = $('#body_dllActividad_VI').val();
-                       //var idEta = $('#body_txtEtapa_I').val();
                        var obs = $('#body_txtMemPbservaciones_I').val();
                       
                        var datos = "{'idObr':'" + idObr + "','codPlt':'" + codPlt + "','nomPlt':'" + nomPlt + "','idAct':'" + idAct + "','obs':'" + obs + "' }";

@@ -92,12 +92,10 @@ Public Class Formulario_web16
         Dim ID_ACC_PLT As Integer
 
         If HttpContext.Current.Session("ID_ACC_PLT") Is Nothing Then
-            'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
             newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codPlt, idObr, 1, idAct, nomPlt, obs)
             ID_ACC_PLT = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
             HttpContext.Current.Session.Add("ID_ACC_PLT", ID_ACC_PLT)
         Else
-            ' newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
             newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), codPlt, idObr, idAct, 1, nomPlt, obs)
         End If
     End Sub
@@ -112,17 +110,21 @@ Public Class Formulario_web16
 
 
 
-    Protected Sub txtnombre_ValueChanged(sender As Object, e As EventArgs) Handles txtnombre.ValueChanged
-        Session.Add("xtxtNombre", txtnombre.Value)
-    End Sub
+    'Protected Sub txtnombre_ValueChanged(sender As Object, e As EventArgs) Handles txtnombre.ValueChanged
+    '    Session.Add("xtxtNombre", txtnombre.Value)
+    'End Sub
 
-    Protected Sub txtMemPbservaciones_ValueChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.ValueChanged
-        Session.Add("xObs", txtMemPbservaciones.Text)
-    End Sub
+    'Protected Sub txtMemPbservaciones_ValueChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.ValueChanged
+    '    Session.Add("xObs", txtMemPbservaciones.Text)
+    'End Sub
 
-    Protected Sub codigotexto_TextChanged(sender As Object, e As EventArgs) Handles codigotexto.TextChanged
-        Session.Add("xCodigo", codigotexto.Text)
-    End Sub
+    'Protected Sub codigotexto_TextChanged(sender As Object, e As EventArgs) Handles codigotexto.TextChanged
+    '    Session.Add("xCodigo", codigotexto.Text)
+    'End Sub
+
+    'Protected Sub txtMemPbservaciones_TextChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.TextChanged
+    '    Session.Add("xObs", txtMemPbservaciones.Text)
+    'End Sub
 #End Region
     Protected Sub Grid_CellEditorInitialize(ByVal sender As Object, ByVal e As ASPxGridViewEditorEventArgs)
         If e.Column.FieldName = "ID_TIP" Then
@@ -220,22 +222,19 @@ Public Class Formulario_web16
         End If
     End Sub
 
-    Protected Sub txtMemPbservaciones_TextChanged(sender As Object, e As EventArgs) Handles txtMemPbservaciones.TextChanged
-        Session.Add("xObs", txtMemPbservaciones.Text)
-    End Sub
 
     Protected Sub Grid_InitNewRow(sender As Object, e As ASPxDataInitNewRowEventArgs) Handles Grid.InitNewRow
 
         If Session("ID_ACC_PLT") Is Nothing Then
             Dim newPlantilla As Boolean
             Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
-            newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), 1, HttpContext.Current.Session.Contents("xActividad"), HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
+            newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codigotexto.Text, ddlProyectos.Value, dllActividad.Value, 1, txtnombre.Value, txtMemPbservaciones.Text)
+            'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("xCodigo"), HttpContext.Current.Session.Contents("idObra"), HttpContext.Current.Session.Contents("xActividad"), 1, HttpContext.Current.Session.Contents("xtxtNombre"), HttpContext.Current.Session.Contents("xObs"))
             Dim ID_ACC_PLT As Integer = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
             e.NewValues("ID_ACC_PLT") = ID_ACC_PLT
             Session.Add("ID_ACC_PLT", ID_ACC_PLT)
-
-
-
+        Else
+            e.NewValues("ID_ACC_PLT") = Session("ID_ACC_PLT")
         End If
 
     End Sub

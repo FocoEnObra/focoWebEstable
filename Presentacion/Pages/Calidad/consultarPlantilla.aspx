@@ -389,8 +389,10 @@
 					                                <div class="panel-body buttons-with-margins" id="page-alerts-dark-demo">
 						                                      <button data-type="success" data-text="<strong>Bien hecho!</strong>Tus registros fueron creados" class="btn btn-small btn-primary auto-close-alert">Guardar Registros</button>
 						                               
-					                                </div>
-				                                 </div>--%>
+					                                </div>
+
+				                                 </div>--%>
+
 
 
 
