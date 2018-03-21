@@ -69,8 +69,6 @@ Namespace Calidad
             Catch ex As Exception
                 Throw New Exception("No se pudo TRAER LA PLANTILLA", ex)
             End Try
-
         End Function
-
     End Class
 End Namespace

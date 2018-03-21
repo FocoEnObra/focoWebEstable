@@ -47,9 +47,7 @@ Public Class Formulario_web18
 
     End Sub
     Protected Sub treeUcos_DataBound(sender As Object, e As EventArgs) Handles treeUcos.DataBound
-
         SetNodeSelectionSettings()
-
     End Sub
 
     Protected Sub treeUcos_CustomSummaryCalculate(sender As Object, e As TreeListCustomSummaryEventArgs) Handles treeUcos.CustomSummaryCalculate
@@ -124,8 +122,9 @@ Public Class Formulario_web18
         Dim plantilla As Integer = Request.Params("idPlantilla")
         Dim result As Boolean = DAL.registro.registro.insertarRegistrosCalidad(Session.Contents("xSSN_USUARIO"), plantilla, Trim(chkUcos), Trim(USUARIOS).Remove(USUARIOS.Length - 1))
         If result Then
-            Response.Redirect("RegistrosCalidadListado.aspx", True)
-            '            Server.Transfer("RegistrosCalidadListado.aspx", True)
+            ScriptManager.RegisterStartupScript(Me, Me.Page.GetType, "myFuncionAlerta", "myFuncionAlerta();", True)
+            'Response.Redirect("RegistrosCalidadListado.aspx", True)
+
         End If
     End Sub
 End Class

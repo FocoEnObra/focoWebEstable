@@ -63,6 +63,7 @@ Public Class FrmLogin
             dtEmpresas = vUser.Empresas
             Session.Add("xEMPRESA", dtEmpresas)
 
+
         Catch sqlEx As SqlException
             'Alerta(sqlEx.Message)
             Exit Sub
@@ -78,7 +79,7 @@ Public Class FrmLogin
                 If vUser.Empresas.Rows.Count = 1 Then
                     'Solo tiene una empresa
                     'Usuario.
-                    ' DAL.Seguridad.Usuario.CargarParticular(Usuario)
+                    DAL.Seguridad.Usuario.CargarParticular(vUser)
                 End If
                 'Podemos redireccionar
                 Session.Add("xSSN_USUARIO", vUser)

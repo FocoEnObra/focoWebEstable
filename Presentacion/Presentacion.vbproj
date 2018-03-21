@@ -155,6 +155,9 @@
     <Content Include="assets\images\foco2.png" />
     <Content Include="assets\images\focoVerde.png" />
     <Content Include="assets\images\logoBeltec2.png" />
+    <Content Include="Pages\Calidad\RegistroCalidadTrabajo.aspx" />
+    <Content Include="Pages\Calidad\funcionesCliente.js" />
+    <Content Include="Pages\Calidad\main-navbar-logo.png" />
     <Content Include="assets\images\pixel-admin\avatar.png" />
     <Content Include="assets\images\pixel-admin\blank.png" />
     <Content Include="assets\images\pixel-admin\blur.svg" />
@@ -171,6 +174,7 @@
     <Content Include="assets\images\themes\clean\body-bg.gif" />
     <Content Include="assets\javascripts\bootstrap-editable-demo.js" />
     <Content Include="assets\javascripts\bootstrap-editable-demo.min.js" />
+    <Content Include="assets\javascripts\bootstrap-notify.min.js" />
     <Content Include="assets\javascripts\bootstrap.js" />
     <Content Include="assets\javascripts\bootstrap.min.js" />
     <Content Include="assets\javascripts\demo-mock.js" />
@@ -203,6 +207,7 @@
     <Content Include="CSS\w3-theme-black.css" />
     <Content Include="CSS\w3.css" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Calidad\megamenu.aspx" />
     <Content Include="Pages\Calidad\RegistrosCalidadListado.aspx" />
     <Content Include="Pages\Calidad\verPlantilla.aspx" />
     <Content Include="Pages\Calidad\consultarPlantilla.aspx" />
@@ -293,6 +298,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Maestro.vb" />
+    <Compile Include="Pages\Calidad\RegistroCalidadTrabajo.aspx.designer.vb">
+      <DependentUpon>RegistroCalidadTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\RegistroCalidadTrabajo.aspx.vb">
+      <DependentUpon>RegistroCalidadTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calidad\megamenu.aspx.designer.vb">
+      <DependentUpon>megamenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Calidad\megamenu.aspx.vb">
+      <DependentUpon>megamenu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Pages\Calidad\RegistrosCalidadListado.aspx.designer.vb">
       <DependentUpon>RegistrosCalidadListado.aspx</DependentUpon>
     </Compile>

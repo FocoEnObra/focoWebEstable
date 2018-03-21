@@ -33,7 +33,6 @@ Namespace Seguridad
                 Ingresar.NickName = vTablas.Tables(0).Rows(0).Item("NOMBRE_USU")
                 Ingresar.Estado = EL.Seguridad.EstadoUsuario.Activo
                 Ingresar.ID_MAESTRO = vTablas.Tables(0).Rows(0).Item("ID_USU")
-
                 Ingresar.ip = ip
                 Ingresar.hostName = host
                 Ingresar.UsuarioTest = vTablas.Tables(0).Rows(0).Item("USUARIO_TEST")
@@ -121,7 +120,8 @@ Namespace Seguridad
                         vUsuario.PaginaInicio = vTablas.Tables(0).Rows(0).Item("PAGINA_INI")
                     End If
                 End If
-                vUsuario.EmpresaSelected.ObraIDSelected = vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
+                vUsuario.EmpresaSelected.ObraIDSelected = 68 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
+                vUsuario.EmpresaSelected.ObraNombreSelected = "DEMO BELTEC"
             End If
         End Sub
 

@@ -4814,12 +4814,13 @@ body:after {
     }
 
 #main-navbar #main-menu-toggle .hide-menu-text {
-    left: 51px;
+    left: 0px;
     line-height: 46px;
     margin-top: -23px;
     opacity: 0;
     position: absolute;
-    z-index: 1035
+    z-index: 1035;
+    top: 23px;
 }
 
 .ie8 #main-navbar #main-menu-toggle .hide-menu-text {

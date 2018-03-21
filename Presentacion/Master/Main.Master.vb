@@ -2,26 +2,41 @@
     Inherits System.Web.UI.MasterPage
 
 
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Page.ClientScript.GetPostBackEventReference(Me, "")
+        ' Page.ClientScript.GetPostBackEventReference(Me, "")
+        Dim sUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         If Not Page.IsPostBack Then
-            'CargarObras()
-            CargarEmpresa()
-
-            'lnk_CM.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(Me, lnk_CM.ID.ToString))
-            'lnk_CM.HRef = "~/foco/proyectosEnGrupo.aspx"
-
+            lblUsuario.Text = sUsuario.ip & " - " & sUsuario.NickName & " - " & sUsuario.EmpresaSelected.Nombre
+            lbl_obra.Text = sUsuario.EmpresaSelected.ObraNombreSelected
         End If
+
+
+
     End Sub
 
     Private Sub CargarObras()
-        'Try
-        '        rpt1.DataSource = DAL.Empresa.Obra.ListarObrasUsuario(Session("SSN_USUARIO"))
-        '        rpt1.DataBind()
 
-        '    Catch ex As Exception
+
+
+
+
+
+
+        'Try
+        '    Dim dt As New DataTable
+        'dt = DAL.Empresa.Obra.ListarObrasUsuario(Session("xSSN_USUARIO"))
+        '    If dt.Rows.Count > 0 Then
+        '        lblProyecto.Text = dt.Rows.Item(0).ToString
+        '    Else
+        '        lblProyecto.Text = "NINGUNA"
+        '    End If
+
+        'Catch ex As Exception
         'End Try
+
+
     End Sub
 
     'Private Sub lnk_CM_ServerClick(sender As Object, e As System.EventArgs) Handles lnk_CM.ServerClick
@@ -41,11 +56,13 @@
 
         'If emp.Rows.Count = 1 Then
         '    lblUsuario.Text = usuario.ToUpper 'emp.Rows(0).Item(1).ToString
-        '    lblEmpresa.Text = nombreEmpresa.ToUpper
+        '    ' lblEmpresa.Text = nombreEmpresa.ToUpper
         '    lblEmpresaMenu.Text = nombreEmpresa.ToUpper
 
         'End If
 
 
     End Sub
+
+
 End Class

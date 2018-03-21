@@ -6,7 +6,6 @@ Namespace Empresa
         Public Shared Function ListarObrasUsuario(vUsuario As EL.Seguridad.Usuario) As DataTable
             Dim vCon As New Conexion(vUsuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
             Dim vParam As New Dictionary(Of String, Object)
-
             vParam.Add("@ID_USU", vUsuario.ID_PARTICULAR)
             Try
                 ListarObrasUsuario = vCon.ExecSP("WEB_SP_OBRAS_POR_USUARIO", vParam)

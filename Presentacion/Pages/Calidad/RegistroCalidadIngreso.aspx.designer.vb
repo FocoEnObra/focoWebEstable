@@ -56,7 +56,7 @@ Partial Public Class Formulario_web16
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents GuardarPaso_1 As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents GuardarPaso_1 As Global.DevExpress.Web.Bootstrap.BootstrapButton
     
     '''<summary>
     '''Control ddlProyectos.
@@ -201,6 +201,15 @@ Partial Public Class Formulario_web16
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtMemPbservaciones As Global.DevExpress.Web.Bootstrap.BootstrapMemo
+    
+    '''<summary>
+    '''Control UpdatePanel43.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdatePanel43 As Global.System.Web.UI.UpdatePanel
     
     '''<summary>
     '''Control Grid.

@@ -30,7 +30,7 @@
     </script>
      <div class="panel">  
                     <div class="panel-heading">
-						<span class="panel-title" style="color:#17649A"><b>LISTADO DE ACTIVIDADES DE CONTROL DE CALIDAD.</b></span></div>
+						<span class="panel-title" style="color:#17649A"><b>LISTADO DE PLANTILLAS DE CONTROL DE CALIDAD.</b></span></div>
 				<div class="stat-panel">
 					<div class="stat-row">
 						<div class="stat-cell col-sm-12 padding-sm ">
@@ -55,13 +55,12 @@
                                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                  <contenttemplate>
                                       <div class="col-md-12">
-                                            <label class="control-label">Listado de Actividades Controladas</label>
+                                            <label class="control-label">Listado de plantillas creadas</label>
                                             <br />
                                 
                                             <dx:ASPxGridView ID="gridActividades"  ClientInstanceName="grid" runat="server" AutoGenerateColumns="False" DataSourceID="sqlCalidad" 
                                                 EnableTheming="True" KeyFieldName="ID_ACC_PLT" Theme="MaterialCompact" Width="100%">
                                                 <Settings GridLines="Horizontal" VerticalScrollableHeight="400" VerticalScrollBarStyle="VirtualSmooth" />
-                                                <SettingsBehavior AllowFocusedRow="True" />
                                                 <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
                                                 <SettingsSearchPanel Visible="True" />
                                                 <SettingsPager EnableAdaptivity="true" Mode="EndlessPaging" Position="Top" />

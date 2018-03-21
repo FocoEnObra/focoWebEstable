@@ -7,8 +7,11 @@
     <link href="../../assets/stylesheets/DragAndDrop.css" rel="stylesheet" />
     <link href="../../CSS/animate.css" rel="stylesheet" />
     <link href="../../assets/stylesheets/pace-theme-flash.css" rel="stylesheet" />
-    <script src="../../../assets/javascripts/pace.min.js"></script>
+    <script src="../../assets/javascripts/pace.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="../../assets/javascripts/bootstrap-notify.min.js"></script>
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body"  runat="server">
 
@@ -51,8 +54,6 @@
                         <a href="#" class="list-group-item">
                               <p class="list-group-item-heading text-left text-xs"><i class="far fa-calendar-check"></i>&nbsp;&nbsp;<b>Actividad:</b></p>
                               <p class="list-group-item-text text-left text-xs"><asp:Label ID="lblActividad" runat="server" Text=""></asp:Label></p>
-                             
-                              
                             </a>
                         <a href="#" class="list-group-item">
                                <p class="list-group-item-heading text-left text-xs"><i class="fas fa-angle-right"></i>&nbsp;&nbsp;<b>Etapa:</b></p>
@@ -504,6 +505,22 @@
 
 
          <script>
+                                                      function ListaTemplate() {
+                                                                myVar = setTimeout(function () { window.open('RegistrosCalidadListado.aspx', '_self'); }, 4000);
+                                                            }
+
+                                                            function myFuncionAlerta() {
+                                                                var notify = $.notify('<strong>Guardando..</strong> no cierre esta pagina...', {
+                                                                    allow_dismiss: false,
+                                                                    showProgressbar: true,
+                                                                    allow_dismiss: false
+                                                                });
+
+                                                                setTimeout(function () {
+                                                                    notify.update({ 'type': 'success', 'message': '<strong>Listo...</strong> Su registro de calidad ha sido creado..!', 'progress': 25 });
+                                                                }, 2500);
+                                                                ListaTemplate();
+                                                      }
                                                             $(document).ready(function () {
                                                                 $("#body_GuardarPaso").click(function () {
                                                                     var res = document.getElementById("myUsuarios").value
@@ -525,14 +542,5 @@
                                                                     });
                                                                 });
                                                             });
-
-
-
-
-
-
-
  </script>
-
-
 </asp:Content>

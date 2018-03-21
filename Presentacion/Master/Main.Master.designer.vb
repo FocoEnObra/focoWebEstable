@@ -23,6 +23,24 @@ Partial Public Class Main
     Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
     
     '''<summary>
+    '''Control form1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    
+    '''<summary>
+    '''Control lbl_obra.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbl_obra As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control lblUsuario.
     '''</summary>
     '''<remarks>
@@ -32,15 +50,6 @@ Partial Public Class Main
     Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lblEmpresa.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblEmpresa As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''Control lblEmpresaMenu.
     '''</summary>
     '''<remarks>
@@ -48,15 +57,6 @@ Partial Public Class Main
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblEmpresaMenu As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control form1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
     '''Control ScriptManager1.
@@ -75,4 +75,40 @@ Partial Public Class Main
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents body As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    
+    '''<summary>
+    '''Control UpdatePanel1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
+    
+    '''<summary>
+    '''Control radioObras.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents radioObras As Global.System.Web.UI.WebControls.RadioButtonList
+    
+    '''<summary>
+    '''Control sqlProyectos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sqlProyectos As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control hObraid.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hObraid As Global.System.Web.UI.WebControls.HiddenField
 End Class
