@@ -11,17 +11,16 @@ Public Class Formulario_web110
             Dim xlbl_obra As Label = CType(Me.Master.FindControl("lbl_obra"), Label)
             Dim valorobras As HiddenField = CType(Me.Master.FindControl("hObraid"), HiddenField)
             Dim sUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
-
-            gridActividades.DataBind()
-
             If sUsuario.EmpresaSelected.ObraNombreSelected = "" Then
                 xlbl_obra.Text = "sin obras listado"
             Else
                 '  lbl_obra.Text = "Proyecto [ " & sUsuario.EmpresaSelected.ObraNombreSelected & " ]"
                 xlbl_obra.Text = sUsuario.EmpresaSelected.ObraNombreSelected
                 valorobras.Value = sUsuario.EmpresaSelected.ObraIDSelected
-
+                Session.Add("idObra", sUsuario.EmpresaSelected.ObraIDSelected)
             End If
+            gridActividades.DataBind()
+
         End If
 
 

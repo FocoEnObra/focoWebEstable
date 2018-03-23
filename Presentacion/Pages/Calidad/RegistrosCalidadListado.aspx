@@ -16,11 +16,14 @@
           .auto-style1 {
               height: 10px;
           }*/
+          .auto-style1 {
+              height: 20px;
+          }
       </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-     .<script type="text/javascript">
+     <script type="text/javascript">
         function OnToolbarItemClick(s, e) {
             if(IsCustomExportToolbarCommand(e.item.name)) {
                 e.processOnServer=true;
@@ -39,17 +42,13 @@
                                         off_state_content: '<span class="fa fa-times"></span>'
                                         
                                     });
-
+                                    
                                     $('#switcher-example-2').click(function () {
-                                       //$('#switchers-disabled input').switcher('enable');
-
                                         $('#collapseExample').collapse('toggle');
 
                                     });
 
-                                    //$('#switcher-disable-all').click(function () {
-                                    //    $('#switchers-disabled input').switcher('disable');
-                                    //});
+                                  
                                 });
 
                             </script><!-- / Javascript --><div class="collapse navbar multi-collapse " id="collapseExample">
@@ -70,7 +69,7 @@
                                                         ListBoxStyle-HorizontalAlign="Justify" ListBoxStyle-VerticalAlign="Middle"
                                                         ListBoxStyle-Wrap="True" LoadingPanelStyle-HorizontalAlign="Center"
                                                         RightToLeft="Default" BorderLeft-BorderStyle="None" BorderRight-BorderStyle="None"
-                                                        BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" NullText="seleciona una o varias etapas">
+                                                        BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" >
                                                     </dx:ASPxTokenBox>
                                                                 <asp:SqlDataSource runat="server" ID="sqlEtapa" ConnectionString='<%$ ConnectionStrings:cnxCalidad %>' SelectCommand="SP_WS_TRAER_ETAPA" SelectCommandType="StoredProcedure" >
                                                                 <SelectParameters>
@@ -79,10 +78,7 @@
                                                             </asp:SqlDataSource>
                                        </ContentTemplate>
 
-                                <%--    <Triggers>
-                                           <asp:AsyncPostBackTrigger ControlID ="btn_Filtrar" /> 
-
-                                    </Triggers>--%>
+                           
 
                                     </asp:UpdatePanel>
 
@@ -107,21 +103,15 @@
                                                                  ListBoxStyle-HorizontalAlign="Justify" ListBoxStyle-VerticalAlign="Middle"
                                                                  ListBoxStyle-Wrap="True" LoadingPanelStyle-HorizontalAlign="Center"
                                                                  RightToLeft="Default" BorderLeft-BorderStyle="None" BorderRight-BorderStyle="None"
-                                                                 BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" NullText="seleciona uno varias actividades">
+                                                                 BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" >
                                                        </dx:ASPxTokenBox>
                                                 <asp:SqlDataSource runat="server" ID="sqlActividad" ConnectionString='<%$ ConnectionStrings:cnxCalidad %>' 
                                                     SelectCommand="SELECT [ID_QA_ACT] ,[ID_OBR],[NOMBRE_ACT],[ID_ETA] FROM [QA_ACTIVIDAD] WHERE ID_OBR=@ID_OBR" >
                                                     <SelectParameters>
-                                                      <%--  <asp:Parameter  Name="ID_ETA" Type="String" />--%>
                                                         <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" DefaultValue ="68" />
                                                     </SelectParameters>
                                                 </asp:SqlDataSource>
                                         </ContentTemplate>
-
-                               <%--     <Triggers>
-                                           <asp:AsyncPostBackTrigger ControlID ="btn_Filtrar" /> 
-
-                                    </Triggers>--%>
 
                                     </asp:UpdatePanel>
 
@@ -148,7 +138,7 @@
                                            ShowShadow="False" HorizontalAlign="Justify"
                                            ListBoxStyle-HorizontalAlign="Justify" ListBoxStyle-VerticalAlign="Middle"
                                            ListBoxStyle-Wrap="True" LoadingPanelStyle-HorizontalAlign="Center" BorderLeft-BorderStyle="None" BorderRight-BorderStyle="None"
-                                           BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" NullText="seleciona uno o varios estados">
+                                           BorderTop-BorderStyle="None" BorderBottom-BorderStyle="Solid" BackColor="#F3F3F3" >
                                            <Items>
                                                <dx:ListEditItem Text="PENDIENTES" Value="0"></dx:ListEditItem>
                                                <dx:ListEditItem Text="APROBADO" Value="1"></dx:ListEditItem>
@@ -164,10 +154,7 @@
 
                                               </ContentTemplate>
 
-                                <%--    <Triggers>
-                                           <asp:AsyncPostBackTrigger ControlID ="btn_Filtrar" /> 
-
-                                    </Triggers>--%>
+                        
 
                                     </asp:UpdatePanel>
 
@@ -177,7 +164,7 @@
                         </div>
               
                              <div class="input-group input-group-sm ">
-                            <%--<button class="btn btn-info" runat="server"  id="btnFiltros"  ><span class="btn-label  fas fa-filter"></span>&nbsp;&nbsp;Filtar los Registros...&nbsp;&nbsp;</button>--%>
+                     
                                 <dx:BootstrapButton ID="btn_Filtrar"  CssClasses-Control ="btn-info" CssClasses-Icon ="fas fa-filter"   runat="server" AutoPostBack="false" Text="filtrar registros" ></dx:BootstrapButton>
 
                             </div>
@@ -188,14 +175,10 @@
                 <div class="panel-heading">
 					<span class="panel-title" style="color:#17649A"><b>LISTADO DE PROTOCOLOS ACTIVADOS.</b></span>
                      <div class="panel-heading-controls">
-                         <%--<button class="btn btn-xs btn-warning btn-outline" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" ><span class="fa fa-refresh"></span>&nbsp;&nbsp;Refresh</button>--%>                        <%--    <button class="btn btn-xs btn-info btn-outline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
-                            <span class="fas fa-filter"></span></button>--%>                         
-                         <%--<Styles>
-                                                                        <Style CssClass="fas fa-angle-double-right fa-2x"></Style>
-                                                               </Styles>--%>
+                  
                         <span class="panel-heading-text"><em>Activar Filtros de Busqueda </em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
                         <input type="checkbox" id="switcher-example-2"  checked="checked" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample" >&nbsp;&nbsp;
-                         <%-- <asp:Parameter  Name="ETAPAS" Type="String" />--%>
+                      
                      </div> <!-- / .panel-heading-controls -->
                 </div>
 				<div class="stat-panel">
@@ -204,18 +187,18 @@
                                       <div class="col-md-12">
                                           <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                             <ContentTemplate>
-                                                            <dx:ASPxGridView ID="gridActividades"  ClientInstanceName="grid" runat="server" AutoGenerateColumns="False" DataSourceID="sqlCalidad" 
-                                                                EnableTheming="True" KeyFieldName="ID_ACC_REG" Theme="MaterialCompact" Width="100%">
-                                                                <Settings GridLines="Horizontal" VerticalScrollableHeight="500" ShowColumnHeaders="False" />
+                                                <dx:ASPxGridView ID="gridActividades" ClientInstanceName="grid" runat="server" AutoGenerateColumns="False" DataSourceID="sqlCalidad"
+                                                    EnableTheming="True" KeyFieldName="ID_ACC_REG" Theme="Office365" Width="100%">
+                                                                <Settings GridLines="Horizontal" VerticalScrollableHeight="500" />
                                                                 <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
                                                                 <SettingsPager EnableAdaptivity="true" Position="Top" AlwaysShowPager="True" NumericButtonCount="25" />
                                                 
                                                                 <SettingsBehavior />
                                                                  <ClientSideEvents CustomButtonClick="function(s, e) {
-	                                                                            if(e.buttonID == 'ver'){
+	                                                                            if(e.buttonID == 'editar'){
                                                                                                 var rowVisibleIndex = e.visibleIndex;
                                                                                                 var rowKeyValue = s.GetRowKey(rowVisibleIndex);
-                                                                                               window.open('verPlantilla.aspx?idPLantilla='+ rowKeyValue , '_self');
+                                                                                               window.open('RegistroCalidadTrabajo.aspx?idRegistro='+ rowKeyValue , '_self');
                                                                                    }
                                                                                 if(e.buttonID == 'calidad'){
                                                                                                 var rowVisibleIndex = e.visibleIndex;
@@ -230,46 +213,60 @@
                                                                 <Columns>
                                                                     <dx:GridViewCommandColumn VisibleIndex="0" Width="12%">
                                                                             <CustomButtons>
-                                                                                <dx:GridViewCommandColumnCustomButton ID="ver" Text =" ">
-                                                                                             <Image  ToolTip="Consultar"  IconID ="zoom_zoomin_16x16gray"/>
+                                                                                   <dx:GridViewCommandColumnCustomButton ID ="editar" Text =" "  >
+                                                                                   <%-- <Styles>
+                                                                                        <Style CssClass="btn fas fa-pencil-alt"></Style>
+                                                                                    </Styles>--%>
+                                                                                       <Image IconID="edit_edit_32x32gray">
+                                                                                       </Image>
                                                                                 </dx:GridViewCommandColumnCustomButton>
-                                                                                <dx:GridViewCommandColumnCustomButton ID="version" Text =" ">
-                                                                                    <Image  ToolTip="nueva versión"  IconID ="edit_copy_16x16gray"   />
-                                                                                </dx:GridViewCommandColumnCustomButton>
-                                                                                   <dx:GridViewCommandColumnCustomButton ID="calidad" Text =" ">
-                                                                                    <Image  ToolTip="nuevo registro calidad"  IconID ="miscellaneous_newwizard_16x16gray"/>
+                                                                                <dx:GridViewCommandColumnCustomButton>
+                                                                                    <%--<Styles>
+                                                                                        <Style CssClass="btn fas fa-print"></Style>
+                                                                                    </Styles>--%>
+                                                                                    <Image IconID="print_print_32x32gray">
+                                                                                    </Image>
                                                                                 </dx:GridViewCommandColumnCustomButton>
                                                                             </CustomButtons>
                                                                     </dx:GridViewCommandColumn>
-                                                                    <dx:GridViewDataTextColumn FieldName="ID_ACC_REG" ReadOnly="True" Visible="False" VisibleIndex="5">
+                                                                    <dx:GridViewDataTextColumn FieldName="ID_ACC_REG" ReadOnly="True" Visible="False" VisibleIndex="4">
                                                                         <EditFormSettings Visible="False" />
                                                                     </dx:GridViewDataTextColumn>
-                                                                    <dx:GridViewDataTextColumn FieldName="ESTADO_VB" Visible="False" VisibleIndex="8">
+                                                                    <dx:GridViewDataTextColumn FieldName="ESTADO_VB" Visible="true" VisibleIndex="5" ShowInCustomizationForm="True" Caption="ESTADO">
+                                                                        <DataItemTemplate>
+                                                                            <button class="btn btn-xs btn-warning "><span class="fas fa-asterisk"></span></button>
+                                                                            
+                                                                        </DataItemTemplate>
+                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                                                        </CellStyle>
                                                                     </dx:GridViewDataTextColumn>
-                                                                    <dx:GridViewDataDateColumn FieldName="FECHA_CREA" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                                                                    <dx:GridViewDataDateColumn FieldName="FECHA_CREA" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
                                                                     </dx:GridViewDataDateColumn>
-                                                                    <dx:GridViewDataTextColumn FieldName="NOMBRE_ETA" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                                    <dx:GridViewDataTextColumn FieldName="NOMBRE_ETA" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
                                                                     </dx:GridViewDataTextColumn>
-                                                                    <dx:GridViewDataTextColumn Caption="UCO / FECHA" FieldName="NOMBRE_UCO" ShowInCustomizationForm="True" VisibleIndex="7" Width="30%">
+                                                                    <dx:GridViewDataTextColumn Caption="RECINTO / UBICACIÓN RECINTO" FieldName="NOMBRE_UCO" ShowInCustomizationForm="True" VisibleIndex="8" Width="30%">
                                                                         <DataItemTemplate>
                                                                             <table class="nav-justified">
                                                                                 <tr>
-                                                                                    <td>
+                                                                                    <td class="auto-style1">
                                                                                         <asp:Label ID="lblEtapa" runat="server" Font-Bold="True" Font-Size="Small" ForeColor="Black" Text='<%# Eval("NOMBRE_UCO") %>'></asp:Label>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td class="auto-style1">
-                                                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("FECHA_CREA") %>'></asp:Label>
+                                                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("RAIZ") %>'></asp:Label>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
                                                                         </DataItemTemplate>
                                                                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle">
+                                                                        </CellStyle>
                                                                     </dx:GridViewDataTextColumn>
-                                                                    <dx:GridViewDataTextColumn FieldName="NOMBRE_ACT" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                                    <dx:GridViewDataTextColumn FieldName="NOMBRE_ACT" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
                                                                     </dx:GridViewDataTextColumn>
-                                                                    <dx:GridViewDataTextColumn Caption="ETAPA / ACTIVIDAD" FieldName="ETAPA" ShowInCustomizationForm="True" VisibleIndex="6" Width="30%">
+                                                                    <dx:GridViewDataTextColumn Caption="ETAPA / ACTIVIDAD" FieldName="ETAPA" ShowInCustomizationForm="True" VisibleIndex="7" Width="30%">
                                                                         <DataItemTemplate>
                                                                             <table class="nav-justified">
                                                                                 <tr>
@@ -285,6 +282,39 @@
                                                                             </table>
                                                                         </DataItemTemplate>
                                                                         <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn VisibleIndex="9" Caption="CREACIÓN  /  ULT. V°B°" ShowInCustomizationForm="True">
+                                                                        <EditCellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                                                        </EditCellStyle>
+                                                                        <DataItemTemplate>
+                                                                            <table class="nav-justified">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:Label ID="Label3" runat="server" Font-Bold="True" Text='<%# Eval("FECHA_CREA", "{0:d}") %>'></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("FECHA_ULT_VB", "{0:d}") %>'></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </DataItemTemplate>
+                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="DIAS DIF." FieldName="DIAS_DIF" ShowInCustomizationForm="True" VisibleIndex="10">
+                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="NIVEL DE V°B°" FieldName="AVANCE_VB" ShowInCustomizationForm="True" VisibleIndex="11">
+                                                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                                                        </CellStyle>
                                                                     </dx:GridViewDataTextColumn>
                                                                 </Columns>
                                                                 <Styles Header-Wrap="True">
@@ -294,26 +324,7 @@
                                                                     <SelectedRow BackColor="#FFFFCC">
                                                                     </SelectedRow>
                                                                 </Styles>
-                                                                        <SettingsCommandButton>
-                                                                        <NewButton Text=" " Image-IconID="actions_add_16x16gray"  >
-                                                                            <%--<Styles>
-                                                                                        <Style CssClass="fas fa-angle-double-right fa-2x"></Style>
-                                                                               </Styles>--%>
-                                                                             <Image  ToolTip="nuevo" ></Image>
-                                                                       </NewButton>
-                                                                         <EditButton    Text =" " Image-IconID ="edit_edit_16x16gray">   
-                                                                                <Image  ToolTip="Editar" ></Image>
-                                                                         </EditButton>
-                                                                      <UpdateButton  Text =" " Image-IconID ="save_save_16x16gray"  >
-                                                                                <Image  ToolTip="Guardar" ></Image>
-                                                                      </UpdateButton>
-                                                                      <CancelButton Text =" " Image-IconID ="actions_cancel_16x16gray"   >
-                                                                              <Image  ToolTip="cancelar" ></Image>
-                                                                      </CancelButton>
-                                                                       <DeleteButton Text =" " Image-IconID ="actions_delete_16x16gray"  >
-                                                                            <Image  ToolTip="eliminar" ></Image>
-                                                                       </DeleteButton>
-                                                                  </SettingsCommandButton>
+                                                                  
                                                             </dx:ASPxGridView>
                                                             <asp:SqlDataSource ID="sqlCalidad" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
                                                                 SelectCommand="SP_WS_BUSCA_REGISTRO" 
@@ -339,4 +350,11 @@
 	</div> 
     <asp:HiddenField ID="hEtapa" runat="server" />
 
+
+
+
+    
+
+
+    
  </asp:Content>

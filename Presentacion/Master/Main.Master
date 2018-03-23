@@ -12,7 +12,7 @@
 	<title>Foco en Obra</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">	
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+ 
      <link href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet" type="text/css">
 <%--    <link href="../assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">--%>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
@@ -937,215 +937,20 @@
              </SelectParameters>
          </asp:SqlDataSource>
      </div>
-
-    <%--<!-- FOOTER RRSS - ETC -->
-    <footer class="panel-footer bg-panel ">
-            <p><strong>Conecta con Foco</strong>&nbsp;&nbsp;<a href="#"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Facebook</a>&nbsp;&nbsp;
-			<a href="#"><i class="fab fa-skype"></i>&nbsp;&nbsp;Skype</a>&nbsp;&nbsp;
-			<a href="#"><i class="fab fa-linkedin"></i>&nbsp;&nbsp;Linkedin</a>&nbsp;&nbsp;
-			<a href="#"><i class="fas fa-phone-square"></i>&nbsp;&nbsp;Fono</a>&nbsp;&nbsp;
-			<a href="#"><i class="fas fa-envelope-square"></i>&nbsp;&nbsp;Correo</a></p>
-            <p style="font-size:10px">Todos los derechos reservados &copy; 2018 | Foco en Obra - Gestión por Compromiso</p>
-    </footer>--%>
         <asp:HiddenField runat="server" id="hObraid" ></asp:HiddenField >
   </form>
 
 </div> 
     <!-- End Wrapper -->
 
-<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>--%>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  
 <script src="../../../assets/javascripts/jquery.transit.min.js"></script>
-<%--<script src="../../../assets/javascripts/bootstrap.min.js"></script>--%>
-
-
-
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 <script src="../../../assets/javascripts/pixel-admin.min.js"></script>
 <script src="../../../assets/javascripts/jquery-qrcode.min.js"></script>
 <script src="../../../assets/javascripts/bootstrap-notify.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>       
-
-
-
-<script>
-    //$("#modal-iframe").iziModal({
-    //    title: 'iziModal with iframe',
-    //    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    //    iconClass: 'fa fa-cog',
-    //    transitionIn: 'transitionIn',
-    //    transitionOut: 'transitionOut',
-    //    headerColor: 'rgb(189, 91, 91)',
-    //    width: 1200,
-    //    overlayClose: true,
-    //    iframe: true
-    //});
-
-
-    //$(document).on('click', '.trigger-iframe', function (event) {
-    //    event.preventDefault();
-    //    $("#modal-iframe").iziModal('open', event);
-    //});
-
-    //$("#modal-alert").iziModal({
-    //    title: "Your message has been sent successfully",
-    //    iconClass: 'fa fa-warning',
-    //    headerColor: '#5bbd72',
-    //    width: "40%"
-    //});
-    //$(document).on('click', '.trigger-alert', function (event) {
-    //    event.preventDefault();
-    //    $('#modal-alert').iziModal('open');
-    //});
-
-    //$("#modal-content").iziModal({
-    //    title: "Welcome to the iziModal",
-    //    subtitle: "Simple, complete and lightweight modal plugin with jquery.",
-    //    iconClass: 'icon-stack',
-    //    overlayColor: 'rgba(255, 255, 255, 0.4)',
-    //    width: 700,
-    //    padding: 20
-    //});
-    $(document).on('click', '.trigger-content', function (event) {
-        event.preventDefault();
-    });
-</script>
-
-
-
-
-
-<script type="text/javascript">
-    $("#modal-content").iziModal({
-        title: "FOCO EN OBRA - PROYECTOS",
-        headerColor: '#35ae98',
-        subtitle: "seleciona tú proyecto para trabajar",
-        iconClass: 'icon-stack',
-        overlayColor: 'rgba(255, 255, 255, 0.4)',
-        width: 400,
-        padding: 20,
-    });
-    init.push(function () {});
-    window.PixelAdmin.start(init);
-
-    //window.onload = function () {
-       
-    //};
-
-    $(document).on('click', '.trigger-content', function (event) {
-        event.preventDefault();
-        $('#modal-content').iziModal('open');
-
-        var rbl = document.getElementById("<%=radioObras.ClientID %>");
-        var radio = rbl.getElementsByTagName("INPUT");
-        var labelObj = document.getElementById("<%= lbl_obra.ClientID %>");
-        for (var i = 0; i < radio.length; i++) {
-            radio[i].onchange = function () {
-                var radio = this;
-                var label = radio.parentNode.getElementsByTagName("LABEL")[0];
-                //alert("SelectedText: " + label.innerHTML
-                //    + "\nSelectedValue: " + radio.value);
-                labelObj.innerHTML = label.innerHTML;
-                labelObj.val = radio.value;
-                hObraid.value = radio.value;
-                var datos = "{'hObraid':'" + hObraid.value + "','hObraNombre':'" + label.innerHTML + "' }";
-                //var actionData = "{'hObraid':'" + radio.value + "'}";
-
-                $.ajax({
-                    type: "POST",
-                    url: "RegistrosCalidadListado.aspx/setProyecto",
-                    data: datos,
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        $('#modal-content').iziModal('close');
-                        //var notify = $.notify('<strong>Cargando..</strong> no cierre esta pagina...', {
-                        //    showProgressbar: true,
-                        //    allow_dismiss: false
-                        //});
-
-                        //setTimeout(function () {
-                        //    notify.update({ 'type': 'success', 'message': '<strong>Listo...</strong> mostrando datos!', 'progress': 50 });
-                        //}, 500);
-
-                        
-                    },
-                    failure: function (response) {
-                        console.log(response.d);
-                    }
-                });
-
-
-               // alert(hObraid.val);
-
-              
-                //labelObj.value = "new val";
-
-
-
-            };
-        }
-    });
-</script>
-    
-    <script>
-        //$(".basic").click(function () {
-        //    $.notify({
-        //        title: "<strong>Basic Usage:</strong> ",
-        //        icon: 'glyphicon glyphicon-star',
-        //        message: "Custom Title + Glyphicons!"
-        //    });
-        //});
-        //$(".animation").click(function () {
-        //    $.notify({
-        //        title: "<strong>With Animation:</strong> ",
-        //        icon: 'glyphicon glyphicon-user',
-        //        message: "This example Requires Animate.css"
-
-        //    }, {
-        //        animate: {
-        //            enter: "animated fadeInUp",
-        //            exit: "animated fadeOutDown"
-        //        }
-        //        });
-        //});
-        //$(".danger").click(function () {
-        //    $.notify({
-        //        title: "<strong>Danger Notification:</strong> ",
-        //        icon: 'glyphicon glyphicon-user',
-        //        message: "This is a danger notification"
-
-        //    }, {
-        //        animate: {
-        //            enter: "animated fadeInUp",
-        //            exit: "animated fadeOutDown"
-        //        }, type: 'danger'
-        //        });
-        //});
-</script>
-
-
-
-
-    <script type="text/javascript">
-       
-
-        //<![CDATA[
-        $(window).on('load', function () { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({ 'overflow': 'visible' });
-        })
-    //]]>
-        //jQuery("#demo").qrcode({
-        //    //render:"table"
-        //    width: 128,
-        //    height: 128,
-        //    text: "http://ourcodeworld.com"
-</script>
        <script>
                init.push(function () {
                    $('.ui-wizard-example').pixelWizard({
@@ -1162,7 +967,6 @@
                        var idObr = $('#body_ddlProyectos_VI').val();
                        var idAct = $('#body_dllActividad_VI').val();
                        var nomPlt = $('#body_txtnombre_I').val();
-                      //if ((idObr != '') && (idAct != '') && (nomPlt != '')) {
                       if ((idObr != '') && (idAct != '') && (nomPlt != '')) {
                           $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
                       } else {
@@ -1183,29 +987,7 @@
                                       }, type: 'info'
                                   });
 
-                          //$.notify({
-                          //   // icon: 'https://randomuser.me/api/portraits/med/men/77.jpg',
-                          //   icon: 'fas fa-exclamation-circle',
-                            
-                          //    title: 'Infomación Requerida',
-                          //    message: 'debes ingresar todos los campos requeridos.-'
-                          //}, {
-                          //        type: 'minimalist',
-                          //        delay: 5000,
-                          //        type: 'success',
-                          //        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
-                          //        '<img data-notify="icon" class="img-circle pull-left">' +
-                          //        '<span data-notify="title">{1}</span>' +
-                          //        '<span data-notify="message">{2}</span>' +
-                          //        '</div>'
-                          //    });
-
-
                        }
-
-                     // $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
-
-
                    });
                    $('.wizard-prev-step-btn').click(function () {
                        $(this).parents('.ui-wizard-example').pixelWizard('prevStep');
@@ -1228,25 +1010,61 @@
                        callback();
                    });
 
-                   // ingreso de la plantilla
-               
+               });
 
-                 
-                 
+
+               $("#modal-content").iziModal({
+                   title: "FOCO EN OBRA - PROYECTOS",
+                   headerColor: '#35ae98',
+                   subtitle: "seleciona tú proyecto para trabajar",
+                   iconClass: 'icon-stack',
+                   overlayColor: 'rgba(255, 255, 255, 0.4)',
+                   width: 400,
+                   padding: 20,
+               });
+               init.push(function () { });
+               window.PixelAdmin.start(init);
+               $(document).on('click', '.trigger-content', function (event) {
+                   event.preventDefault();
+                   $('#modal-content').iziModal('open');
+                    var rbl = document.getElementById("<%=radioObras.ClientID %>");
+                   var radio = rbl.getElementsByTagName("INPUT");
+                   var labelObj = document.getElementById("<%= lbl_obra.ClientID %>");
+
+                                    for (var i = 0; i < radio.length; i++) {
+                                        radio[i].onchange = function () {
+                                            var radio = this;
+                                            var label = radio.parentNode.getElementsByTagName("LABEL")[0];
+                                            labelObj.innerHTML = label.innerHTML;
+                                            labelObj.val = radio.value;
+                                            hObraid.value = radio.value;
+                                            var datos = "{'hObraid':'" + hObraid.value + "','hObraNombre':'" + label.innerHTML + "' }";
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "RegistrosCalidadListado.aspx/setProyecto",
+                                                data: datos,
+                                                contentType: "application/json; charset=utf-8",
+                                                dataType: "json",
+                                                success: function (response) {
+                                                    console.log(response.d);
+                                                    $('#modal-content').iziModal('close');
+
+                                                },
+                                                failure: function (response) {
+                                                    console.log(response.d);
+                                                }
+                                            });
+
+
+
+                                        };
+
+
+                                    }
 
 
 
                });
-
-
-
 </script>
-
-
-
-    	
-
-
-   
 </body>
 </html>

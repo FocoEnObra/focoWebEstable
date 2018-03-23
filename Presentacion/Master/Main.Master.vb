@@ -5,10 +5,10 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        ' Page.ClientScript.GetPostBackEventReference(Me, "")
+        Page.ClientScript.GetPostBackEventReference(Me, "")
         Dim sUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         If Not Page.IsPostBack Then
-            lblUsuario.Text = sUsuario.ip & " - " & sUsuario.NickName & " - " & sUsuario.EmpresaSelected.Nombre
+            lblUsuario.Text = sUsuario.NickName & " - " & sUsuario.EmpresaSelected.Nombre
             lbl_obra.Text = sUsuario.EmpresaSelected.ObraNombreSelected
         End If
 
@@ -64,5 +64,13 @@
 
     End Sub
 
+    <System.Web.Services.WebMethod()>
+    Public Shared Sub setProyecto(ByVal hObraid As String, ByVal hObraNombre As String)
+        Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
+        ssUsuario.EmpresaSelected.ObraNombreSelected = hObraNombre
+        ssUsuario.EmpresaSelected.ObraIDSelected = hObraid
+        HttpContext.Current.Session.Add("idObra", hObraid)
+        HttpContext.Current.Session.Add("xSSN_USUARIO", ssUsuario)
 
+    End Sub
 End Class

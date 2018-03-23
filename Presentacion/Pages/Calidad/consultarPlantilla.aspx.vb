@@ -21,16 +21,10 @@ Public Class Formulario_web18
         'lblObra.Text = Session.Contents("idObra")
         lblNombreObra.Text = Session.Contents("nombreObra")
         If Page.IsPostBack = False Then
-
             treeUcos.DataBind()
             treeUcos.Nodes.Item(0).Expanded = True
             treeUcos.UnselectAll()
-
-            ' ddd
-
         End If
-        ' countLiteral.Text = treeUcos.SelectionCount.ToString()
-
     End Sub
     Private Sub SetNodeSelectionSettings()
         Dim iterator As TreeListNodeIterator = treeUcos.CreateNodeIterator()
@@ -40,16 +34,12 @@ Public Class Formulario_web18
             If node Is Nothing Then
                 Exit Do
             End If
-
             node.AllowSelect = Not node.HasChildren
-
         Loop
-
     End Sub
     Protected Sub treeUcos_DataBound(sender As Object, e As EventArgs) Handles treeUcos.DataBound
         SetNodeSelectionSettings()
     End Sub
-
     Protected Sub treeUcos_CustomSummaryCalculate(sender As Object, e As TreeListCustomSummaryEventArgs) Handles treeUcos.CustomSummaryCalculate
         Select Case e.SummaryProcess
             Case CustomSummaryProcess.Start

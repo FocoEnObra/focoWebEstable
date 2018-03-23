@@ -36,7 +36,18 @@ Namespace registro
 
         End Function
 
-
+        Public Shared Function traerRegistro(usuario As EL.Seguridad.Usuario, ByVal idReg As Integer) As DataSet
+            Dim vCon As New Conexion(usuario.EmpresaSelected.DatosConexion.GenerarStringConexion)
+            Dim vParam As New Dictionary(Of String, Object)
+            Dim vTablas As DataSet = Nothing
+            vParam.Add("@ID_ACC_REG", idReg)
+            Try
+                vTablas = vCon.ExecSP_DS("SP_WS_TRAER_REGISTRO", vParam)
+                Return vTablas
+            Catch ex As Exception
+                Throw New Exception("No se pudo TRAER EL REGISTRO", ex)
+            End Try
+        End Function
 
     End Class
 End Namespace

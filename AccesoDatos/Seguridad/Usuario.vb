@@ -36,12 +36,15 @@ Namespace Seguridad
                 Ingresar.ip = ip
                 Ingresar.hostName = host
                 Ingresar.UsuarioTest = vTablas.Tables(0).Rows(0).Item("USUARIO_TEST")
+
                 If Not IsDBNull(vTablas.Tables(0).Rows(0).Item("ES_ADMIN_USU")) Then _
                     Ingresar.EsAdmin = vTablas.Tables(0).Rows(0).Item("ES_ADMIN_USU")
                 Ingresar.Empresas = vTablas.Tables(1)
                 If Ingresar.Empresas.Rows.Count = 1 Then
                     Ingresar.EmpresaSelected = New EL.Empresa.Empresa(Ingresar.Empresas.Rows(0))
                 End If
+                'Ingresar.EmpresaSelected.ObraIDSelected = 68 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
+                'Ingresar.EmpresaSelected.ObraNombreSelected = "DEMO PLAZA"
             Else
                 Ingresar = Nothing
             End If
@@ -121,7 +124,7 @@ Namespace Seguridad
                     End If
                 End If
                 vUsuario.EmpresaSelected.ObraIDSelected = 68 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
-                vUsuario.EmpresaSelected.ObraNombreSelected = "DEMO BELTEC"
+                vUsuario.EmpresaSelected.ObraNombreSelected = "DEMO PLAZO"
             End If
         End Sub
 
