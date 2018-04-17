@@ -1,5 +1,7 @@
 ﻿Imports System.Net
 Imports System.Data.SqlClient
+Imports System.Windows.Forms
+
 Public Class FrmLogin
     Inherits System.Web.UI.Page
 
@@ -8,6 +10,15 @@ Public Class FrmLogin
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim vRazon As String = Request.QueryString("Raz")
+        Response.AppendHeader("Cache-Control", "no-cache, no-store, must-revalidate")
+        ' HTTP 1.1.
+        Response.AppendHeader("Pragma", "no-cache")
+        ' HTTP 1.0.
+        Response.AppendHeader("Expires", "0")
+        ' Proxies.
+        Session.Clear()
+
+
         If Not String.IsNullOrWhiteSpace(vRazon) Then
             Select Case vRazon
                 Case "1" 'La session caducó o el intento de ingreso no es válido.
@@ -85,7 +96,8 @@ Public Class FrmLogin
                 Session.Add("xSSN_USUARIO", vUser)
                 'Session(SSN_USUARIO) = vUser
                 vUser.LoggedIn = True
-                'Session.Add("xUser", fname.Value.ToLower)
+                vUser.ID_PARTICULAR.ToString()
+                Session.Add("xUser", vUser.ID_PARTICULAR.ToString())
                 'Session.Add("xPass", fpass.Value.ToLower)
 
 

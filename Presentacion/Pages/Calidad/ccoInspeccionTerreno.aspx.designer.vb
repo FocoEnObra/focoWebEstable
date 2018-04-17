@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class Formulario_web11
     
     '''<summary>
-    '''Control ddlObra.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ddlObra As Global.DevExpress.Web.ASPxComboBox
-    
-    '''<summary>
-    '''Control sqlObra.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlObra As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control UpdatePanel1.
     '''</summary>
     '''<remarks>

@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" CodeBehind="FrmLogin.aspx.vb" Inherits="Presentacion.FrmLogin" %>
 <%@ register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" class="gt-ie8 gt-ie9 not-ie">
@@ -103,7 +106,7 @@
 				<div class="form-actions">
 				<%--	<input type="submit" value="INGRESAR" class="signin-btn bg-primary">--%>
                     
-                    <asp:Button ID="Button1" runat="server" class="signin-btn bg-primary" OnClick="Ingresar_Click" OnClientClick="muestraLoader()" Text="Ingresar" />
+                    <asp:Button ID="Button1" runat="server" class="signin-btn bg-primary" OnClick="Ingresar_Click"  Text="Ingresar" />
 <%--                    <asp:Button id="btnIngresar3" type="submit" runat="server" class="signin-btn bg-primary" OnClick="Ingresar_Click" value="INGRESAR" />--%>  
 					<a href="RecuperarContraseña.aspx" class="forgot-password" id="forgot-password-link">¿Olvidó su Contraseña?</a>
 				</div> 

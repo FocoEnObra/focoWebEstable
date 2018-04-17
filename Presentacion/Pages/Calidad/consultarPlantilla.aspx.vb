@@ -13,7 +13,7 @@ Public Class Formulario_web18
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         Dim xPlantilla As DataSet = DAL.Calidad.Plantilla.traerPlantilla(ssUsuario, Session.Contents("idObra"), idPlantilla)
         lblCodigoPlantilla.Text = xPlantilla.Tables(0).Rows(0).Item("CODIGO").ToString
-        ' Session.Add("")
+        Session.Add("ID_ACC_PLT", idPlantilla)
         lblNombrePLantilla.Text = xPlantilla.Tables(0).Rows(0).Item("NOMBRE_ACC").ToString
         lblActividad.Text = xPlantilla.Tables(0).Rows(0).Item("ACTIVIDAD").ToString
         lblEtapa.Text = xPlantilla.Tables(0).Rows(0).Item("ETAPA").ToString

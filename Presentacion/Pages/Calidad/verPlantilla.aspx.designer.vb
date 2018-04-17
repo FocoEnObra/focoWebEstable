@@ -50,33 +50,6 @@ Partial Public Class Formulario_web19
     Protected WithEvents lblObra As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control ddlProyectos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ddlProyectos As Global.DevExpress.Web.Bootstrap.BootstrapComboBox
-    
-    '''<summary>
-    '''Control sqlObra.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlObra As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control sqlEtapa.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlEtapa As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control UpdatePanel3.
     '''</summary>
     '''<remarks>
@@ -129,6 +102,15 @@ Partial Public Class Formulario_web19
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ddlEtapa As Global.DevExpress.Web.Bootstrap.BootstrapComboBox
+    
+    '''<summary>
+    '''Control sqlEtapa.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents sqlEtapa As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''Control btnNuevaActividad.

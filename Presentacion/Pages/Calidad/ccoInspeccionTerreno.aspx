@@ -40,19 +40,7 @@
 						    </div>--%>
                             <p>En esta sección puedes editar la información relacionada con las etapas constructivas de tus proyectos en Foco.</p><hr />
 						             <div class="panel-body bg-panel">
-                                      <div class="col-sm-12">
-                                        <label class="control-label">Selecciona Proyecto</label>
-								        <div class="form-group no-margin-hr">
-									                  &nbsp;<dx:ASPxComboBox ID="ddlObra" runat="server" AutoPostBack="True" DataSourceID="sqlObra" TextField="NomAbr_Obr" Theme="MaterialCompact" ValueField="ID_OBR" ValueType="System.Int32">
-                                                      </dx:ASPxComboBox>
-                                                      <asp:SqlDataSource ID="sqlObra" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT [ID_OBR], [NomAbr_Obr] FROM [OBRAS] WHERE ([Vigente_Obr] = @Vigente_Obr)">
-                                                          <SelectParameters>
-                                                              <asp:Parameter DefaultValue="1" Name="Vigente_Obr" Type="String" />
-                                                          </SelectParameters>
-                                                      </asp:SqlDataSource>
-                                        </div>
-							         </div>  
-                                           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                  <contenttemplate>
                                       <div class="col-md-12">
                                             <label class="control-label">Listado de plantillas creadas</label>
@@ -65,7 +53,6 @@
                                                 <SettingsSearchPanel Visible="True" />
                                                 <SettingsPager EnableAdaptivity="true" Mode="EndlessPaging" Position="Top" />
                                                 <Settings ShowFooter="true" />
-                                                <SettingsBehavior AllowFocusedRow="true" />
                                                  <ClientSideEvents CustomButtonClick="function(s, e) {
 	                                                            if(e.buttonID == 'ver'){
                                                                                 var rowVisibleIndex = e.visibleIndex;
@@ -88,17 +75,17 @@
                                                      />
                                                 <Columns>
                                                      
-                                                    <dx:GridViewCommandColumn VisibleIndex="0" Width="12%">
+                                                    <dx:GridViewCommandColumn VisibleIndex="0" Width="22%">
                                                             <CustomButtons>
                                                                 <dx:GridViewCommandColumnCustomButton ID="ver" Text =" ">
-                                                                             <Image  ToolTip="Consultar"  IconID ="zoom_zoomin_16x16gray"/>
+                                                                             <Image  ToolTip="Consultar"  IconID ="zoom_zoomin_32x32gray"/>
                                                                 </dx:GridViewCommandColumnCustomButton>
                                                                 <dx:GridViewCommandColumnCustomButton ID="version" Text =" ">
-                                                                    <Image  ToolTip="nueva versión"  IconID ="edit_copy_16x16gray"   />
+                                                                    <Image  ToolTip="Nueva versión"  IconID ="edit_copy_32x32gray"   />
                                                                 </dx:GridViewCommandColumnCustomButton>
                                                                    <dx:GridViewCommandColumnCustomButton ID="calidad" Text =" ">
-                                                                    <Image  ToolTip="nuevo registro calidad"  IconID ="miscellaneous_newwizard_16x16gray"/>
-                                                                </dx:GridViewCommandColumnCustomButton>
+                                                                    <Image  ToolTip="Activar protocolos de calidad"  IconID ="other_addtext_32x32gray"/>
+                                                                </dx:GridViewCommandColumnCustomButton> 
                                                                 
                                                             </CustomButtons>
                                                     </dx:GridViewCommandColumn>
@@ -122,7 +109,7 @@
                                                                 <CellStyle HorizontalAlign="Left" VerticalAlign="Middle">
                                                                 </CellStyle>
                                                             </dx:GridViewDataTextColumn>--%>
-                                                            <dx:GridViewDataTextColumn FieldName="CODIGO" VisibleIndex="2" Caption="CODIGO / NOMBRE PLANTILLA" Width="30%">
+                                                            <dx:GridViewDataTextColumn FieldName="CODIGO" VisibleIndex="2" Caption="CODIGO / NOMBRE PLANTILLA" Width="25%">
                                                                 <DataItemTemplate>
                                                                     <table class="nav-justified">
                                                                         <tr>
@@ -141,7 +128,7 @@
                                                             </dx:GridViewDataTextColumn>
                                                             <dx:GridViewDataTextColumn FieldName="ACTIVIDAD" VisibleIndex="1" Visible="False">
                                                             </dx:GridViewDataTextColumn>
-                                                            <dx:GridViewDataTextColumn FieldName="ETAPA" VisibleIndex="0" Caption="ETAPA / ACTIVIDAD" Width="30%">
+                                                            <dx:GridViewDataTextColumn FieldName="ETAPA" VisibleIndex="0" Caption="ETAPA / ACTIVIDAD" Width="25%">
                                                                 <DataItemTemplate>
                                                                     <table class="nav-justified">
                                                                         <tr>
@@ -235,7 +222,8 @@
                                                 SelectCommandType="StoredProcedure">
                                                 
                                                 <SelectParameters>
-                                                    <asp:ControlParameter ControlID="ddlObra" Name="ID_OBR" PropertyName="Value" Type="Int64" />
+                                                      <asp:SessionParameter SessionField="idObra" Name="ID_OBR" Type="string"  ></asp:SessionParameter>
+                                                  <%--  <asp:ControlParameter ControlID="ddlObra" Name="ID_OBR" PropertyName="Value" Type="Int64" />--%>
                                                     <asp:Parameter DefaultValue="-1" Name="ID_ACC_PLT" Type="Int32" />
                                                     <asp:Parameter DefaultValue="0" Name="SOLO_PEND" Type="Int32" />
                                                 </SelectParameters>
@@ -245,9 +233,7 @@
                                         </div>
 					                 </div>
                                  </contenttemplate>
-                                               <Triggers>
-                                                        <asp:AsyncPostBackTrigger ControlID="ddlObra" />
-                                               </Triggers>
+                                               
                             </asp:UpdatePanel>
                           
                         <%--<div class="col-md-12">

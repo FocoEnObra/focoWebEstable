@@ -5,8 +5,10 @@ Public Class Global_asax
     Inherits System.Web.HttpApplication
 
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
+        DevExpress.XtraReports.Web.WebDocumentViewer.Native.WebDocumentViewerBootstrapper.SessionState = System.Web.SessionState.SessionStateBehavior.Default
         ' Se desencadena al iniciar la aplicación
         EL.Empresa.Empresa.ClaveEncripta = ConfigurationManager.AppSettings("FocoEnObra")
+
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
@@ -23,8 +25,8 @@ Public Class Global_asax
 
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
         ' Se desencadena cuando se produce un error
+        Response.Redirect("../Seguridad/error.aspx")
     End Sub
-
     Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)
         ' Se desencadena cuando finaliza la sesión
     End Sub

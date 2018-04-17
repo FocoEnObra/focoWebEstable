@@ -8,6 +8,7 @@
         Page.ClientScript.GetPostBackEventReference(Me, "")
         Dim sUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         If Not Page.IsPostBack Then
+
             lblUsuario.Text = sUsuario.NickName & " - " & sUsuario.EmpresaSelected.Nombre
             lbl_obra.Text = sUsuario.EmpresaSelected.ObraNombreSelected
         End If

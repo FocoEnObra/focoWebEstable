@@ -18,7 +18,11 @@ Public Class Formulario_web19
             dllActividad.DataBind()
             dllActividad.Text = txtAct_Nombre.Value
             txtEtapa.Text = ddlEtapa.Text
-            lblObra.Text = ddlProyectos.Text  'txtProyectos.Text
+
+            'ssUsuario.EmpresaSelected.ObraIDSelected = 71 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
+
+
+            lblObra.Text = ssUsuario.EmpresaSelected.ObraNombreSelected  'txtProyectos.Text
             lblPlnNom.Text = txtnombre.Text
             lblAct.Text = dllActividad.Text
         Else
@@ -31,7 +35,7 @@ Public Class Formulario_web19
         Dim nombreEtapa As String
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
         nombreEtapa = DAL.Calidad.Actividad.buscarEtapa(ssUsuario, dllActividad.Value)
-        lblObra.Text = ddlProyectos.Text
+        lblObra.Text = ssUsuario.EmpresaSelected.ObraNombreSelected
         lblPlnNom.Text = txtnombre.Text
         lblAct.Text = dllActividad.Text
         txtEtapa.Text = nombreEtapa
@@ -81,20 +85,20 @@ Public Class Formulario_web19
 
 
         If Request.Params("idPlantilla") <> "" Then
-                Dim idPlantilla As String = Request.Params("idPlantilla")
-                Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
+            Dim idPlantilla As String = Request.Params("idPlantilla")
+            Dim ssUsuario As DAL.Seguridad.UsuarioSistema = Session.Contents("xSSN_USUARIO")
             Dim xPlantilla As DataSet = DAL.Calidad.Plantilla.traerPlantilla(ssUsuario, Session.Contents("idObra"), idPlantilla)
 
             Session("ID_ACC_PLT") = xPlantilla.Tables(0).Rows(0).Item("ID_ACC_PLT").ToString
-                Session("xCodigo") = xPlantilla.Tables(0).Rows(0).Item("CODIGO").ToString
+            Session("xCodigo") = xPlantilla.Tables(0).Rows(0).Item("CODIGO").ToString
 
             Session("xActividad") = xPlantilla.Tables(0).Rows(0).Item("ACTIVIDAD").ToString
             Session("xtxtNombre") = xPlantilla.Tables(0).Rows(0).Item("NOMBRE_ACC").ToString
             Session("xObs") = xPlantilla.Tables(0).Rows(0).Item("OBS_ACC").ToString
 
             If Page.IsPostBack = False Then
-                ddlProyectos.Value = Session.Contents("idObra")
-                ddlProyectos.Text = Session.Contents("nombreObra")
+                ssUsuario.EmpresaSelected.ObraIDSelected = Session.Contents("idObra")
+                ssUsuario.EmpresaSelected.ObraNombreSelected = Session.Contents("nombreObra")
                 'txtProyectos.Text =
                 'txtObraNombre.Text = 
                 codigotexto.Value = Session("xCodigo")
@@ -106,17 +110,17 @@ Public Class Formulario_web19
 
 
             Grid.DataBind()
-                grillaCheck.DataBind()
-                GridVb.DataBind()
-                gridMensajes.DataBind()
+            grillaCheck.DataBind()
+            GridVb.DataBind()
+            gridMensajes.DataBind()
 
 
 
 
-                Grid.StartEdit(0)
-                '  lblFecha.Text = Date.Today.ToLongDateString
-                ' limpiarVariables()
-            End If
+            Grid.StartEdit(0)
+            '  lblFecha.Text = Date.Today.ToLongDateString
+            ' limpiarVariables()
+        End If
 
 
 

@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calidad\Actividad.vb" />
+    <Compile Include="Calidad\Archivo.vb" />
     <Compile Include="Calidad\Mensajeria.vb" />
     <Compile Include="Calidad\Plantilla.vb" />
     <Compile Include="Calidad\registro.vb" />

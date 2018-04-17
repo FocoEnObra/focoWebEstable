@@ -69,6 +69,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calidad\RegistroCalidad.vb" />
+    <Compile Include="Calidad\RegistroHistorico.vb" />
     <Compile Include="Empresa\Empresa.vb" />
     <Compile Include="Empresa\EstadoEmpresa.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

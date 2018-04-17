@@ -86,6 +86,15 @@ Partial Public Class Formulario_web112
     Protected WithEvents lblDias As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control btnCerrarProtocolo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCerrarProtocolo As Global.DevExpress.Web.ASPxButton
+    
+    '''<summary>
     '''Control grilla_check.
     '''</summary>
     '''<remarks>
@@ -102,4 +111,112 @@ Partial Public Class Formulario_web112
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents sqlCheckList As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control manejaArchivos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents manejaArchivos As Global.DevExpress.Web.ASPxFileManager
+    
+    '''<summary>
+    '''Control PopupControl.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents PopupControl As Global.DevExpress.Web.ASPxPopupControl
+    
+    '''<summary>
+    '''Control FormLayout.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents FormLayout As Global.DevExpress.Web.ASPxFormLayout
+    
+    '''<summary>
+    '''Control Name.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Name As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Type.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Type As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Location.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Location As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control RelativeLocation.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RelativeLocation As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Size.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Size As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Contains.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Contains As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Created.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Created As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Modified.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Modified As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
+    '''Control Accessed.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Accessed As Global.DevExpress.Web.ASPxLabel
 End Class

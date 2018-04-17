@@ -145,25 +145,7 @@
                                                                                                                           <br />
                                                                                                                           <br />
                                                                                                                          <div class="row">
-                                                                                                                               <div class="form-group">
-                                                                                                                                         
-						                                                                                                                                  <div class="col-sm-12">
-                                                                                                                                            <dx:BootstrapComboBox Caption="Proyecto" ID="ddlProyectos" runat="server" NullText="seleciona un proyecto"  DataSourceID="sqlObra" AutoPostBack="True" TextField="NomAbr_Obr" ValueField="ID_OBR"></dx:BootstrapComboBox>
-                                                                                                                                                      <asp:SqlDataSource ID="sqlObra" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT [ID_OBR], [NomAbr_Obr] FROM [OBRAS] WHERE ([Vigente_Obr] = @Vigente_Obr)">
-                                                                                                                                                      <SelectParameters>
-                                                                                                                                                          <asp:Parameter DefaultValue="1" Name="Vigente_Obr" Type="String" />
-                                                                                                                                                      </SelectParameters>
-                                                                                                                                                  </asp:SqlDataSource>
-                                                                                                                                                <asp:SqlDataSource ID="sqlEtapa" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT [ID_ETA], [NOMBRE_ETA], [ID_OBR] FROM [ETAPAS_NIVELES] WHERE ([ID_OBR] = @ID_OBR)">
-                                                                                                                                                         <SelectParameters>
-                                                                                                                                                                   <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int64"></asp:Parameter>
-                                                                                                                                                                   </SelectParameters>
-                                                                                                                                                         </asp:SqlDataSource>
-                                                                                                                                                </div>
-                                                                                                                                             
-                                                                                                                                             
-                                                                                                                                           </div>
-
+                                                                                                                             
 
 		                                                            	                                                                   <div class="col-sm-12">
 				                                                                                                                                <div class="form-group">
@@ -172,10 +154,7 @@
                                                                                                                                                             <ContentTemplate>
                                                                                                                                                         <dx:BootstrapTextBox  Enabled ="false"  RequiredField-IsRequired="true" ID="codigotexto" Caption="Código" runat="server" NullText="Código de plantilla"></dx:BootstrapTextBox>
                                                                                                                                                     </ContentTemplate>
-                                                                                                                                                              <Triggers>
-                                                                                                                                                                <asp:AsyncPostBackTrigger ControlID ="ddlProyectos"  />
-
-                                                                                                                                                            </Triggers>
+                                                                                                                                                              
                                                                                                                                                          </asp:UpdatePanel>
                                                                                                                                                                 </div>
 					                                                                                                                            </div> 
@@ -225,6 +204,12 @@
 					                                                                                                        </div> <!-- / .form-group -->
                                                                                                                 </div>
 							                                                                            </div>
+                                                                                                          <asp:SqlDataSource ID="sqlEtapa" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                                                                                                                    SelectCommand="SELECT [ID_ETA], [NOMBRE_ETA], [ID_OBR] FROM [ETAPAS_NIVELES] WHERE ([ID_OBR] = @ID_OBR)">
+                                                                                                                                                         <SelectParameters>
+                                                                                                                                                                   <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
+                                                                                                                                                         </SelectParameters>
+                                                                                                      </asp:SqlDataSource>
                                                                                                         <div class="modal-footer">
                                                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 								                                                                            <dx:BootstrapButton ID="btnNuevaActividad" runat="server" data-dismiss="modal" AutoPostBack="false" Text="Guardar Actividad" class="btn btn-rounded btn-labeled btn-primary">
@@ -243,7 +228,7 @@
                                                                                                                                                                     </dx:BootstrapComboBox>
                                                                                                                                                                     <asp:SqlDataSource ID="sqlActividad" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SELECT [NOMBRE_ACT], [ID_QA_ACT], [ID_ETA] FROM [QA_ACTIVIDAD] WHERE ([ID_OBR] = @ID_OBR)">
                                                                                                                                                                         <SelectParameters>
-                                                                                                                                                                            <asp:SessionParameter DefaultValue="69" Name="ID_OBR" SessionField="idObra" Type="Int64" />
+                                                                                                                                                                            <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
                                                                                                                                                                         </SelectParameters>
                                                                                                                                                                     </asp:SqlDataSource>
                                                                                                                                                                 <span class="input-group-btn">
@@ -251,10 +236,7 @@
 							                                                                                                                                    </span>
                                                                                                                                                             </div>  
                                                                                                                                                                 </ContentTemplate>
-                                                                                                                                                            <Triggers>
-                                                                                                                                                                <asp:AsyncPostBackTrigger ControlID ="ddlProyectos"  />
-
-                                                                                                                                                            </Triggers>
+                                                                                                                                                          
                                                                                                                                                             </asp:UpdatePanel>
                                                                                                                                                     </div>
                                                                                                                                                 </div> <!-- / .form-group -->
@@ -265,10 +247,7 @@
                                                                                                                                                         <dx:BootstrapTextBox Enabled ="false"  RequiredField-IsRequired="true" ID="txtEtapa" Caption="Etapa" runat="server" NullText="etapa de una actividad"></dx:BootstrapTextBox>
                                                                                                                                                         <p class="help-block">Esta es la etapa para actividad seleccionada.</p>
 						                                                                                                                                  </ContentTemplate>
-                                                                                                                                                            <Triggers>
-                                                                                                                                                                <asp:AsyncPostBackTrigger ControlID ="ddlProyectos"  />
-
-                                                                                                                                                            </Triggers>
+                                                                                                                                                            
                                                                                                                                                             </asp:UpdatePanel>
                                                                                                                                                         
                                                                                                                                                         
@@ -282,9 +261,7 @@
 							                                                                                                                                     <dx:BootstrapMemo ID="txtMemPbservaciones" runat="server" Rows="2" EncodeHtml="False" AutoPostBack ="true" ></dx:BootstrapMemo>
                                                                                                                                                                     <p class="help-block">las observaciones que ingresas aparecen en el Pie de la plantilla de registro</p>
                                                                                                                                                         </ContentTemplate>
-                                                                                                                                                            <Triggers>
-                                                                                                                                                                <asp:AsyncPostBackTrigger ControlID ="ddlProyectos"  />
-                                                                                                                                                            </Triggers>
+                                                                                                                                                            
                                                                                                                                                             </asp:UpdatePanel>
                                                                                                                                                         </div>
 					                                                                                                                            </div> <!-- / .form-group -->
@@ -305,34 +282,29 @@
                                                                                                                  <div class="row">
 		                                                            	                                                      <div class="col-sm-12">
                                                                                                                                   <div class="form-group">    
-                                                                                                                                 <dx:ASPxGridView 	OnCellEditorInitialize="Grid_CellEditorInitialize" ClientInstanceName="grid" ID="Grid" runat="server" DataSourceID="sqlCat_Tip" AutoGenerateColumns="False" KeyFieldName="ID_ACC_SEC" Theme="Moderno" EnableTheming="True" Width="100%">
+                                                                                                                                  <dx:ASPxGridView 	OnCellEditorInitialize="Grid_CellEditorInitialize" ClientInstanceName="grid" ID="Grid" runat="server" DataSourceID="sqlCat_Tip" AutoGenerateColumns="False" KeyFieldName="ID_ACC_SEC" Theme="Moderno" EnableTheming="True" Width="100%">
                                                                                                                                       <Toolbars>
-            <dx:GridViewToolbar EnableAdaptivity="true">
-                <Items>
-                    <dx:GridViewToolbarItem Command="New" Text ="Agregar" DisplayMode="Text" >
+                                                                                                                                            <dx:GridViewToolbar EnableAdaptivity="true">
+                                                                                                                                                <Items>
+                                                                                                                                                    <dx:GridViewToolbarItem Command="New" Text ="Agregar" DisplayMode="Text" >
                    
-                        <Image IconID="actions_addfile_32x32">
-                        </Image>
-                        <ItemStyle VerticalAlign="Middle" Width="20px">
-                        <BackgroundImage HorizontalPosition="center" VerticalPosition="center" />
-                        </ItemStyle>
-                    </dx:GridViewToolbarItem>
+                                                                                                                                                        <Image IconID="actions_addfile_32x32">
+                                                                                                                                                        </Image>
+                                                                                                                                                        <ItemStyle VerticalAlign="Middle" Width="20px">
+                                                                                                                                                        <BackgroundImage HorizontalPosition="center" VerticalPosition="center" />
+                                                                                                                                                        </ItemStyle>
+                                                                                                                                                    </dx:GridViewToolbarItem>
                    
-                </Items>
-            </dx:GridViewToolbar>
-        </Toolbars>
-                <SettingsPager Visible="False"></SettingsPager>
+                                                                                                                                                </Items>
+                                                                                                                                            </dx:GridViewToolbar>
+                                                                                                                                        </Toolbars>
+                                                                                                                                                <SettingsPager Visible="False"></SettingsPager>
                                                                                                                                       <SettingsEditing Mode="Inline">
                                                                                                                                       </SettingsEditing>
-                        <Settings UseFixedTableLayout="True" />
+                                                                                                                                       <Settings UseFixedTableLayout="True" />
                                                                                                                                      <SettingsDataSecurity AllowEdit="False" />
                                                                                                                                       <SettingsText CommandNew="Agregar" CommandUpdate="Guardar" CommandCancel="Cancelar" CommandDelete="Quitar" EmptyDataRow="No hay terrenos con recintos agregados" />
-                        <Columns>
-
-                                                                                                                                                    <%--   <dx:GridViewDataComboBoxColumn FieldName="ID_TIP" Width="40%" Caption="TIPOLOGIAS" VisibleIndex="4">
-                                                                                                                                                           <PropertiesComboBox DataSourceID="sqlCategorias" TextField="NOMBRE_TIP" ValueField="ID_TIP"></PropertiesComboBox>
-                                                                                                                                                       </dx:GridViewDataComboBoxColumn>--%>
-
+                                                                                                                                                <Columns>
                                                                                                                                                        <dx:GridViewCommandColumn VisibleIndex="1" Width="10%" ShowDeleteButton="True"></dx:GridViewCommandColumn>
                                                                                                                                                        <dx:GridViewDataTextColumn FieldName="ID_ACC_SEC" ReadOnly="True" VisibleIndex="2" Visible="False">
                                                                                                                                                            <EditFormSettings Visible="False"></EditFormSettings>
@@ -391,11 +363,7 @@
   </SettingsCommandButton>
                                                                                                                                      
           </dx:ASPxGridView>
-
-
-
-
-                                                                                                                                                    <asp:SqlDataSource runat="server" ID="sqlCat_Tip" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' 
+                                                                                                                                              <asp:SqlDataSource runat="server" ID="sqlCat_Tip" ConnectionString='<%$ ConnectionStrings:cnxCalidad_Prod %>' 
                                                                                                                                                         SelectCommand="SELECT * FROM [QA_ACC_PLT_SECTOR] WHERE ([ID_ACC_PLT] = @ID_ACC_PLT)" 
                                                                                                                                                         DeleteCommand="DELETE FROM [QA_ACC_PLT_SECTOR] WHERE [ID_ACC_SEC] = @ID_ACC_SEC" 
                                                                                                                                                         InsertCommand="INSERT INTO [QA_ACC_PLT_SECTOR] ([ID_ACC_PLT], [ID_TUC], [ID_TIP]) VALUES (@ID_ACC_PLT, @ID_TUC, @ID_TIP)" 
@@ -418,19 +386,20 @@
                                                                                                                                                             <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32" DefaultValue ="-1" ></asp:SessionParameter>
                                                                                                                                                             </selectparameters>
                                                                                                                                                </asp:SqlDataSource>
-                                                                                                                                                                     <asp:SqlDataSource ID="sqlCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" SelectCommand="SELECT [ID_TUC], [ID_OBR], [NOMBRE_TUC] FROM [UCO_TIPOS] WHERE ([ID_OBR] = @ID_OBR)">
+                                                                                                                                                                     <asp:SqlDataSource ID="sqlCategorias" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" 
+                                                                                                                                                                         SelectCommand="SELECT [ID_TUC], [ID_OBR], [NOMBRE_TUC] FROM [UCO_TIPOS] WHERE ([ID_OBR] = @ID_OBR)">
                                                                                                                                                                          <SelectParameters>
-                                                                                                                                                                             <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int32" />
+                                                                                                                                                                            <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
                                                                                                                                                                          </SelectParameters>
                                                                                                                                                                      </asp:SqlDataSource>
                                                                                                                                                                      <asp:SqlDataSource ID="sqlTodasTipologias" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" SelectCommand="SELECT [ID_TIP], [ID_UNIUCO], [NOMBRE_TIP], [ID_OBR], [ID_TUC] FROM [CM_MAESTRO_TIPOLOGIAS] WHERE ([ID_OBR] = @ID_OBR)">
                                                                                                                                                                          <SelectParameters>
-                                                                                                                                                                             <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int32" />
+                                                                                                                                                                              <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
                                                                                                                                                                          </SelectParameters>
                                                                                                                                                                      </asp:SqlDataSource>
                                                                                                                                                                      <asp:SqlDataSource ID="sqlTipologias" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad_Prod %>" SelectCommand="SELECT [ID_TIP], [NOMBRE_TIP], [ID_OBR], [ID_TUC] FROM [CM_MAESTRO_TIPOLOGIAS] WHERE (([ID_OBR] = @ID_OBR) AND ([ID_TUC] = @ID_TUC))">
                                                                                                                                                                          <SelectParameters>
-                                                                                                                                                                             <asp:Parameter DefaultValue="68" Name="ID_OBR" Type="Int32" />
+                                                                                                                                                                             <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
                                                                                                                                                                              <asp:Parameter Name="ID_TUC" Type="Int32" />
                                                                                                                                                                          </SelectParameters>
                                                                                                                                                                      </asp:SqlDataSource>
@@ -758,13 +727,11 @@
                                                                              <div class ="col-md-12">
                                                                                                                   <div class="panel panel-transparent">
                                                                                                                         <div class="panel-heading">
-                                                                                                                                <span class="panel-title "><i class="lnr lnr-sort-amount-asc fa-2x "></i> <b>3.2)</b>&nbsp;&nbsp;Definición de cadena revición</span>
+                                                                                                                                <span class="panel-title "><i class="lnr lnr-sort-amount-asc fa-2x "></i> <b>3.2)</b>&nbsp;&nbsp;Definición de cadena revisión</span>
                                                                                                                         </div>
                                                                                                                          <div class="panel-body">
                                                                                                                                              
-                                                                                                                                             <br />
-                                                                                                                                             <br />
-                                                                                                                                   <dx:ASPxGridView ID="GridVb" runat="server" AutoGenerateColumns="False" DataSourceID="sql_vb" KeyFieldName="ID_PLT_VB"  Theme="MaterialCompact" Width="100%" EnableTheming="True">
+                                                                                                                      <dx:ASPxGridView ID="GridVb" runat="server" AutoGenerateColumns="False" DataSourceID="sql_vb" KeyFieldName="ID_PLT_VB"  Theme="MaterialCompact" Width="100%" EnableTheming="True">
                                                                                                                                      <SettingsEditing EditFormColumnCount="1" Mode="EditForm">
                                                                                                                                      </SettingsEditing>
                                                                                                                                        <SettingsPopup>
@@ -774,13 +741,13 @@
                                                                                                                                        </SettingsPopup>
                                                                                                                                      <EditFormLayoutProperties AlignItemCaptionsInAllGroups="True" ColCount="8">
                                                                                                                                          <Items>
-                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="REVISOR ANTERIOR" ColumnName="ORDEN_VB" Name="cbx" Width="200px">
+                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="ORDEN" ColumnName="ORDEN_VB" Name="cbx" Width="20%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="CARGO_VB" Caption="REVISOR" Width="400px">
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="CARGO_VB" Caption="REVISOR" Width="20%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="ROL" Caption="ROLES ">
+                                                                                                                                             <dx:GridViewColumnLayoutItem ColumnName="ROL" Caption="ROLES" Width="30%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
-                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="AVISO ADICIONAL" ColumnName="CORREOS_VB">
+                                                                                                                                             <dx:GridViewColumnLayoutItem Caption="AVISO ADICIONAL" ColumnName="CORREOS_VB" Width ="40%">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
                                                                                                                                              <dx:GridViewColumnLayoutItem ColumnName="VB_PAPEL">
                                                                                                                                              </dx:GridViewColumnLayoutItem>
@@ -794,26 +761,26 @@
                                                                                                                                      <Columns>
                                                                                                                                          <dx:GridViewCommandColumn ShowNewButtonInHeader="True" VisibleIndex="0" ShowEditButton="True" Width="10%">
                                                                                                                                          </dx:GridViewCommandColumn>
-                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ID_PLT_VB" ReadOnly="True" VisibleIndex="7" Visible="False">
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ID_PLT_VB" ReadOnly="True" VisibleIndex="8" Visible="False">
                                                                                                                                              <EditFormSettings Visible="False"></EditFormSettings>
                                                                                                                                          </dx:GridViewDataTextColumn>
 
-                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="8" Visible="False">
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ID_ACC_PLT" VisibleIndex="9" Visible="False">
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTextColumn FieldName="CARGO_VB" VisibleIndex="3" Caption="REVISOR" Width="10%">
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="CARGO_VB" VisibleIndex="4" Caption="REVISOR" Width="20%">
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ESTADO_VB" Visible="false" VisibleIndex="9" Caption="ESTADO">
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="ESTADO_VB" Visible="false" VisibleIndex="10" Caption="ESTADO">
                                                                                                                                          </dx:GridViewDataTextColumn>
-                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="ROL" VisibleIndex="4" Width="15%" Caption="ROLES">
+                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="ROL" VisibleIndex="5" Width="25%" Caption="ROLES">
                                                                                                                                              <PropertiesTokenBox AllowMouseWheel="True" DataSourceID="sqlRol" TextField="NOMBRE_ROL" Tokens="" ValueField="NOMBRE_ROL" 
                                                                                                                                                  ValueSeparator =";">
-                                                                                                                                                 <TokenBoxInputStyle Width="50%">
+                                                                                                                                                 <TokenBoxInputStyle Width="30%">
                                                                                                                                                  </TokenBoxInputStyle>
                                                                                                                                              </PropertiesTokenBox>
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataTokenBoxColumn>
-                                                                                                                                         <dx:GridViewBandColumn Caption="V.B." VisibleIndex="6">
+                                                                                                                                         <dx:GridViewBandColumn Caption="V.B." VisibleIndex="7">
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                              <Columns>
                                                                                                                                                  <dx:GridViewDataCheckColumn FieldName="VB_DIGITAL" Caption="DIGITAL" VisibleIndex="4" Width="5%">
@@ -828,29 +795,31 @@
                                                                                                                                                  </dx:GridViewDataCheckColumn>
                                                                                                                                              </Columns>
                                                                                                                                          </dx:GridViewBandColumn>
-                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="CORREOS_VB" ShowInCustomizationForm="True" VisibleIndex="5" Width="40%" Caption="AVISO ADICIONAL">
+                                                                                                                                         <dx:GridViewDataTokenBoxColumn FieldName="CORREOS_VB" ShowInCustomizationForm="True" VisibleIndex="6" Width="40%" Caption="AVISO ADICIONAL">
                                                                                                                                              <PropertiesTokenBox AllowMouseWheel="True" IncrementalFilteringMode="None" ShowDropDownOnFocus="Never" Tokens="" ValueSeparator=";">
                                                                                                                                                  <TokenBoxInputStyle Width="50%">
                                                                                                                                                  </TokenBoxInputStyle>
                                                                                                                                              </PropertiesTokenBox>
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataTokenBoxColumn>
-                                                                                                                                         <dx:GridViewDataComboBoxColumn Caption="REV. ANTERIOR" FieldName="ORDEN_VB" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2" Width="12%">
-                                                                                                                                             <PropertiesComboBox DataSourceID="sqlAnterior" TextField="CARGO_VB" TextFormatString="{1}" ValueField="ID_PLT_VB" ValueType="System.Int32">
+                                                                                                                                         <dx:GridViewDataComboBoxColumn Caption="ORDEN" FieldName="ORDEN_VB" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2" Width="12%">
+                                                                                                                                             <PropertiesComboBox DataSourceID="sqlAnterior" TextField="ORDEN_STR" ValueField="ORDEN_VB" ValueType="System.Int32">
                                                                                                                                                  <Columns>
-                                                                                                                                                     <dx:ListBoxColumn Caption="ORDEN" FieldName="ORDEN_VB">
-                                                                                                                                                     </dx:ListBoxColumn>
-                                                                                                                                                     <dx:ListBoxColumn Caption="NOMBRE" FieldName="CARGO_VB">
+                                                                                                                                                     <dx:ListBoxColumn Caption="ORDEN" FieldName="ORDEN_STR">
                                                                                                                                                      </dx:ListBoxColumn>
                                                                                                                                                  </Columns>
                                                                                                                                              </PropertiesComboBox>
-                                                                                                                                             <EditFormSettings Visible="True" />
+                                                                                                                                             <EditFormSettings Visible="False" />
                                                                                                                                              <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                                                                                                                          </dx:GridViewDataComboBoxColumn>
                                                                                                                                          <dx:GridViewDataTextColumn Caption="iD" FieldName="ORDEN_VB" Name="combo" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1" Width="3%">
                                                                                                                                              <PropertiesTextEdit NullDisplayText="Seleccione su nivel de aprobación">
                                                                                                                                              </PropertiesTextEdit>
                                                                                                                                              <EditFormSettings Visible="False" />
+                                                                                                                                         </dx:GridViewDataTextColumn>
+                                                                                                                                         <dx:GridViewDataTextColumn Caption="ORDEN" FieldName="ORDEN_VB" ReadOnly="True" VisibleIndex="3">
+                                                                                                                                         </dx:GridViewDataTextColumn>
+                                                                                                                                         <dx:GridViewDataTextColumn FieldName="USUARIOS" ReadOnly="True" VisibleIndex="11" Visible="False">
                                                                                                                                          </dx:GridViewDataTextColumn>
                                                                                                                                      </Columns>
                                                                                                                                              <SettingsCommandButton>
@@ -889,7 +858,7 @@
                                                                                                                                          <asp:Parameter Name="CARGO_VB" Type="String" />
                                                                                                                                          <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="VB_PAPEL" Type="Int32" DefaultValue ="0"/>
-                                                                                                                                         <asp:Parameter Name="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="ORDEN_VB" Type="Int32" />
                                                                                                                                          <asp:Parameter Name="ESTADO_VB" Type="Int32"  DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="ROL"  Type="String" />
                                                                                                                                          <asp:Parameter Name="CORREOS_VB"  Type="String" />
@@ -900,7 +869,7 @@
                                                                                                                                          <asp:Parameter Name="CARGO_VB" Type="String" />
                                                                                                                                          <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="VB_PAPEL" Type="Int32"  DefaultValue ="0"/>
-                                                                                                                                          <asp:SessionParameter Name="ID_PLT_VB_PRED" SessionField="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                          <asp:SessionParameter Name="ORDEN_VB" SessionField="ORDEN_VB" Type="Int32" />
                                                                                                                                          <asp:Parameter Name="ESTADO_VB" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="ROL" Type="String" />
                                                                                                                                           <asp:Parameter Name="CORREOS_VB" Type="String" />
@@ -923,7 +892,7 @@ ORDER BY [ID_PLT_VB] DESC">
                                                                                                                                              <asp:SqlDataSource ID="sqlRol" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
                                                                                                                                                  SelectCommand=" SELECT [ID_ROL], [NOMBRE_ROL]  FROM [QA_ROL] WHERE ([ID_OBR] = @ID_OBR)">
                                                                                                                                                  <SelectParameters>
-                                                                                                                                                     <asp:SessionParameter Name="ID_OBR" SessionField="ID_OBR" Type="Int64" DefaultValue="68" />
+                                                                                                                                                     <asp:SessionParameter Name="ID_OBR" SessionField="idObra" Type="Int64" />
                                                                                                                                                  </SelectParameters>
                                                                                                                                              </asp:SqlDataSource>
 
@@ -940,7 +909,7 @@ ORDER BY [ID_PLT_VB] DESC">
                                                                                                                                          <asp:Parameter Name="CARGO_VB" Type="String" />
                                                                                                                                          <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="VB_PAPEL" Type="Int32" DefaultValue ="0"/>
-                                                                                                                                         <asp:Parameter Name="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                         <asp:Parameter Name="ORDEN_VB" Type="Int32" />
                                                                                                                                          <asp:Parameter Name="ESTADO_VB" Type="Int32"  DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="USUARIO"  Type="String" />
                                                                                                                                          <asp:Parameter Name="CORREOS_VB"  Type="String" />
@@ -951,13 +920,12 @@ ORDER BY [ID_PLT_VB] DESC">
                                                                                                                                          <asp:Parameter Name="CARGO_VB" Type="String" />
                                                                                                                                          <asp:Parameter Name="VB_DIGITAL" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="VB_PAPEL" Type="Int32"  DefaultValue ="0"/>
-                                                                                                                                          <asp:SessionParameter Name="ID_PLT_VB_PRED" SessionField="ID_PLT_VB_PRED" Type="Int32" />
+                                                                                                                                          <asp:SessionParameter Name="ORDEN_VB" SessionField="ORDEN_VB" Type="Int32" />
                                                                                                                                          <asp:Parameter Name="ESTADO_VB" Type="Int32" DefaultValue ="0" />
                                                                                                                                          <asp:Parameter Name="USUARIO" Type="String" />
                                                                                                                                           <asp:Parameter Name="CORREOS_VB" Type="String" />
                                                                                                                                      </UpdateParameters>
                                                                                                                                              </asp:SqlDataSource>
-                                                                                                                                             <br />
 
                                                                                                                              </div>
                                                                                                                     </div>
@@ -1155,14 +1123,14 @@ ORDER BY [ID_PLT_VB] DESC">
                   });
                    $("#body_GuardarPaso_1").click(function () {
                        document.getElementById("datosTop").style.display = "block";
-                       var idObr = $('#body_ddlProyectos_VI').val();
+                       var a = $('#body_ddlProyectos_VI').val();
                        var codPlt = $('#body_codigotexto_I').val();
                        var nomPlt = $('#body_txtnombre_I').val();
                        var idAct = $('#body_dllActividad_VI').val();
                        //var idEta = $('#body_txtEtapa_I').val();
                        var obs = $('#body_txtMemPbservaciones_I').val();
                       
-                       var datos = "{'idObr':'" + idObr + "','codPlt':'" + codPlt + "','nomPlt':'" + nomPlt + "','idAct':'" + idAct + "','obs':'" + obs + "' }";
+                       var datos = "{'a':'" + a + "','codPlt':'" + codPlt + "','nomPlt':'" + nomPlt + "','idAct':'" + idAct + "','obs':'" + obs + "' }";
                        //alert(datos);
                        $.ajax({
                            type: "POST",

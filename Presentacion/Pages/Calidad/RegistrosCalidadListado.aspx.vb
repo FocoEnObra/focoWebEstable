@@ -1,11 +1,10 @@
-﻿Imports DAL.Seguridad
+﻿Imports System.IO
+Imports DAL.Seguridad
+Imports DevExpress.Web
 
 Public Class Formulario_web110
     Inherits System.Web.UI.Page
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-
         If Page.IsPostBack = False Then
             btn_Filtrar.Visible = False
             Dim xlbl_obra As Label = CType(Me.Master.FindControl("lbl_obra"), Label)
@@ -20,14 +19,8 @@ Public Class Formulario_web110
                 Session.Add("idObra", sUsuario.EmpresaSelected.ObraIDSelected)
             End If
             gridActividades.DataBind()
-
         End If
-
-
-
     End Sub
-
-
     <System.Web.Services.WebMethod()>
     Public Shared Sub setProyecto(ByVal hObraid As String, ByVal hObraNombre As String)
         Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
@@ -52,7 +45,28 @@ Public Class Formulario_web110
 
     End Sub
 
-    Protected Sub sqlCalidad_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs) Handles sqlCalidad.Selecting
+    Protected Sub gridActividades_HtmlDataCellPrepared(sender As Object, e As ASPxGridViewTableDataCellEventArgs) Handles gridActividades.HtmlDataCellPrepared
+        Dim carpeta As String = "/archivos/" & e.KeyValue & "/"
+        If (e.DataColumn.FieldName = "ESTADO_VB") Then
+            Dim image As Image = TryCast(gridActividades.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "nuevoReg"), Image)
+            Dim lblRevisor As ASPxLabel = TryCast(gridActividades.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "lblRevisor"), ASPxLabel)
 
+            Dim adjunto As ASPxImage = TryCast(gridActividades.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "adjunto"), ASPxImage)
+            Dim cantidadAdj As Integer = CType((TryCast(sender, ASPxGridView)).GetRowValues(e.VisibleIndex, "NUM_ADJ"), Integer)
+
+            If e.CellValue.ToString = Trim("1") Then
+                image.ImageUrl = "~/assets/images/okr.png"
+                image.ToolTip = ""
+            End If
+            If e.CellValue.ToString = Trim("-1") Then
+                image.ImageUrl = "~/assets/images/fallas.png"
+            End If
+
+            If CType(cantidadAdj, Integer) > 0 Then
+                adjunto.EmptyImage.IconID = "navigation_up_16x16"
+                adjunto.ToolTip = "El registro posee (" & CType(cantidadAdj, Integer) & ") archivo(s) adjunto"
+
+            End If
+        End If
     End Sub
 End Class

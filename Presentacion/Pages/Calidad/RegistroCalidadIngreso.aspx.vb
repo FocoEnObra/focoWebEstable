@@ -51,18 +51,18 @@ Public Class Formulario_web16
 
 #Region "Web method"
     <System.Web.Services.WebMethod()>
-    Public Shared Sub guardaPaso_1(idObr As Integer, codPlt As String, nomPlt As String, idAct As Integer, obs As String)
+    Public Shared Sub guardaPaso_1(idObra As Integer, codPlt As String, nomPlt As String, idAct As Integer, obs As String)
         Try
             Dim newPlantilla As Boolean
             Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
             'newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codigotexto.Text, HttpContext.Current.Session.Contents("idObra"), dllActividad.Value, 1, txtnombre.Text, txtMemPbservaciones.Text)
             Dim ID_ACC_PLT As Integer
             If HttpContext.Current.Session("ID_ACC_PLT") Is Nothing Then
-                newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codPlt, idObr, 1, idAct, nomPlt, obs)
+                newPlantilla = DAL.Calidad.Plantilla.insertarPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, codPlt, idObra, 1, idAct, nomPlt, obs)
                 ID_ACC_PLT = DAL.Calidad.Plantilla.traeUltimoFolio(ssUsuario, "qa_acc_plt")
                 HttpContext.Current.Session.Add("ID_ACC_PLT", ID_ACC_PLT)
             Else
-                newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), codPlt, idObr, idAct, 1, nomPlt, obs)
+                newPlantilla = DAL.Calidad.Plantilla.modificarrPlantilla(ssUsuario, ssUsuario.ID_MAESTRO, HttpContext.Current.Session.Contents("ID_ACC_PLT"), codPlt, idObra, idAct, 1, nomPlt, obs)
             End If
         Catch ex As Exception
 
@@ -240,7 +240,7 @@ Public Class Formulario_web16
             e.RowError = "ingresa todos los campos."
         End If
 
-        If e.NewValues("ID_GRP_CHK") IsNot Nothing AndAlso e.NewValues("ID_GRP_CHK").ToString().Length < 2 Then
+        If e.NewValues("ID_GRP_CHK") Is Nothing Then
             AddError(e.Errors, grillaCheck.Columns("NOMBRE_GRUPO_CHK"), "debes ingresar o selecionar un grupo.")
         End If
 

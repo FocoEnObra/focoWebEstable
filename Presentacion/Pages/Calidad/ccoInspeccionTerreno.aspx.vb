@@ -7,6 +7,12 @@ Public Class Formulario_web11
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If Page.IsPostBack = False Then
+            Dim ssUsuario As DAL.Seguridad.UsuarioSistema = HttpContext.Current.Session.Contents("xSSN_USUARIO")
+            Session.Add("idObra", ssUsuario.EmpresaSelected.ObraIDSelected)
+
+        End If
+
     End Sub
 
     Protected Sub gridRecinto_BeforePerformDataSelect(sender As Object, e As EventArgs)
@@ -107,8 +113,5 @@ Public Class Formulario_web11
 
     End Sub
 
-    Protected Sub ddlObra_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlObra.SelectedIndexChanged
-        Session.Add("idObra", ddlObra.Value)
-        Session.Add("nombreObra", ddlObra.Text)
-    End Sub
+
 End Class

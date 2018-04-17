@@ -123,8 +123,8 @@ Namespace Seguridad
                         vUsuario.PaginaInicio = vTablas.Tables(0).Rows(0).Item("PAGINA_INI")
                     End If
                 End If
-                vUsuario.EmpresaSelected.ObraIDSelected = 68 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
-                vUsuario.EmpresaSelected.ObraNombreSelected = "DEMO PLAZO"
+                vUsuario.EmpresaSelected.ObraIDSelected = 71 'vTablas.Tables(0).Rows(0).Item("ID_OBR_PRED")
+                vUsuario.EmpresaSelected.ObraNombreSelected = "SANTA TERESA"
             End If
         End Sub
 

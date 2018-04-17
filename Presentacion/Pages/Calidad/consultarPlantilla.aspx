@@ -20,7 +20,7 @@
 
 
 
-  <div class ="page-profile">
+    <div class ="page-profile">
     <div class="profile-full-name">
 			<span class="text-semibold">
              <%--  <b><dx:ASPxLabel ID="lblCodigoPlantilla1" runat="server" Text="" Font-Bold="True" Font-Size="Large"></dx:ASPxLabel></b> </span>--%>
@@ -398,9 +398,10 @@
 
 
 
-                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" SelectCommand="SP_QA_ACC_PLT_LISTADO_SECTORES" SelectCommandType="StoredProcedure">
+                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" 
+                                                        SelectCommand="SP_QA_ACC_PLT_LISTADO_SECTORES" SelectCommandType="StoredProcedure">
                                                         <SelectParameters>
-                                                             <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32" DefaultValue ="342" ></asp:SessionParameter>
+                                                             <asp:SessionParameter SessionField="ID_ACC_PLT" Name="ID_ACC_PLT" Type="Int32"  ></asp:SessionParameter>
                                                         </SelectParameters>
                                                     </asp:SqlDataSource>
 
@@ -418,7 +419,7 @@
                                     <asp:SessionParameter DefaultValue="68" Name="ID_OBR" SessionField="idObra" Type="Int32" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
-                             <asp:SqlDataSource ID="sqlUsuarios" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [USUARIOS] WHERE [id_Usu] = @original_id_Usu AND [nombre_Usu] = @original_nombre_Usu" InsertCommand="INSERT INTO [USUARIOS] ([nombre_Usu]) VALUES (@nombre_Usu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [id_Usu], [nombre_Usu] FROM [USUARIOS]" UpdateCommand="UPDATE [USUARIOS] SET [nombre_Usu] = @nombre_Usu WHERE [id_Usu] = @original_id_Usu AND [nombre_Usu] = @original_nombre_Usu">
+                             <asp:SqlDataSource ID="sqlUsuarios" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:cnxCalidad %>" DeleteCommand="DELETE FROM [USUARIOS] WHERE [id_Usu] = @original_id_Usu AND [nombre_Usu] = @original_nombre_Usu" InsertCommand="INSERT INTO [USUARIOS] ([nombre_Usu]) VALUES (@nombre_Usu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [id_Usu], [nombre_Usu] FROM [USUARIOS] where estado_usu=1" UpdateCommand="UPDATE [USUARIOS] SET [nombre_Usu] = @nombre_Usu WHERE [id_Usu] = @original_id_Usu AND [nombre_Usu] = @original_nombre_Usu">
                                  <DeleteParameters>
                                      <asp:Parameter Name="original_id_Usu" Type="Int64" />
                                      <asp:Parameter Name="original_nombre_Usu" Type="String" />

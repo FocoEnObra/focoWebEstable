@@ -50,15 +50,6 @@ Partial Public Class Main
     Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lblEmpresaMenu.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblEmpresaMenu As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
     '''Control ScriptManager1.
     '''</summary>
     '''<remarks>

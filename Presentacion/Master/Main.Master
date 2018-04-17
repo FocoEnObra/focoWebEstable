@@ -25,13 +25,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css" />
     <link href="../assets/stylesheets/pace-theme-flash.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
 
 
     <%--   #b3b3b3  #35ae98 --%>
 
   
-
-    <style>
+<style>
   
       
 
@@ -819,7 +820,7 @@
                         			</span>
                      			</a>
                                 <ul class="dropdown-menu">
-									<li><a href="#"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Salir de Foco</a></li>
+									<li><a href="../seguridad/frmLogin.aspx"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Salir de Foco</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -832,63 +833,25 @@
 		<div id="main-menu-inner">
 			<div class="menu-content top" id="menu-content-demo">
 				<div>
-					<div class="text-bg"><span class="text-semibold">
-                        <asp:Label ID="lblEmpresaMenu" runat="server" Text="Label"></asp:Label></span></div>
-					<div class="btn-group">
+					<div class="text-bg"><span class="text-semibold"></span>
+                        </div>
+					<%--<div class="btn-group">
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-envelope"></i></a>
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-user"></i></a>
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-cog"></i></a>
 						<a href="#" class="btn btn-xs btn-danger btn-outline dark"><i class="fa fa-power-off"></i></a>
-					</div>
-					<a href="#" class="close">&times;</a>
+					</div>--%>
+					
 				</div>
 			</div>
 
 			<ul class="navigation">
-                
-                <li><a href="../Seguridad/initConfig.aspx"><i class="menu-icon fas fa-cog fa-spin"></i><span class="mm-text">Configuración Inicial</span></a></li>
-                <li><a href="#"><i class="menu-icon fa fa-tasks"></i><span class="mm-text">Cuadro de Mando</span></a></li>
-				
-                <li class="mm-dropdown"><a href="#"><i class="menu-icon fa fa-th"></i><span class="mm-text">Avances</span></a>
-				<ul><li><a tabindex="-1" href="#"><i class="menu-icon fa fa-dot-circle-o"></i><span class="mm-text">Configuración</span></a></li>
-					<li><a tabindex="-1" href="#"><i class="menu-icon fa fa-keyboard-o"></i><span class="mm-text">Toma de Avance</span><%--<span class="label label-warning">Updated</span>--%></a></li>
-                    <li><a tabindex="-1" href="#"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Consulta de Avance</span><%--<span class="label label-warning">Updated</span>--%></a></li>
-				</ul>
-				</li>
-			
-				<li class="mm-dropdown">
-					<a href="#"><i class="menu-icon fa fa-align-left"></i><span class="mm-text">Productividad</span></a>
-				<ul><li><a tabindex="-1" href="../Productividad/ImportaAsistencia.aspx"><i class="menu-icon fa fa-users"></i><span class="mm-text">Importa Asistencia</span></a></li>
-					<li><a tabindex="-1" href="../Productividad/ControlAsistencia.aspx"><i class="menu-icon fa fa-building-o"></i><span class="mm-text">Control de Asistencia</span></a></li>
-	                <li><a tabindex="-1" href="../Productividad/ImportaLibro.aspx"><i class="menu-icon fa fa-align-left"></i><span class="mm-text">Importa Libro</span></a></li>
-					<li><a tabindex="-1" href="../Productividad/ControlLibro.aspx"><i class="menu-icon fa fa fa-align-left"></i><span class="mm-text">Control de Libro</span></a></li>
-					<li><a tabindex="-1" href="../Productividad/ImportaFichas.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Importa Fichas</span></a></li>
-                    <li><a tabindex="-1" href="../Productividad/ControlFichas.aspx"><i class="menu-icon fa fa-suitcase"></i><span class="mm-text">Control de Fichas</span></a></li>
-                </ul> 
-                </li>
-
-                <li class="mm-dropdown">
-					<a href="#"><i class="menu-icon fas fa-desktop"></i><span class="mm-text">Configuración Sistema</span></a>
-                    <ul><li><a tabindex="-1" href="../Productividad/ConfigSistema.aspx"><i class="menu-icon fa fa-building-o"></i><span class="mm-text">Empresa</span></a></li>
-						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp1.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Proyectos</span></a></li>
-						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp2.aspx"><i class="menu-icon fa fa-map-marker"></i><span class="mm-text">Ubicaciones</span></a></li>
-						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp3.aspx"><i class="menu-icon fa fa-calendar"></i><span class="mm-text">Calendario</span></a></li>
-						<li><a tabindex="-1" href="../Productividad/ConfigSistemaOp4.aspx"><i class="menu-icon fa fa-user"></i><span class="mm-text">Supervisores</span></a></li>
-                        <li><a tabindex="-1" href="../Productividad/ConfigSistemaOp5.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Área/Especialidad/Cargo</span></a></li>
-                        <li><a tabindex="-1" href="../Productividad/ConfigSistemaOp6.aspx"><i class="menu-icon fa fa-flag"></i><span class="mm-text">Actividades de Control</span></a></li>
-                        <li><a tabindex="-1" href="../Productividad/ConfigSistemaOp7.aspx"><i class="menu-icon fa fa-tachometer"></i><span class="mm-text">Unidades de Medida</span></a></li>
-                        <li><a tabindex="-1" href="../Productividad/ConfigSistemaOp8.aspx"><i class="menu-icon fa fa-lightbulb-o"></i><span class="mm-text">Etapas Constructivas</span></a></li>
-                    </ul> 
-                </li>
                  <li class="mm-dropdown"> 
 					<a href="#"><i class="menu-icon fas fa-book"></i><span class="mm-text">Calidad de Obra</span></a>
                     <ul>
-                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Crear P.R.C.</span> </a>
-                             <li><a tabindex="-1" href="../calidad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Listado de P.R.C.</span> </a>
-                            <li><a tabindex="-1" href="../calidad/consultarplantilla.aspx"><i class="menu-icon fa fa-calendar"></i><span class="mm-text">Crear R.C.</span> </a>
-                           <li><a tabindex="-1" href="../calidad/RegistrosCalidadListado.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Listado de R.C.</span> </a>
-                          
-                         
+                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Crear Plantilla de Calidad</span> </a>
+                             <li><a tabindex="-1" href="../calidad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Plantillas de Calidad</span> </a>
+                             <li><a tabindex="-1" href="../calidad/RegistrosCalidadListado.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Protocolos Activos</span> </a>
                         </li>
                     </ul> 
                 </li>
@@ -948,11 +911,19 @@
 <script src="../../../assets/javascripts/jquery.transit.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
 <script src="../../../assets/javascripts/pixel-admin.min.js"></script>
-<script src="../../../assets/javascripts/jquery-qrcode.min.js"></script>
-<script src="../../../assets/javascripts/bootstrap-notify.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>       
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>       
        <script>
-               init.push(function () {
+           init.push(function () {
+                   //$('#collapseExample').collapse('show');
+                   //$('#switcher-example-2').switcher({
+                       
+                   //                 $('#switcher-example-2').click(function () {
+                   //                     $('#collapseExample').collapse('toggle');
+
+                   //                 });
+                             
+
+
                    $('.ui-wizard-example').pixelWizard({
                        onChange: function () {
                            console.log('Current step: ' + this.currentStep());
@@ -964,10 +935,10 @@
                        }
                    });
                    $('.wizard-next-step-btn').click(function () {
-                       var idObr = $('#body_ddlProyectos_VI').val();
+                       var idObra = $('#body_ddlProyectos_VI').val();
                        var idAct = $('#body_dllActividad_VI').val();
                        var nomPlt = $('#body_txtnombre_I').val();
-                      if ((idObr != '') && (idAct != '') && (nomPlt != '')) {
+                      if ((idObra != '') && (idAct != '') && (nomPlt != '')) {
                           $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
                       } else {
                           $.notify({
@@ -1022,11 +993,25 @@
                    width: 400,
                    padding: 20,
                });
-               init.push(function () { });
+
+               //$("#modal-content1").iziModal({
+               //    title: "FOCO EN OBRA - COMENTARIOS",
+               //    headerColor: '#35ae98',
+               //    subtitle: "COMENTARIOS",
+               //    iconClass: 'icon-stack',
+               //    overlayColor: 'rgba(255, 255, 255, 0.4)',
+               //    width: 400,
+               //    padding: 20,
+               //});
+
+
+              
                window.PixelAdmin.start(init);
                $(document).on('click', '.trigger-content', function (event) {
                    event.preventDefault();
                    $('#modal-content').iziModal('open');
+                  
+
                     var rbl = document.getElementById("<%=radioObras.ClientID %>");
                    var radio = rbl.getElementsByTagName("INPUT");
                    var labelObj = document.getElementById("<%= lbl_obra.ClientID %>");
@@ -1065,6 +1050,11 @@
 
 
                });
+              // $(document).on('click', '.trigger-content1', function (event) {
+              //     event.preventDefault();
+              //     $('#modal-content1').iziModal('open');
+
+              //});
 </script>
 </body>
 </html>
