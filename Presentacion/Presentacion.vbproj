@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -129,7 +130,6 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="archivos\ExtensionsDisplayName.xml" />
     <Content Include="assets\demo\avatars\1.jpg" />
     <Content Include="assets\demo\avatars\2.jpg" />
     <Content Include="assets\demo\avatars\3.jpg" />
@@ -168,11 +168,9 @@
     <Content Include="assets\images\new.png" />
     <Content Include="assets\javascripts\textifyed.js" />
     <Content Include="assets\javascripts\textifyed.min.js" />
-    <Content Include="Pages\Reportes\reporte.aspx" />
+    <Content Include="bin\Presentacion.dll" />
+    <Content Include="bin\Presentacion.pdb" />
     <Content Include="Pages\Seguridad\error.aspx" />
-    <Content Include="Pages\Calidad\RegistroCalidadTrabajo.aspx" />
-    <Content Include="Pages\Calidad\funcionesCliente.js" />
-    <Content Include="Pages\Calidad\main-navbar-logo.png" />
     <Content Include="assets\images\pixel-admin\avatar.png" />
     <Content Include="assets\images\pixel-admin\blank.png" />
     <Content Include="assets\images\pixel-admin\blur.svg" />
@@ -222,21 +220,6 @@
     <Content Include="CSS\w3-theme-black.css" />
     <Content Include="CSS\w3.css" />
     <Content Include="Global.asax" />
-    <Content Include="Pages\Calidad\megamenu.aspx" />
-    <Content Include="Pages\Calidad\RegistrosCalidadListado.aspx" />
-    <Content Include="Pages\Calidad\verPlantilla.aspx" />
-    <Content Include="Pages\Calidad\consultarPlantilla.aspx" />
-    <Content Include="Pages\Calidad\MantenedorPlantillas.aspx" />
-    <Content Include="Pages\Calidad\prueba2.aspx" />
-    <Content Include="Pages\Calidad\Pruebas.aspx" />
-    <Content Include="Pages\Calidad\RegistroCalidadIngreso.aspx" />
-    <Content Include="Pages\Calidad\jquery.countdown.js" />
-    <Content Include="Pages\Calidad\jquery.countdown.min.js" />
-    <Content Include="Pages\Calidad\jquery.countdown360.js" />
-    <Content Include="Pages\Productividad\AsignacionMO.aspx" />
-    <Content Include="Pages\Productividad\calElabRegistro.aspx" />
-    <Content Include="Pages\Calidad\ccoInspeccionTerreno.aspx" />
-    <Content Include="Pages\Productividad\checklist.aspx" />
     <Content Include="Pages\Productividad\ConfigSistema.aspx" />
     <Content Include="Pages\Productividad\ConfigSistemaOp1.aspx" />
     <Content Include="Pages\Productividad\ConfigSistemaOp2.aspx" />
@@ -272,7 +255,6 @@
     <Content Include="Pages\Seguridad\initConfig.aspx" />
     <Content Include="assets\javascripts\jquery-qrcode.min.js" />
     <Content Include="Pages\Seguridad\RecuperarContraseña.aspx" />
-    <Content Include="pruebafuera.aspx" />
     <Content Include="Scripts\jquery.qrcode.js" />
     <Content Include="Scripts\qrcode.js" />
     <Content Include="Scripts\w3.js" />
@@ -289,22 +271,8 @@
     <Content Include="Service References\wsLogin_\Presentacion.wsLogin_.UsuarioSistema.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Pages\Productividad\AsignacionMO.aspx.bak" />
-    <Content Include="Pages\Calidad\ccoInspeccionTerreno.aspx.bak" />
-    <Content Include="Pages\Productividad\checklist.aspx.bak" />
     <None Include="My Project\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile2.pubxml" />
-    <Content Include="Pages\Reportes\Protocolo.xsc">
-      <DependentUpon>Protocolo.xsd</DependentUpon>
-    </Content>
-    <None Include="Pages\Reportes\Protocolo.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Protocolo.Designer.vb</LastGenOutput>
-    </None>
-    <Content Include="Pages\Reportes\Protocolo.xss">
-      <DependentUpon>Protocolo.xsd</DependentUpon>
-    </Content>
     <None Include="Service References\wsLogin_\Servicios.disco" />
     <None Include="Service References\wsLogin_\configuration91.svcinfo" />
     <None Include="Service References\wsLogin_\configuration.svcinfo" />
@@ -323,121 +291,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Maestro.vb" />
-    <Compile Include="Pages\Reportes\Protocolo.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Protocolo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Reportes\RegistroCalidad.Designer.vb">
-      <DependentUpon>RegistroCalidad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Reportes\RegistroCalidad.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Pages\Reportes\reporte.aspx.designer.vb">
-      <DependentUpon>reporte.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Reportes\reporte.aspx.vb">
-      <DependentUpon>reporte.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Pages\Seguridad\error.aspx.designer.vb">
       <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Seguridad\error.aspx.vb">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistroCalidadTrabajo.aspx.designer.vb">
-      <DependentUpon>RegistroCalidadTrabajo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistroCalidadTrabajo.aspx.vb">
-      <DependentUpon>RegistroCalidadTrabajo.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\megamenu.aspx.designer.vb">
-      <DependentUpon>megamenu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\megamenu.aspx.vb">
-      <DependentUpon>megamenu.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistrosCalidadListado.aspx.designer.vb">
-      <DependentUpon>RegistrosCalidadListado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistrosCalidadListado.aspx.vb">
-      <DependentUpon>RegistrosCalidadListado.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\verPlantilla.aspx.designer.vb">
-      <DependentUpon>verPlantilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\verPlantilla.aspx.vb">
-      <DependentUpon>verPlantilla.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\consultarPlantilla.aspx.designer.vb">
-      <DependentUpon>consultarPlantilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\consultarPlantilla.aspx.vb">
-      <DependentUpon>consultarPlantilla.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\MantenedorPlantillas.aspx.designer.vb">
-      <DependentUpon>MantenedorPlantillas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\MantenedorPlantillas.aspx.vb">
-      <DependentUpon>MantenedorPlantillas.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\prueba2.aspx.designer.vb">
-      <DependentUpon>prueba2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\prueba2.aspx.vb">
-      <DependentUpon>prueba2.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\Pruebas.aspx.designer.vb">
-      <DependentUpon>Pruebas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\Pruebas.aspx.vb">
-      <DependentUpon>Pruebas.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistroCalidadIngreso.aspx.designer.vb">
-      <DependentUpon>RegistroCalidadIngreso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\RegistroCalidadIngreso.aspx.vb">
-      <DependentUpon>RegistroCalidadIngreso.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Productividad\AsignacionMO.aspx.designer.vb">
-      <DependentUpon>AsignacionMO.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Productividad\AsignacionMO.aspx.vb">
-      <DependentUpon>AsignacionMO.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Productividad\calElabRegistro.aspx.designer.vb">
-      <DependentUpon>calElabRegistro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Productividad\calElabRegistro.aspx.vb">
-      <DependentUpon>calElabRegistro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Calidad\ccoInspeccionTerreno.aspx.designer.vb">
-      <DependentUpon>ccoInspeccionTerreno.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Calidad\ccoInspeccionTerreno.aspx.vb">
-      <DependentUpon>ccoInspeccionTerreno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Productividad\checklist.aspx.designer.vb">
-      <DependentUpon>checklist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Productividad\checklist.aspx.vb">
-      <DependentUpon>checklist.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Master\Main.Master.designer.vb">
       <DependentUpon>Main.Master</DependentUpon>
@@ -675,13 +534,6 @@
       <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="pruebafuera.aspx.designer.vb">
-      <DependentUpon>pruebafuera.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pruebafuera.aspx.vb">
-      <DependentUpon>pruebafuera.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Service References\wsLogin\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -700,9 +552,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Reportes\RegistroCalidad.resx">
-      <DependentUpon>RegistroCalidad.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

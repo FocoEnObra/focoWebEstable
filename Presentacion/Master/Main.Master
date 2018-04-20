@@ -833,28 +833,31 @@
 		<div id="main-menu-inner">
 			<div class="menu-content top" id="menu-content-demo">
 				<div>
-					<div class="text-bg"><span class="text-semibold"></span>
-                        </div>
-					<%--<div class="btn-group">
+					<div class="text-bg"><span class="text-semibold">Nombre Empresa</span></div>
+					<div class="btn-group">
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-envelope"></i></a>
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-user"></i></a>
 						<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-cog"></i></a>
 						<a href="#" class="btn btn-xs btn-danger btn-outline dark"><i class="fa fa-power-off"></i></a>
-					</div>--%>
-					
+					</div>
+					<a href="#" class="close">&times;</a>
 				</div>
 			</div>
 
 			<ul class="navigation">
-                 <li class="mm-dropdown"> 
-					<a href="#"><i class="menu-icon fas fa-book"></i><span class="mm-text">Calidad de Obra</span></a>
-                    <ul>
-                        <li><a tabindex="-1" href="../calidad/RegistroCalidadIngreso.aspx"><i class="menu-icon fa fa-file-text-o"></i><span class="mm-text">Crear Plantilla de Calidad</span> </a>
-                             <li><a tabindex="-1" href="../calidad/ccoInspeccionTerreno.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Plantillas de Calidad</span> </a>
-                             <li><a tabindex="-1" href="../calidad/RegistrosCalidadListado.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Protocolos Activos</span> </a>
-                        </li>
-                    </ul> 
+                
+                <li><a href="../Seguridad/initConfig.aspx"><i class="menu-icon fa fa-gear"></i><span class="mm-text">Configuración Inicial</span></a></li>
+        		<li class="mm-dropdown">
+					<a href="#"><i class="menu-icon fa fa-align-left"></i><span class="mm-text">Productividad</span></a>
+				<ul><li><a tabindex="-1" href="../Productividad/ImportaAsistencia.aspx"><i class="menu-icon fa fa-users"></i><span class="mm-text">Importa Asistencia</span></a></li>
+					<li><a tabindex="-1" href="../Productividad/ControlAsistencia.aspx"><i class="menu-icon fa fa-building-o"></i><span class="mm-text">Control de Asistencia</span></a></li>
+	                <li><a tabindex="-1" href="../Productividad/ImportaLibro.aspx"><i class="menu-icon fa fa-align-left"></i><span class="mm-text">Importa Libro</span></a></li>
+					<li><a tabindex="-1" href="../Productividad/ControlLibro.aspx"><i class="menu-icon fa fa fa-align-left"></i><span class="mm-text">Control de Libro</span></a></li>
+					<li><a tabindex="-1" href="../Productividad/ImportaFichas.aspx"><i class="menu-icon fa fa-book"></i><span class="mm-text">Importa Fichas</span></a></li>
+                    <li><a tabindex="-1" href="../Productividad/ControlFichas.aspx"><i class="menu-icon fa fa-suitcase"></i><span class="mm-text">Control de Fichas</span></a></li>
+                </ul> 
                 </li>
+             
 			</ul>  <!-- END SIDEBAR -->
 		</div> 
 	</div> 
