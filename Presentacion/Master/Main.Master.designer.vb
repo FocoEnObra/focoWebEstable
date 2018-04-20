@@ -75,31 +75,4 @@ Partial Public Class Main
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
-    
-    '''<summary>
-    '''Control radioObras.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents radioObras As Global.System.Web.UI.WebControls.RadioButtonList
-    
-    '''<summary>
-    '''Control sqlProyectos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents sqlProyectos As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control hObraid.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hObraid As Global.System.Web.UI.WebControls.HiddenField
 End Class

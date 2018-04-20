@@ -883,7 +883,7 @@
          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
              <ContentTemplate>
                  <div class ="col-lg-offset-4  panel panel-transparent">
-                 <asp:RadioButtonList CssClass="radio" ID="radioObras" runat="server" DataSourceID="sqlProyectos" DataTextField="NOMBRE" DataValueField="ID" Width="100%" AutoPostBack="True" Font-Italic="False" Font-Names="verdana" Font-Overline="False" Font-Size="X-Small" Font-Underline="True" ForeColor="#666666"></asp:RadioButtonList>
+               
                  </div>
              </ContentTemplate>
              <Triggers>
@@ -893,17 +893,6 @@
              </Triggers>
 
          </asp:UpdatePanel>
-         
-
-
-
-         <asp:SqlDataSource runat="server" ID="sqlProyectos" ConnectionString='<%$ ConnectionStrings:cnxCalidad %>' SelectCommand="SP_WS_OBRAS_BUSCAR" SelectCommandType="StoredProcedure">
-             <SelectParameters>
-                 <asp:Parameter DefaultValue="1" Name="Vigente_Obr" Type="Int32"></asp:Parameter>
-             </SelectParameters>
-         </asp:SqlDataSource>
-     </div>
-        <asp:HiddenField runat="server" id="hObraid" ></asp:HiddenField >
   </form>
 
 </div> 
@@ -917,16 +906,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>       
        <script>
            init.push(function () {
-                   //$('#collapseExample').collapse('show');
-                   //$('#switcher-example-2').switcher({
-                       
-                   //                 $('#switcher-example-2').click(function () {
-                   //                     $('#collapseExample').collapse('toggle');
-
-                   //                 });
-                             
-
-
                    $('.ui-wizard-example').pixelWizard({
                        onChange: function () {
                            console.log('Current step: ' + this.currentStep());
@@ -938,30 +917,7 @@
                        }
                    });
                    $('.wizard-next-step-btn').click(function () {
-                       var idObra = $('#body_ddlProyectos_VI').val();
-                       var idAct = $('#body_dllActividad_VI').val();
-                       var nomPlt = $('#body_txtnombre_I').val();
-                      if ((idObra != '') && (idAct != '') && (nomPlt != '')) {
                           $(this).parents('.ui-wizard-example').pixelWizard('nextStep');
-                      } else {
-                          $.notify({
-                              
-                                  title: "<strong>Cuidado :</strong> ",
-                                  icon: 'fas fa-exclamation-circle',
-                                  message: "debes ingresar todos los campos requeridos"
-                              }, {
-
-                                  offset: {
-                                      x: 3,
-                                      y: 48
-                                  },
-                                  animate: {
-                                          enter: 'animated zoomInDown',
-                                          exit: 'animated lightSpeedOut'
-                                      }, type: 'info'
-                                  });
-
-                       }
                    });
                    $('.wizard-prev-step-btn').click(function () {
                        $(this).parents('.ui-wizard-example').pixelWizard('prevStep');
@@ -969,95 +925,12 @@
                    $('.wizard-go-to-step-btn').click(function () {
                        $(this).parents('.ui-wizard-example').pixelWizard('setCurrentStep', 2);
                    });
-                   $('#ui-wizard-modal').on('show.bs.modal', function (e) {
-                       var $modal = $(this),
-                           $wizard = $modal.find('.ui-wizard-example'),
-                           timer = null,
-                           callback = function () {
-                               if (timer) clearTimeout(timer);
-                               if ($modal.hasClass('in ')) {
-                                   $wizard.pixelWizard('resizeSteps');
-                               } else {
-                                   timer = setTimeout(callback, 10);
-                               }
-                           };
-                       callback();
-                   });
-
                });
-
-
-               $("#modal-content").iziModal({
-                   title: "FOCO EN OBRA - PROYECTOS",
-                   headerColor: '#35ae98',
-                   subtitle: "seleciona tú proyecto para trabajar",
-                   iconClass: 'icon-stack',
-                   overlayColor: 'rgba(255, 255, 255, 0.4)',
-                   width: 400,
-                   padding: 20,
-               });
-
-               //$("#modal-content1").iziModal({
-               //    title: "FOCO EN OBRA - COMENTARIOS",
-               //    headerColor: '#35ae98',
-               //    subtitle: "COMENTARIOS",
-               //    iconClass: 'icon-stack',
-               //    overlayColor: 'rgba(255, 255, 255, 0.4)',
-               //    width: 400,
-               //    padding: 20,
-               //});
-
-
-              
                window.PixelAdmin.start(init);
                $(document).on('click', '.trigger-content', function (event) {
                    event.preventDefault();
-                   $('#modal-content').iziModal('open');
-                  
-
-                    var rbl = document.getElementById("<%=radioObras.ClientID %>");
-                   var radio = rbl.getElementsByTagName("INPUT");
-                   var labelObj = document.getElementById("<%= lbl_obra.ClientID %>");
-
-                                    for (var i = 0; i < radio.length; i++) {
-                                        radio[i].onchange = function () {
-                                            var radio = this;
-                                            var label = radio.parentNode.getElementsByTagName("LABEL")[0];
-                                            labelObj.innerHTML = label.innerHTML;
-                                            labelObj.val = radio.value;
-                                            hObraid.value = radio.value;
-                                            var datos = "{'hObraid':'" + hObraid.value + "','hObraNombre':'" + label.innerHTML + "' }";
-                                            $.ajax({
-                                                type: "POST",
-                                                url: "RegistrosCalidadListado.aspx/setProyecto",
-                                                data: datos,
-                                                contentType: "application/json; charset=utf-8",
-                                                dataType: "json",
-                                                success: function (response) {
-                                                    console.log(response.d);
-                                                    $('#modal-content').iziModal('close');
-
-                                                },
-                                                failure: function (response) {
-                                                    console.log(response.d);
-                                                }
-                                            });
-
-
-
-                                        };
-
-
-                                    }
-
-
-
                });
-              // $(document).on('click', '.trigger-content1', function (event) {
-              //     event.preventDefault();
-              //     $('#modal-content1').iziModal('open');
-
-              //});
+       
 </script>
 </body>
 </html>
